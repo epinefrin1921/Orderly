@@ -87,18 +87,18 @@
         $(document).scroll(function () {
             var $nav = $("#fix");
             var $nav2 = $(".menu-item");
-            $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
-            $nav2.addClass('notactive', $(this).scrollTop() > $nav.height());
-        });
-    });
+$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+$nav2.addClass('notactive', $(this).scrollTop() > $nav.height());
+});
+});
 
 
-    function myFunction() {
-        let x = document.getElementsByClassName("menu-item");
-        for (let i = 0; i < x.length; i++) {
-            x[i].classList.toggle('notactive');
-        }
-    }
+function myFunction() {
+let x = document.getElementsByClassName("menu-item");
+for (let i = 0; i < x.length; i++) {
+x[i].classList.toggle('notactive');
+}
+}
 </script>
 </body>
 </html>
