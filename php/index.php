@@ -9,35 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div id="fix">
-    <header id="h1">
-        <div id="d1" class="wrap">
-            <a id="naslov" href="index.html">orderly</a>
-            <nav class="menu-item notactive">
-                <a href="#">Home</a>
-                <a href="#s4">About</a>
-                <a href="#">Menu</a>
-            </nav>
-            <nav class="menu-item notactive">
-                <ul>
-                    <li class="has-drop">
-                        <a href="#">My Profile</a>
-                        <div class="dropdown">
-                            <a href="#">My account</a>
-                            <a href="#">Previous orders</a>
-                            <a href="#">Balance</a>
-                            <a href="#">Log out</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <a id="hamburger"  class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-    </header>
-</div>
-
+<?php include 'header.php';?>
 <section class="wrap" id="s1">
     <div id="podnaslov">
         <h1>
@@ -103,9 +75,8 @@
     </div>
 </section>
 
+<?php include 'footer.php'; ?>
 
-
-<footer><div class="wrap">&copy;SSST_2020</div></footer>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

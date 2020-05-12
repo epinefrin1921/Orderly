@@ -20,5 +20,13 @@
 
     <input class="butt" type="button" name="" value="Sign In">
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<?php include 'footer.php'; ?>
 </body>
 </html>
