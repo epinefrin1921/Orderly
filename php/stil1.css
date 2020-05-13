@@ -29,7 +29,7 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-#d2{
+ul{
     display: none;
 }
 .wrap{
@@ -116,7 +116,7 @@ html{
     justify-content: center;
 }
 
-#s2 button{
+#s2 a{
     border-radius:20px;
     padding: 10px 30px;
     background: transparent;
@@ -125,9 +125,10 @@ html{
     font-weight: bold;
     margin: 90px;
     font-size:1.5rem;
+    text-decoration: none;
 }
 
-#s2 button:hover{
+#s2 a:hover{
     background: white;
     color:#89253e;
     transition: ease-in 0.3s;

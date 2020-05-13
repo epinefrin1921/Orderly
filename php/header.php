@@ -10,15 +10,19 @@
             <nav class="menu-item notactive">
                 <ul>
                     <li class="has-drop">
-                        <a href="#">My Profile</a>
+                        <a href="/LogIn.php">My Profile</a>
                         <div class="dropdown">
                             <a href="#">My account</a>
                             <a href="#">Previous orders</a>
                             <a href="#">Balance</a>
-                            <a href="#">Log out</a>
+                            <a href="index1.php">Log out</a>
                         </div>
                     </li>
                 </ul>
+                <div id="d2">
+                    <a href="LogIn.php">Log in</a>
+                    <a href="Register.php">Register</a>
+                </div>
             </nav>
             <a id="hamburger"  class="icon" onclick="myFunction()">
                 <i class="fa fa-bars"></i>

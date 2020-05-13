@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="RegStil.css">
 </head>
 <body>
-<h1><a href="index.php">Welcome to orderly</a></h1>
+<h1><a href="index1.php">Welcome to orderly</a></h1>
 <?php
 $today = date("Y-m-d");
 ?>
@@ -36,12 +36,6 @@ $today = date("Y-m-d");
     </div>
     <input class="butt" type="submit" name="" value="Submit" >
 </form>
-<?php include 'footer.php'; ?>
-<?php
-$user='root';
-$pass='';
-$db='project';
-$db= new mysqli('localhost',$user,$pass,$db) or die("Unable to connect!");
-?>
+
 </body>
 </html>
