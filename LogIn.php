@@ -13,7 +13,7 @@ $title = 'Log in';
 </head>
 
 <body>
-<h1><a href="index1.php">Welcome to orderly</a></h1>
+<h1><a href="index.php">Welcome to orderly</a></h1>
 <form class="Login">
     <h2>Log in</h2>
     <div class="textbox">
