@@ -2,112 +2,13 @@
     color: white;
     text-align: center;
 }
-form{
-    width: 100%;
-}
-.cart-action{
-    width: 100%;
-    margin-top: 5px;
-}
-h3{
-    color:white;
-    text-decoration: none;
-}
-.up{
-    width:98%;
-    background: white;
-    color:red;
-    font-weight: bold;
-    padding: 10px;
-    text-align: center;
-    margin-bottom: 50px;
-    border-radius: 15px;
-
-}
-.open_cart{
-    color:white;
-    text-decoration: none;
-}
-
-input[type=number]{
-    width: 93%;
-    color:white;
-    background-color: #89253e;
-    border-radius: 10px;
-}
-input[type=submit]{
-    width: 100%;
-    color:white;
-    background-color: #89253e;
-    border-radius: 10px;
-}
 .wrap2{
     width: 80%;
     margin:0 auto;
 }
-
-#helping{
-    padding-bottom: 100px;
+.jumbotron{
+    padding: 130px 15px 15px 0;
 }
 #s3{
     padding: 20px;
-}
-.info-more {
-    text-decoration: none;
-    color: #89253e;
-}
-.container{
-    padding-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-button{
-    display: inline;
-}
- .container a, .container p{
-    width: 100%;
-    text-decoration: none;
-}
- a img{
-     width:100%;
- }
-a{
-    color: white;
-}
-.kolicina{
-    display: inline-block;
-}
-input[type=text]{
-    background-color:red;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-#supp{
-    text-align: center;
-    color:white;
-    font-weight: bold;
-}
-::-webkit-scrollbar {
-    display: none;
-}
-#supp a{
-    border:1px solid white;
-    padding: 5px 10px;
-    border-radius:15px ;
-    color:white;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 15px;
-}
-
-#supp a:hover{
-    background-color: white;
-    color:#89253e;
-}
-@media (max-width: 500px) {
-    #supp span{
-        display: block;
-        margin-bottom:20px;
-    }
 }
