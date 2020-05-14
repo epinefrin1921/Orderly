@@ -1,6 +1,6 @@
 <?php
 
-include('includes/db.php');
+include('includes/DB.php');
 
 $id = $_GET['id'];
 
@@ -20,18 +20,23 @@ $title = $row['MI_NAME'];
 <head>
     <?php include('includes/head.php') ?>
     <link rel="stylesheet" href="styles/stil.css">
-    <link rel="stylesheet" href="includes/products.css">
+    <link rel="stylesheet" href="styles/productsingle.css">
 </head>
 
 <body>
 <?php include('includes/header.php') ?>
-
-<h1><?= $row['MI_NAME'] ?></h1>
-<h1><?= $row['MI_PRICE'] ?></h1>
-<h1><?= $row['MI_DESCRIPTION'] ?></h1>
-<h1><?= $row['MI_SUPPLY_PRICE'] ?></h1>
-
-
+<main class="wrap">
+    <div class="prikaz">
+        <div class="info">
+            <h2><?= $row['MI_NAME'] ?></h2>
+            <p>Price: <?= $row['MI_PRICE'] ?>KM</p>
+            <p>Description: <?= $row['MI_DESCRIPTION'] ?></p>
+            <a href="edit_product.php?id=<?= $row['MI_ID'] ?>">Edit product </a>
+            <a href="delete_product.php?id=<?= $row['MI_ID']?>">Delete product</a>
+        </div>
+        <img src="<?=$row['MI_IMG']?>">
+    </div>
+</main>
 <?php include('includes/footer.php') ?>
 </body>
 </html>

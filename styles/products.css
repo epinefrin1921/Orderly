@@ -12,3 +12,23 @@
 #s3{
     padding: 20px;
 }
+.info-more {
+    text-decoration: none;
+    color: #89253e;
+}
+.container{
+    padding-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+button{
+    display: inline;
+}
+ .container a, .container p{
+    width: 100%;
+    text-decoration: none;
+}
+a{
+    color: white;
+}

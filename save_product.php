@@ -1,5 +1,5 @@
 <?php
-include('includes/db.php');
+include('includes/DB.php');
 
 if ($_POST) {
 
@@ -7,14 +7,14 @@ if ($_POST) {
     $description = $_POST['description'];
     $price = $_POST['price'];
     $price2 = $_POST['price_supply'];
+    $image = $_POST['image'];
 
 
-    $query = oci_parse($conn, "INSERT INTO MENU_ITEMS (MI_NAME, MI_PRICE, MI_DESCRIPTION, MI_SUPPLY_PRICE) VALUES ('{$name}', {$price},'{$description}',{$price2})");
 
-
+    $query = oci_parse($conn, "INSERT INTO MENU_ITEMS (MI_NAME, MI_PRICE, MI_DESCRIPTION, MI_SUPPLY_PRICE, MI_IMG) 
+                      VALUES ('{$name}', {$price},'{$description}',{$price2},'{$image}')");;
     oci_execute($query);
     oci_commit($conn);
 
     header('Location: products.php');
-
 }

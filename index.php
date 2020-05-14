@@ -1,7 +1,11 @@
 <?php
 
 $title = 'Homepage';
+include('includes/DB.php');
 
+$query = oci_parse($conn, 'select * from MENU_ITEMS');
+oci_execute($query);
+$i = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,32 +38,14 @@ $title = 'Homepage';
     <section id="ss">
         <h3>Recommended by others:</h3>
     </section>
+    <?php while($row=oci_fetch_assoc($query) and $i<5):?>
     <div>
-        <img src="https://image.dnevnik.hr/media/images/567x350/Oct2018/61585381.jpg">
-        <p>Pizza</p>
-        <button>Add to cart</button>
+        <img src="<?=$row['MI_IMG']?>">
+        <p><?= $row['MI_NAME'] ?></p>
+        <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
+        <button>Add to Cart</button>
     </div>
-    <div>
-        <img src="https://image.dnevnik.hr/media/images/567x350/Oct2018/61585381.jpg">
-        <p>Pizza</p>
-        <button>Add to cart</button>
-    </div>
-    <div>
-        <img src="https://image.dnevnik.hr/media/images/567x350/Oct2018/61585381.jpg">
-        <p>Pizza</p>
-        <button>Add to cart</button>
-    </div>
-    <div>
-        <img src="https://image.dnevnik.hr/media/images/567x350/Oct2018/61585381.jpg">
-        <p>Pizza</p>
-        <button>Add to cart</button>
-    </div>
-    <div>
-        <img src="https://image.dnevnik.hr/media/images/567x350/Oct2018/61585381.jpg">
-        <p>Pizza</p>
-        <button>Add to cart</button>
-    </div>
-
+    <?php $i++; endwhile; ?>
 </section>
 
 <section class="wrap" id="s4">
@@ -80,28 +66,5 @@ $title = 'Homepage';
 
 <?php include 'includes/footer.php'; ?>
 
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script>
-    $(function () {
-        $(document).scroll(function () {
-            var $nav = $("#fix");
-            var $nav2 = $(".menu-item");
-$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
-$nav2.addClass('notactive', $(this).scrollTop() > $nav.height());
-});
-});
-
-
-function myFunction() {
-let x = document.getElementsByClassName("menu-item");
-for (let i = 0; i < x.length; i++) {
-x[i].classList.toggle('notactive');
-}
-}
-</script>
 </body>
 </html>
