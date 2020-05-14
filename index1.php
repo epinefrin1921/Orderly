@@ -1,15 +1,17 @@
+<?php
+
+$title = 'Homepage';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Homepage</title>
-    <link rel="stylesheet" href="stil.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/stil1.css">
+    <?php include('includes/head.php') ?>
 </head>
+
 <body>
-<?php include 'header.php';?>
+<?php include 'includes/header.php';?>
 <section class="wrap" id="s1">
     <div id="podnaslov">
         <h1>
@@ -24,7 +26,7 @@
     </div>
 </section>
 <section class="wrap" id="s2">
-    <button>Order Now</button>
+    <a href="LogIn.php">Order Now</a>
 </section>
 
 <section class="wrap" id="s3">
@@ -75,7 +77,7 @@
     </div>
 </section>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -87,18 +89,18 @@
         $(document).scroll(function () {
             var $nav = $("#fix");
             var $nav2 = $(".menu-item");
-$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
-$nav2.addClass('notactive', $(this).scrollTop() > $nav.height());
-});
-});
+            $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            $nav2.addClass('notactive', $(this).scrollTop() > $nav.height());
+        });
+    });
 
 
-function myFunction() {
-let x = document.getElementsByClassName("menu-item");
-for (let i = 0; i < x.length; i++) {
-x[i].classList.toggle('notactive');
-}
-}
+    function myFunction() {
+        let x = document.getElementsByClassName("menu-item");
+        for (let i = 0; i < x.length; i++) {
+            x[i].classList.toggle('notactive');
+        }
+    }
 </script>
 </body>
 </html>

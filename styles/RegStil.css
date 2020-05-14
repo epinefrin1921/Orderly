@@ -2,12 +2,11 @@
 body{
     margin: 0;
     padding:0;
-     font-family: 'Roboto', sans-serif;
+    background: #3a6186;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #89253e, #3a6186);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #89253e, #3a6186); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Roboto', sans-serif;
     background-size: cover;
-    background: #C04848;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #480048, #C04848);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #480048, #C04848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 a{
     text-decoration: none;
@@ -21,9 +20,7 @@ h1{
     font-family: 'Lobster', cursive;
     margin-bottom: 40px;
 }
-::-webkit-scrollbar {
-    display: none;
-}
+
 .Login {
     width: 50%;
     margin:0 auto;
@@ -101,15 +98,7 @@ input[type="date"]:before {
     color:#89253e;
     background: white;
 }
-.erroneus{
-    color:red;
-    width:100%;
-}
-.visitDetails{
-    color: #eeeeee;
-    text-align: center;
-    margin: 20px 70px;
-}
+
 
 
 @media (max-width: 660px) {

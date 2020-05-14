@@ -1,16 +1,20 @@
+<?php
+
+$title = 'Log in';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Log In</title>
-    <link rel="stylesheet" href="LogInStil.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/LogInStil.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <?php include('includes/head.php') ?>
 </head>
+
 <body>
 <h1><a href="index1.php">Welcome to orderly</a></h1>
-<div class="Login">
+<form class="Login">
     <h2>Log in</h2>
     <div class="textbox">
         <i style='font-size:24px' class='far'>&#xf2bd;</i>
@@ -24,7 +28,7 @@
     <div id="pass"><a href="PasswordForgot.php" id="pw">Forgot password?</a> |
         <a href="Register.php" id="pw">Don't have an account?</a></div>
 
-</div>
+</form>
 
 
 </body>

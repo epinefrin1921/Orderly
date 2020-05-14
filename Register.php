@@ -1,19 +1,21 @@
+<?php
+
+$title = 'Register';
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>Register Now</title>
-    <link rel="stylesheet" href="RegStil.css">
+     <?php include('includes/head.php') ?>
+    <link rel="stylesheet" href="styles/RegStil.css">
 </head>
 <body>
 <h1><a href="index1.php">Welcome to orderly</a></h1>
 <?php
 $today = date("Y-m-d");
 ?>
-<form class="Login" action="insert.php" method="post">
+<form class="Login" action="" method="post">
     <h2>Register</h2>
     <div class="textbox">
         <input type="text" placeholder="Name" name="FName" value="" required>
