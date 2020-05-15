@@ -1,6 +1,10 @@
 <?php
 include('includes/DB.php');
 
+function checkRequiredField ($value) {
+    return isset($value) && !empty($value);
+}
+
 if ($_POST) {
 
     $name = $_POST['name'];
@@ -10,11 +14,16 @@ if ($_POST) {
     $image = $_POST['image'];
 
 
-
-    $query = oci_parse($conn, "INSERT INTO MENU_ITEMS (MI_NAME, MI_PRICE, MI_DESCRIPTION, MI_SUPPLY_PRICE, MI_IMG, MI_TYPE) 
+    if(checkRequiredField($name) && checkRequiredField($price) && checkRequiredField($image) && checkRequiredField($description)){
+        $query = oci_parse($conn, "INSERT INTO MENU_ITEMS (MI_NAME, MI_PRICE, MI_DESCRIPTION, MI_SUPPLY_PRICE, MI_IMG, MI_TYPE) 
                       VALUES ('{$name}', {$price},'{$description}',{$price2},'{$image}','single')");;
-    oci_execute($query);
-    oci_commit($conn);
+        oci_execute($query);
+        oci_commit($conn);
 
-    header('Location: products.php');
+        header('Location: products.php');
+    }
+    else{
+        header('Location: new_product.php');
+    };
+
 }

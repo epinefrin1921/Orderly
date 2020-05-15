@@ -4,11 +4,17 @@ include('includes/DB.php');
 
 $title = 'Edit product';
 
-$id = $_GET['id'];
+function checkRequiredField ($value)
+{
+    return isset($value) && !empty($value);
+}
 
-$query = oci_parse($conn, 'select * from MENU_ITEMS where MI_ID = ' . $id);
-oci_execute($query);
-$row = oci_fetch_assoc($query);
+$id = $_GET['id'];
+if(checkRequiredField($id)){
+    $query = oci_parse($conn, 'select * from MENU_ITEMS where MI_ID = ' . $id);
+    oci_execute($query);
+    $row = oci_fetch_assoc($query);
+}
 ?>
 <!doctype html>
 <html lang="en">

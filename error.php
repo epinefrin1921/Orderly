@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 $title = 'Error';
 
 ?>
@@ -14,16 +13,13 @@ $title = 'Error';
 <body>
 <?php include 'includes/header.php';?>
 
-<div id="helping"></div>
-
-
 <section class="wrap" id="s1">
     <div id="podnaslov">
         <h1>
             There was an error!
         </h1>
         <p>
-            Maybe you wanted to do something else?
+            Please try again!
         </p>
     </div>
     <div class="slika" id="slika">

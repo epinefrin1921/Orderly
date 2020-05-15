@@ -1,11 +1,21 @@
 <?php
 include('includes/DB.php');
 $title = 'Edit product';
-
 $id = $_GET['id'];
-$query = oci_parse($conn, 'select * from MENU_ITEMS where MI_ID = ' . $id);
-oci_execute($query);
-$row = oci_fetch_assoc($query);
+
+function checkRequiredField ($value) {
+    return isset($value) && !empty($value);
+}
+if(checkRequiredField($id)){
+    $query = oci_parse($conn, 'select * from MENU_ITEMS where MI_ID = ' . $id);
+    oci_execute($query);
+    $row = oci_fetch_assoc($query);
+    $query2 = oci_parse($conn, "select * from MENU_ITEMS where lower(MI_TYPE)='single'");
+    oci_execute($query2);
+}
+else{
+    header('Location: error.php');
+}
 ?>
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
@@ -19,7 +29,7 @@ $row = oci_fetch_assoc($query);
 <body>
 <h1><a href="index.php">Welcome to orderly</a></h1>
 <form class="Login" action="update_combo.php" method="POST">
-    <h2>Edit product</h2>
+    <h2>Edit combo</h2>
     <input type="hidden" name="id" value="<?= $id ?>">
     <div class="textbox">
         <label for="name">Product name:</label>
@@ -42,7 +52,7 @@ $row = oci_fetch_assoc($query);
         <input type="text" placeholder="Product image" name="image" value="<?= $row['MI_IMG']?>">
     </div>
     <div>
-        <?php while($row=oci_fetch_assoc($query)):?>
+        <?php while($row=oci_fetch_assoc($query2)):?>
             <label style="display: block">
                 <?= $row['MI_NAME']  ?>
                 <input type="checkbox" name="meals[]" value="<?=$row['MI_ID']?>">
@@ -50,8 +60,6 @@ $row = oci_fetch_assoc($query);
         <?php endwhile; ?>
     </div>
     <input class="butt" type="submit" name="" value="Edit and save to database">
-
 </form>
-
 </body>
 </html>

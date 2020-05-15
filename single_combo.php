@@ -1,19 +1,24 @@
 <?php
 include('includes/DB.php');
 
+function checkRequiredField ($value) {
+    return isset($value) && !empty($value);
+}
+
 $id = $_GET['id'];
 
-$query = oci_parse($conn, 'select * from MENU_ITEMS where MENU_ITEMS.MI_ID = '. $id);
-oci_execute($query);
+if(checkRequiredField($id)){
+    $query = oci_parse($conn, 'select * from MENU_ITEMS where MENU_ITEMS.MI_ID = '. $id);
+    oci_execute($query);
 
-$query2 = oci_parse($conn, 'select P.*, M.* from PACKAGE_LINE P ,MENU_ITEMS M where P.PL_CHILD_ID = MI_ID AND P.PL_FATHER_ID = '. $id);
-oci_execute($query2);
+    $query2 = oci_parse($conn, 'select P.*, M.* from PACKAGE_LINE P ,MENU_ITEMS M where P.PL_CHILD_ID = MI_ID AND P.PL_FATHER_ID = '. $id);
+    oci_execute($query2);
 
 
-$row = oci_fetch_assoc($query);
-
-if (oci_num_rows($query) === 0) {
-    die('Post is not found');
+    $row = oci_fetch_assoc($query);
+}
+else{
+    header('Location: error.php');
 }
 
 $title = $row['MI_NAME'];

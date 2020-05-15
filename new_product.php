@@ -21,7 +21,7 @@ include('includes/DB.php');
     </div>
     <div class="textbox">
         <label for="price">Product price:</label>
-        <input type="number" placeholder="Product price" name="price" value="" min="0" required>
+        <input type="number" placeholder="Product price" name="price" value="" min="0" required step="0.5">
     </div>
     <div class="textbox">
         <label for="description">Product description:</label>
@@ -29,7 +29,7 @@ include('includes/DB.php');
     </div>
     <div class="textbox">
         <label for="price_supply">Product supply price:</label>
-        <input type="number" placeholder="Product supply price" name="price_supply" value="" min="0" >
+        <input type="number" placeholder="Product supply price" name="price_supply" value="" min="0" step="0.50">
     </div>
     <div class="textbox">
         <label for="image">Product image:</label>

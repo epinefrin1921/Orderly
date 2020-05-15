@@ -144,9 +144,11 @@ html{
     flex-wrap: wrap;
     background: rgba(255,255,255,0.1);
     border-radius: 10px;
+    box-sizing: border-box;
 }
 #s3 div img{
     width: 100%;
+    height:40%;
     padding: 5px;
     box-sizing: border-box;
     border-radius:10px;
