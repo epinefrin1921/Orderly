@@ -6,9 +6,7 @@ function checkRequiredField ($value) {
 }
 
 if ($_POST) {
-
     $combo_product= $_POST['meals'];
-
     $name = $_POST['name'];
     $description = $_POST['description'];
     $price = $_POST['price'];

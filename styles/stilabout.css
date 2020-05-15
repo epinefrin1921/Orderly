@@ -13,6 +13,14 @@ header{
     color:white;
     padding: 10px 0;
 }
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+img{
+    width: 100%;
+}
 #fix{
     position: fixed;
     width: 100%;
@@ -87,98 +95,7 @@ footer{
 html{
     scroll-behavior: smooth;
 }
-#s1{
-    padding: 130px 0px 30px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
-#s1 div{
-    width: 48%;
-}
-#s1 h1{
-    color:white;
-    font-weight: bold;
-    font-size: 50px;
-}
-#s1 p{
-    color:white;
-    font-weight: bold;
-    font-size: 25px;
-}
-#s1 img{
-    width: 350px;
-}
 
-#s2{
-    display: flex;
-    justify-content: center;
-}
-
-#s2 button{
-    border-radius:20px;
-    padding: 10px 30px;
-    background: transparent;
-    border: solid 2px white;
-    color:white;
-    font-weight: bold;
-    margin: 90px;
-    font-size:1.5rem;
-}
-
-#s2 button:hover{
-    background: white;
-    color:#89253e;
-    transition: ease-in 0.3s;
-}
-
-#s3 div{
-    width: 18%;
-    background: rgba(255,255,255,1);
-    text-align: center;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-#s3{
-    display: flex;
-    justify-content: space-around;
-    margin-top:20px;
-    flex-wrap: wrap;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-}
-#s3 div img{
-    width: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-    border-radius:10px;
-}
-#s3 div:hover{
-    transform: scale(1.07);
-}
-#ss{
-    width:100%;
-    text-align: center;
-    color: white;
-
-}
-#s3 button{
-    background: #3a6186;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #89253e, #3a6186);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #89253e, #3a6186);
-    border-radius: 10px;
-    padding:5px 10px;
-    color:white;
-    border:solid 1px white;
-    margin-bottom: 10px;
-}
-
-#s3 button:hover{
-    color:#89253e;
-    background: white ;
-    border:solid 1px #89253e;
-}
 
 #s4 div{
     width:100%;
@@ -205,17 +122,22 @@ html{
 }
 
 @media (max-width: 930px) {
-    #slika{
-        display: none;
-    }
-    #s1 div{
-        width: 100%;
-    }
+
     .wrap{
         width: 90%;
     }
     #s3 div{
         width: 30%;
+    }
+    .container{
+        flex-wrap: wrap;
+    }
+    .container div{
+        width: 100%;
+        order: 1;
+    }
+    #slika{
+        order: 2;
     }
 }
 
@@ -256,9 +178,7 @@ header ul .has-drop:hover>div{
     ul{
         padding-left: 0;
     }
-    #s3 div{
-        width: 43%;
-    }
+
     #s4 div{
         width: 100%;
     }

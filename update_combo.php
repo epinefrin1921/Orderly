@@ -6,6 +6,7 @@ function checkRequiredField ($value) {
 }
 
 if ($_POST) {
+    $combo_product= $_POST['meals'];
     $name = $_POST['name'];
     $description = $_POST['description'];
     $price = $_POST['price'];
@@ -22,7 +23,27 @@ if ($_POST) {
         oci_execute($query);
         oci_commit($conn);
 
-        header('Location: single_product.php?id=' . $id);
+        $query2 = oci_parse($conn, "delete from PACKAGE_LINE where PL_FATHER_ID={$id}");
+
+        oci_execute($query2);
+        oci_commit($conn);
+
+
+        for($i = 0; $i<count($combo_product);$i++)
+        {
+            $father =$id;
+            $child = (int)$combo_product[$i];
+            $quantity = 1;
+            $query3 = oci_parse($conn, "INSERT INTO PACKAGE_LINE (PL_FATHER_ID, PL_CHILD_ID, PL_QUANTITY) 
+                      VALUES ({$father}, {$child},{$quantity})");
+            oci_execute($query3);
+        }
+
+        oci_commit($conn);
+
+
+        header('Location: single_combo.php?id=' . $id);
+
     }
     else{
         header('Location: error.php');

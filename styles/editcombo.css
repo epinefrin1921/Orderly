@@ -1,7 +1,6 @@
 
 /* Customize the label (the container) */
 .container {
-    width: 100%;
     display: block;
     position: relative;
     padding-left: 35px;
@@ -13,11 +12,9 @@
     -ms-user-select: none;
     user-select: none;
 }
-::-webkit-scrollbar {
-    display: none;
-}
+
 /* Hide the browser's default checkbox */
-.container input[type=checkbox] {
+.container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -68,14 +65,4 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-}
-.temp{
-    float: right;
-}
-.
-@media (max-width: 430px) {
-    .temp{
-        display: block;
-        float: none;
-    }
 }

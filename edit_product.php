@@ -37,7 +37,7 @@ if(checkRequiredField($id)){
     </div>
     <div class="textbox">
         <label for="price">Product price:</label>
-        <input type="number" placeholder="Product price" name="price" value="<?= $row['MI_PRICE'] ?>" min="0">
+        <input type="number" placeholder="Product price" name="price" value="<?= $row['MI_PRICE'] ?>" min="0" step="0.5">
     </div>
     <div class="textbox">
         <label for="description">Product description:</label>
@@ -45,7 +45,7 @@ if(checkRequiredField($id)){
     </div>
     <div class="textbox">
         <label for="price_supply">Product supply price:</label>
-        <input type="number" placeholder="Product supply price" name="price_supply" value="<?= $row['MI_SUPPLY_PRICE'] ?>" min="0">
+        <input type="number" placeholder="Product supply price" name="price_supply" value="<?= $row['MI_SUPPLY_PRICE'] ?>" min="0" step="0.5">
     </div>
     <div class="textbox">
         <label for="image">Product image:</label>
