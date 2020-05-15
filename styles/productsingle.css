@@ -25,6 +25,9 @@ a{
     padding: 10px;
     border-radius: 10px;
 }
+#naslov2{
+    text-align: center;
+}
 
 @media (max-width: 740px) {
     .prikaz{

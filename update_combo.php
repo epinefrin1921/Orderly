@@ -8,6 +8,7 @@ if ($_POST) {
     $price2 = $_POST['price_supply'];
     $id = $_POST['id'];
     $image = $_POST['image'];
+    echo $image;
 
 
     $query = oci_parse($conn,  "UPDATE MENU_ITEMS set MI_NAME='$name', MI_DESCRIPTION='$description', MI_PRICE={$price}, MI_SUPPLY_PRICE={$price2}, MI_IMG='{$image}' where MI_ID={$id}");
