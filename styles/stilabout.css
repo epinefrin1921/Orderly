@@ -91,6 +91,12 @@ footer{
     color: white;
     padding: 8px;
     font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.medias a{
+    color:white;
+    padding:5px;
 }
 html{
     scroll-behavior: smooth;
