@@ -39,12 +39,16 @@ $i = 0;
         <h3>Recommended by others:</h3>
     </section>
     <?php while($row=oci_fetch_assoc($query) and $i<5):?>
-    <div>
-        <img src="<?=$row['MI_IMG']?>">
-        <p><?= $row['MI_NAME'] ?></p>
-        <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
-        <button>Add to Cart</button>
-    </div>
+        <div class="container">
+            <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more" onclick="$(this).stopPropagation();">
+                <div class="container2">
+                    <img src="<?=$row['MI_IMG']?>">
+                    <p><?= $row['MI_NAME'] ?></p>
+                    <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
+                    <button>Add to Cart</button>
+                </div>
+            </a>
+        </div>
     <?php $i++; endwhile; ?>
 </section>
 

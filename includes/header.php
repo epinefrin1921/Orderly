@@ -7,9 +7,11 @@
                 <a href="index.php">Home</a>
                 <a href="about.php">About</a>
                 <a href="products.php">Menu</a>
+                <a href="#" class="logout">Log out</a>
+                <a href="./LogIn.php" class="logout">My profile</a>
             </nav>
 
-            <nav class="menu-item notactive">
+            <nav class="menu-item notactive logout2">
                 <ul>
                     <li class="has-drop">
                         <a href="./LogIn.php">My Profile</a>

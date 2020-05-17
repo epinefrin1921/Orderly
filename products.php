@@ -31,11 +31,14 @@ oci_execute($query2);
 <section class="wrap" id="s3">
 <?php while($row=oci_fetch_assoc($query)):?>
     <div class="container">
-        <img src="<?=$row['MI_IMG']?>">
-        <p><?= $row['MI_NAME'] ?></p>
-        <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
-        <button>Add to Cart</button>
-        <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">More info</a>
+    <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
+        <div class="container2">
+            <img src="<?=$row['MI_IMG']?>">
+            <p><?= $row['MI_NAME'] ?></p>
+            <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
+            <button>Add to Cart</button>
+        </div>
+    </a>
     </div>
 <?php endwhile; ?>
 </section>
@@ -49,11 +52,13 @@ oci_execute($query2);
 <section class="wrap" id="s3">
     <?php while($row=oci_fetch_assoc($query2)):?>
         <div class="container">
-            <img src="<?=$row['MI_IMG']?>">
-            <p><?= $row['MI_NAME'] ?></p>
-            <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
-            <button>Add to Cart</button>
-            <a href="single_combo.php?id=<?= $row['MI_ID'] ?>" class="info-more">More info</a>
+            <a href="single_combo.php?id=<?= $row['MI_ID'] ?>" class="info-more">
+                <div class="container2">
+                    <img src="<?=$row['MI_IMG']?>">
+                    <p><?= $row['MI_NAME'] ?></p>
+                    <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
+                    <button>Add to Cart</button>
+                </div>
         </div>
     <?php endwhile; ?>
 </section>

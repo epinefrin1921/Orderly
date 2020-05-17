@@ -96,7 +96,9 @@ html{
     scroll-behavior: smooth;
 }
 
-
+.logout{
+    display: none;
+}
 #s4 div{
     width:100%;
     padding: 15px;
@@ -181,6 +183,8 @@ header ul .has-drop:hover>div{
 
     #s4 div{
         width: 100%;
+        padding: 5px;
+
     }
     #s4{
         flex-wrap: wrap;
@@ -195,6 +199,12 @@ header ul .has-drop:hover>div{
     .notactive{
         display: none;
     }
+    logout{
+        display: inline-block;
+    }
+    .logout2{
+        display: none;
+    }
     .menu-item a,.menu-item ul{
         display: block;
         width: 90%;
@@ -203,7 +213,6 @@ header ul .has-drop:hover>div{
         color: #89253e;
         box-sizing: border-box;
     }
-
     .dropdown{
         display: none;
     }
@@ -216,21 +225,13 @@ header ul .has-drop:hover>div{
         top: 100%;
         margin: 0 auto;
         color: #89253e;
-        border-top: 2px solid #89253e;
-        border-right:2px solid #89253e ;
-        border-left: 2px solid #89253e;
+        border: 2px solid #89253e;
     }
     header ul .has-drop:hover>div{
         display: none;
     }
     .menu-item:nth-of-type(2){
-        top: 259%;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border-bottom: 2px solid #89253e;
-        border-right:2px solid #89253e ;
-        border-left: 2px solid #89253e;
-        border-top: none;
+        display: none;
     }
     #h1{
         padding: 20px;

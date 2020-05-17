@@ -46,7 +46,9 @@ header nav a{
     font-size: 1.05rem;
 
 }
-
+.logout{
+    display: none;
+}
 header nav a:hover{
     background-color: white;
     color:#89253e;
@@ -112,7 +114,19 @@ html{
     display: flex;
     justify-content: center;
 }
-
+.container2{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.container2 p{
+    width: 100%;
+}
+.container a{
+    text-decoration: none;
+    color: #89253e;
+}
 #s2 button{
     border-radius:20px;
     padding: 10px 30px;
@@ -130,22 +144,25 @@ html{
     transition: ease-in 0.3s;
 }
 
-#s3 div{
-    width: 18%;
+#s3 div.container{
+    width: 15%;
     background: rgba(255,255,255,1);
     text-align: center;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin: 10px;
+    padding: 10px;
+
 }
 #s3{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top:20px;
     flex-wrap: wrap;
     background: rgba(255,255,255,0.1);
     border-radius: 10px;
     box-sizing: border-box;
 }
+
 #s3 div img{
     width: 100%;
     height:40%;
@@ -202,6 +219,11 @@ html{
     border-bottom: 1px solid #89253e;
 }
 
+@media  (max-width: 1500px){
+    #s3 div.container {
+        width: 25%;}
+}
+
 @media (max-width: 930px) {
     #slika{
         display: none;
@@ -212,7 +234,7 @@ html{
     .wrap{
         width: 90%;
     }
-    #s3 div{
+    #s3 div.container{
         width: 30%;
     }
 }
@@ -254,8 +276,16 @@ header ul .has-drop:hover>div{
     ul{
         padding-left: 0;
     }
-    #s3 div{
-        width: 43%;
+   .logout{
+        display: inline-block;
+    }
+   .logout2{
+       display: none;
+   }
+    #s3 div.container{
+        width: 40%;
+        padding: 5px;
+        margin: 5px;
     }
     #s4 div{
         width: 100%;
@@ -277,7 +307,7 @@ header ul .has-drop:hover>div{
         display: block;
         width: 90%;
         text-align: center;
-        margin: 10px 10px;
+        margin: 20px auto;
         color: #89253e;
         box-sizing: border-box;
     }
@@ -294,21 +324,14 @@ header ul .has-drop:hover>div{
         top: 100%;
         margin: 0 auto;
         color: #89253e;
-        border-top: 2px solid #89253e;
-        border-right:2px solid #89253e ;
-        border-left: 2px solid #89253e;
+        border: 2px solid #89253e;
+
     }
     header ul .has-drop:hover>div{
         display: none;
     }
     .menu-item:nth-of-type(2){
-        top: 259%;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border-bottom: 2px solid #89253e;
-        border-right:2px solid #89253e ;
-        border-left: 2px solid #89253e;
-        border-top: none;
+        display: none;
     }
     #h1{
         padding: 20px;
