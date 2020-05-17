@@ -24,6 +24,7 @@ oci_execute($query2);
 <?php include('includes/header.php') ?>
 <div class="wrap2 jumbotron">
     <p><a href="new_product.php">Add new product</a> </p>
+    <p><a href="storage.php">Open storage</a></p>
 
     <h1 id="naslov3">Products:</h1>
 </div>

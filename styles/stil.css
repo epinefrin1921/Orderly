@@ -219,10 +219,6 @@ html{
     border-bottom: 1px solid #89253e;
 }
 
-@media  (max-width: 1500px){
-    #s3 div.container {
-        width: 25%;}
-}
 
 @media (max-width: 930px) {
     #slika{
