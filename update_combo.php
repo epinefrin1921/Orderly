@@ -49,3 +49,6 @@ if ($_POST) {
         header('Location: error.php');
     };
 }
+else{
+    header('Location: error.php');
+}

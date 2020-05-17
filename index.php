@@ -6,6 +6,7 @@ include('includes/DB.php');
 $query = oci_parse($conn, 'select * from MENU_ITEMS');
 oci_execute($query);
 $i = 0;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

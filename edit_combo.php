@@ -70,8 +70,6 @@ else{
                 <span class="checkmark"></span>
             </label>
         <?php endwhile; ?>
-
-
     </div>
     <input class="butt" type="submit" name="" value="Edit and save to database">
 </form>

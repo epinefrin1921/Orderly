@@ -9,7 +9,7 @@ oci_execute($query);
 $row = oci_fetch_assoc($query);
 
 if (oci_num_rows($query) === 0) {
-    die('Post is not found');
+    header('Location: error.php');
 }
 
 $title = $row['IN_NAME'];
@@ -32,8 +32,10 @@ $title = $row['IN_NAME'];
             <p>Price: <?= $row['IN_PRICE'] ?>KM</p>
             <a href="edit_ingredient.php?id=<?= $row['IN_ID'] ?>">Edit ingredient </a>
             <a href="delete_ingredient.php?id=<?= $row['IN_ID']?>">Delete ingredient</a>
+            <a href="add_quantity_ingredient.php?id=<?= $row['IN_ID'] ?>">Add new quantity</a>
         </div>
     </div>
+    <a href="storage.php">Back to ingredients</a>
 </main>
 <?php include('includes/footer.php') ?>
 </body>

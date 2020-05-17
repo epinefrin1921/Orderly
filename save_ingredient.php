@@ -20,10 +20,14 @@ if ($_POST) {
                       VALUES ('{$name}', {$quantity},{$price})");
         oci_execute($query);
         oci_commit($conn);
-
         header('Location: storage.php');
-    } else {
-        header('Location: new_ingredient.php');
-    };
+    }
+    else{
+        header('Location: error.php');
+    }
 
+
+}
+else{
+    header('Location: error.php');
 }

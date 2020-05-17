@@ -30,9 +30,9 @@ oci_execute($query);
             <a href="single_ingredient.php?id=<?= $row['IN_ID'] ?>" class="info-more">
                 <div class="container2">
                     <p><strong><?= $row['IN_NAME'] ?></strong></p>
-                    <p>Quantity: <?= number_format($row['IN_QUANTITY'],2)?></p>
+                    <p>On stock: <?= number_format($row['IN_QUANTITY'],2)?></p>
 
-                    <p>Price: <?= number_format($row['IN_PRICE'],2)?>KM</p>
+                    <p>Price per unit: <?= number_format($row['IN_PRICE'],2)?>KM</p>
                 </div>
             </a>
         </div>

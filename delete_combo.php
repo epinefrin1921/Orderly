@@ -16,6 +16,9 @@ if (checkRequiredField($_GET['id'])) {
     $query2 = oci_parse($conn, "DELETE FROM PACKAGE_LINE WHERE PL_CHILD_ID ={$id}");
     oci_execute($query2);
     oci_commit($conn);
-}
-header('Location: products.php');
+    header('Location: products.php');
 
+}
+else{
+    header('Location: error.php');
+}

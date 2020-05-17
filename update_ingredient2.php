@@ -8,14 +8,21 @@ function checkRequiredField ($value) {
 
 if ($_POST) {
     $id = $_POST['id'];
-    $name = $_POST['name'];
-    $price = $_POST['price'];
     $quantity=$_POST['quantity'];
 
+    $query = oci_parse($conn, 'select * from INGREDIENTS where IN_ID = ' . $id);
+    oci_execute($query);
+    $row = oci_fetch_assoc($query);
+
+    $existingQuantity=$row['IN_QUANTITY'];
 
 
-    if(checkRequiredField($name) && checkRequiredField($quantity) && checkRequiredField($price)) {
-        $query = oci_parse($conn, "UPDATE INGREDIENTS set IN_NAME='$name',IN_PRICE=$price,IN_QUANTITY=$quantity where IN_ID={$id}");
+    $quantity2=$quantity+$existingQuantity;
+
+
+
+    if(checkRequiredField($quantity)) {
+        $query = oci_parse($conn, "UPDATE INGREDIENTS set IN_QUANTITY=$quantity2 where IN_ID={$id}");
         oci_execute($query);
         oci_commit($conn);
         header('Location: single_ingredient.php?id=' . $id);
@@ -23,7 +30,6 @@ if ($_POST) {
     else{
         header('Location: error.php');
     }
-
 }
 else{
     header('Location: error.php');

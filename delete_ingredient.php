@@ -20,5 +20,8 @@ if (isset($_GET['id'])) {
     $query2 = oci_parse($conn, "DELETE FROM RECIPE_LINE WHERE RL_INGREDIENT ={$id}");
     oci_execute($query2);
     oci_commit($conn);
+    header('Location: storage.php');
 }
-header('Location: storage.php');
+else{
+    header('Location: error.php');
+}

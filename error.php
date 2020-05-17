@@ -19,7 +19,7 @@ $title = 'Error';
             There was an error!
         </h1>
         <p>
-            Please try again!
+            Maybe you wanted to do something else?
         </p>
     </div>
     <div class="slika" id="slika">

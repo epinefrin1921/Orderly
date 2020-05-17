@@ -27,7 +27,7 @@ $title = $row['MI_NAME'];
 <html lang="en">
 <head>
     <?php include('includes/head.php') ?>
-    <link rel="stylesheet" href="styles/stil_combo.css">
+    <link rel="stylesheet" href="styles/stil.css">
     <link rel="stylesheet" href="styles/productsingle.css">
 </head>
 
@@ -48,10 +48,11 @@ $title = $row['MI_NAME'];
 <section class="wrap" id="s3" style="color: black; padding-top: 20px">
     <?php while($row=oci_fetch_assoc($query2)):?>
         <div class="container">
+            <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
             <img src="<?=$row['MI_IMG']?>">
             <p><?= $row['MI_NAME'] ?></p>
             <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
-            <a style="color: black" href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">More info</a>
+            </a>
         </div>
     <?php endwhile; ?>
 </section>

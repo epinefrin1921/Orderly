@@ -1,6 +1,8 @@
 <?php
 include('includes/DB.php');
   $title = 'Add new product';
+$query = oci_parse($conn, "select * from INGREDIENTS");
+oci_execute($query);
 ?>
 <!doctype html>
 <html lang="en">
@@ -9,6 +11,8 @@ include('includes/DB.php');
     <link rel="stylesheet" href="styles/stil.css">
     <link rel="stylesheet" href="styles/products.css">
     <link rel="stylesheet" href="styles/LogInStil.css">
+    <link rel="stylesheet" href="styles/editcombo.css">
+
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
@@ -35,6 +39,17 @@ include('includes/DB.php');
         <label for="image">Product image:</label>
         <input type="text" placeholder="Product image" name="image" required>
     </div>
+    <h2>Check ingredients in menu (if applicable):</h2>
+    <div>
+        <?php while($row=oci_fetch_assoc($query)):?>
+            <label class="container" style="display: block">
+                <?= $row['IN_NAME']  ?>
+                <input type="checkbox" name="ingredients[]" value="<?=$row['IN_ID']?>">
+                <span class="checkmark"></span>
+            </label>
+        <?php endwhile; ?>
+    </div>
+
     <input class="butt" type="submit" name="" value="Add product to database">
 
 </form>
