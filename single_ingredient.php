@@ -11,6 +11,11 @@ $row = oci_fetch_assoc($query);
 if (oci_num_rows($query) === 0) {
     header('Location: error.php');
 }
+$query2 = oci_parse($conn, 'select m.*
+                            FROM INGREDIENTS i, RECIPE_LINE r, MENU_ITEMS m
+                            where i.IN_ID=r.RL_INGREDIENT  and r.RL_MENU=m.MI_ID and r.RL_INGREDIENT='. $id);
+oci_execute($query2);
+
 
 $title = $row['IN_NAME'];
 ?>
@@ -36,6 +41,22 @@ $title = $row['IN_NAME'];
         </div>
     </div>
     <a href="storage.php">Back to ingredients</a>
+    <?php if($row2=oci_fetch_assoc($query2)){
+        oci_execute($query2);
+        ?>
+        <h1 style="text-align: center"> This ingredient is used in: </h1>
+        <section class="wrap" id="s3" style="color: black; padding-top: 20px">
+            <?php while($row2=oci_fetch_assoc($query2)):?>
+                <div class="container">
+                    <a href="single_product.php?id=<?= $row2['MI_ID'] ?>" class="info-more">
+                        <img src="<?=$row2['MI_IMG']?>">
+                        <p><?= $row2['MI_NAME'] ?></p>
+                        <p>Price: <?= number_format($row2['MI_PRICE'],2)?>KM</p>
+                    </a>
+                </div>
+            <?php endwhile; ?>
+        </section>
+    <?php };?>
 </main>
 <?php include('includes/footer.php') ?>
 </body>

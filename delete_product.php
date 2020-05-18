@@ -22,7 +22,6 @@ if (isset($_GET['id'])) {
 
        while($row=oci_fetch_assoc($query3)){
            $FatherID=$row['PL_FATHER_ID'];
-           echo implode(" ,",$row);
            $query4 = oci_parse($conn, "DELETE FROM MENU_ITEMS WHERE MI_ID ={$FatherID}");
            oci_execute($query4);
            oci_commit($conn);

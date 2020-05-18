@@ -34,23 +34,23 @@ else{
     <input type="hidden" name="id" value="<?= $id ?>">
     <div class="textbox">
         <label for="name">Product name:</label>
-        <input type="text" placeholder="Product name" name="name" value="<?= $row['MI_NAME'] ?>">
+        <input type="text" placeholder="Product name" name="name" value="<?= $row['MI_NAME'] ?>" required>
     </div>
     <div class="textbox">
         <label for="price">Product price:</label>
-        <input type="number" placeholder="Product price" name="price" value="<?= $row['MI_PRICE'] ?>" min="0" step="0.5">
+        <input type="number" placeholder="Product price" name="price" value="<?= $row['MI_PRICE'] ?>" min="0" step="0.1">
     </div>
     <div class="textbox">
         <label for="description">Product description:</label>
-        <input type="text" placeholder="Product description" name="description" value="<?= $row['MI_DESCRIPTION'] ?>">
+        <input type="text" placeholder="Product description" name="description" value="<?= $row['MI_DESCRIPTION'] ?>" required>
     </div>
     <div class="textbox">
         <label for="price_supply">Product supply price:</label>
-        <input type="number" placeholder="Product supply price" name="price_supply" value="<?= $row['MI_SUPPLY_PRICE'] ?>" min="0" step="0.5">
+        <input type="number" placeholder="Product supply price" name="price_supply" value="<?= $row['MI_SUPPLY_PRICE'] ?>" min="0" step="0.1">
     </div>
     <div class="textbox">
         <label for="image">Product image:</label>
-        <input type="text" placeholder="Product image" name="image" value="<?= $row['MI_IMG']?>">
+        <input type="text" placeholder="Product image" name="image" value="<?= $row['MI_IMG']?>" required>
     </div>
     <h2>Check products in combo:</h2>
     <div>

@@ -14,6 +14,15 @@ if(checkRequiredField($id)){
     $query2 = oci_parse($conn, 'select P.*, M.* from PACKAGE_LINE P ,MENU_ITEMS M where P.PL_CHILD_ID = MI_ID AND P.PL_FATHER_ID = '. $id);
     oci_execute($query2);
 
+    $total=0;
+
+    while($row3=oci_fetch_assoc($query2)){
+        $total=$total+$row3['MI_PRICE'];
+    };
+
+
+    oci_execute($query2);
+
 
     $row = oci_fetch_assoc($query);
 }
@@ -39,6 +48,7 @@ $title = $row['MI_NAME'];
             <h2><?= $row['MI_NAME'] ?></h2>
             <p>Price: <?= $row['MI_PRICE'] ?>KM</p>
             <p>Description: <?= $row['MI_DESCRIPTION'] ?></p>
+            <p>You save <?=  number_format($total-$row['MI_PRICE'],2) ?>KM if you buy this combo! </p>
             <a href="edit_combo.php?id=<?= $row['MI_ID'] ?>">Edit combo </a>
             <a href="delete_combo.php?id=<?= $row['MI_ID']?>">Delete combo</a>
         </div>

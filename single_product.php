@@ -9,20 +9,17 @@ oci_execute($query);
 
 $row = oci_fetch_assoc($query);
 
-$query2 = oci_parse($conn, 'select * from RECIPE_LINE where RL_MENU = '. $id);
+$query2 = oci_parse($conn, 'select i.IN_NAME, r.RL_QUANTITY
+                                   FROM INGREDIENTS i, RECIPE_LINE r, MENU_ITEMS m
+                                   where i.IN_ID = r.RL_INGREDIENT and m.MI_ID=r.RL_MENU and r.RL_MENU='. $id);
 oci_execute($query2);
-$row2 = oci_fetch_assoc($query);
 
-$query3 = oci_parse($conn, 'select * from INGREDIENTS');
+
+$query3 = oci_parse($conn, 'select distinct m.*
+FROM PACKAGE_LINE p, MENU_ITEMS m
+where p.PL_FATHER_ID=m.MI_ID and p.PL_CHILD_ID='.$id);
 oci_execute($query3);
-$row3 = oci_fetch_assoc($query3);
 
-$query4 = oci_parse($conn, 'select * from PACKAGE_LINE where PL_CHILD_ID='.$id);
-oci_execute($query4);
-
-$query5= oci_parse($conn, "select * from MENU_ITEMS where lower(MI_TYPE)='combo'");
-oci_execute($query5);
-$row5= oci_fetch_assoc($query5);
 
 
 if (oci_num_rows($query) === 0) {
@@ -53,59 +50,37 @@ $title = $row['MI_NAME'];
         <img src="<?=$row['MI_IMG']?>">
     </div>
     <?php if($row2=oci_fetch_assoc($query2)){
-        oci_execute($query2);
-        $row2 = oci_fetch_assoc($query);
-        ?>
+    oci_execute($query2);
+    $row2 = oci_fetch_assoc($query);
+    ?>
     <h1 style="text-align: center"> Ingredients: </h1>
     <section class="wrap" id="s3" style="color: black; padding-top: 20px">
         <?php while($row2=oci_fetch_assoc($query2)):?>
-            <div class="container">
-                <?php
-                        $ingr='test';
-
-                         oci_execute($query3);
-
-                        while($row3=oci_fetch_assoc($query3)){
-                            if($row3['IN_ID']==$row2['RL_INGREDIENT'])
-                            {
-
-                                $ingr=$row3['IN_NAME'];
-                                break;
-                            };
-                        }
-                ?>
-                <p><?= $ingr ?></p>
+            <div class="container" style="color: #89253e">
+                <p><?= $row2['IN_NAME']?></p>
                 <p>Quantity: <?= number_format($row2['RL_QUANTITY'],2)?></p>
             </div>
         <?php endwhile; ?>
     </section>
     <?php };?>
-    <?php if($row4=oci_fetch_assoc($query4)){
-        oci_execute($query4);
-        $row4 = oci_fetch_assoc($query);
+
+    <?php if($row3=oci_fetch_assoc($query3)){
+        oci_execute($query3);
+        $row3 = oci_fetch_assoc($query);
         ?>
     <h1 style="text-align: center"><?= $row['MI_NAME'] ?>  in combos: </h1>
     <section class="wrap" id="s3" style="color: black; padding-top: 20px">
-        <?php while($row4=oci_fetch_assoc($query4)):?>
-
-            <?php                   oci_execute($query5);
-            while($row5=oci_fetch_assoc($query5)):?>
-                <?php if($row5['MI_ID']==$row4['PL_FATHER_ID']){?>
-
-                    <div class="container">
-                        <a href="single_combo.php?id=<?= $row5['MI_ID'] ?>" class="info-more">
-                            <div class="container2">
-                                <img src="<?=$row5['MI_IMG']?>">
-                                <p><?= $row5['MI_NAME'] ?></p>
-                                <p>Price: <?= number_format($row5['MI_PRICE'],2)?>KM</p>
-                                <button>Add to Cart</button>
-                            </div>
-                        </a>
+        <?php while($row3=oci_fetch_assoc($query3)):?>
+            <div class="container">
+                <a href="single_combo.php?id=<?= $row3['MI_ID'] ?>" class="info-more">
+                    <div class="container2" >
+                        <img src="<?=$row3['MI_IMG']?>">
+                        <p><?= $row3['MI_NAME'] ?></p>
+                        <p>Price: <?= number_format($row3['MI_PRICE'],2)?>KM</p>
+                        <button>Add to Cart</button>
                     </div>
-
-
-          <?php }; ?>
-        <?php endwhile; ?>
+                </a>
+            </div>
         <?php endwhile; ?>
     </section>
     <?php };?>

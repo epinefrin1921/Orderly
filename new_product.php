@@ -25,15 +25,15 @@ oci_execute($query);
     </div>
     <div class="textbox">
         <label for="price">Product price:</label>
-        <input type="number" placeholder="Product price" name="price" value="" min="0" required step="0.5">
+        <input type="number" placeholder="Product price" name="price" value="" min="0" required step="0.01">
     </div>
     <div class="textbox">
         <label for="description">Product description:</label>
-        <input type="text" placeholder="Product description" name="description" value="">
+        <input type="text" placeholder="Product description" name="description" value="" required>
     </div>
     <div class="textbox">
         <label for="price_supply">Product supply price:</label>
-        <input type="number" placeholder="Product supply price" name="price_supply" value="" min="0" step="0.50">
+        <input type="number" placeholder="Product supply price" name="price_supply" value="" min="0" step="0.01">
     </div>
     <div class="textbox">
         <label for="image">Product image:</label>

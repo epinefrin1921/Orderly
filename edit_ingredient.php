@@ -41,11 +41,11 @@ else{
     </div>
     <div class="textbox">
         <label for="quantity">Ingredient quantity:</label>
-        <input type="number" placeholder="Ingredient quantity" name="quantity" value="<?= $row['IN_QUANTITY'] ?>" min="0" required step="0.5">
+        <input type="number" placeholder="Ingredient quantity" name="quantity" value="<?= $row['IN_QUANTITY'] ?>" min="0" required step="0.01">
     </div>
     <div class="textbox">
         <label for="price">Product price:</label>
-        <input type="number" placeholder="Ingredient price" name="price" value="<?= $row['IN_PRICE'] ?>" min="0" required step="0.5">
+        <input type="number" placeholder="Ingredient price" name="price" value="<?= $row['IN_PRICE'] ?>" min="0" required step="0.01">
     </div>
 
     <input class="butt" type="submit" name="" value="Edit ingredient to database">

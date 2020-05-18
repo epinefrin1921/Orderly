@@ -28,7 +28,7 @@ oci_execute($query);
     </div>
     <div class="textbox">
         <label for="description">Combo description:</label>
-        <input type="text" placeholder="Combo description" name="description" value="">
+        <input type="text" placeholder="Combo description" name="description" value="" required>
     </div>
     <div class="textbox">
         <label for="price_supply">Combo supply price:</label>

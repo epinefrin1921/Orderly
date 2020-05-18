@@ -3,9 +3,8 @@
 $title = 'Homepage';
 include('includes/DB.php');
 
-$query = oci_parse($conn, 'select * from MENU_ITEMS');
+$query = oci_parse($conn, 'select * from MENU_ITEMS where ROWNUM<6');
 oci_execute($query);
-$i = 0;
 
 ?>
 <!DOCTYPE html>
@@ -39,7 +38,7 @@ $i = 0;
     <section id="ss">
         <h3>Recommended by others:</h3>
     </section>
-    <?php while($row=oci_fetch_assoc($query) and $i<5):?>
+    <?php while($row=oci_fetch_assoc($query) ):?>
         <div class="container">
             <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more" onclick="$(this).stopPropagation();">
                 <div class="container2">
@@ -50,7 +49,7 @@ $i = 0;
                 </div>
             </a>
         </div>
-    <?php $i++; endwhile; ?>
+    <?php endwhile; ?>
 </section>
 
 <section class="wrap" id="s4">

@@ -51,12 +51,26 @@ oci_execute($query2);
 
 <section class="wrap" id="s3">
     <?php while($row=oci_fetch_assoc($query2)):?>
+    <?php
+
+        $query3 = oci_parse($conn, 'select P.*, M.* from PACKAGE_LINE P ,MENU_ITEMS M where P.PL_CHILD_ID = MI_ID AND P.PL_FATHER_ID = '. $row['MI_ID']);
+        oci_execute($query3);
+
+        $total=0;
+
+        while($row4=oci_fetch_assoc($query3)){
+            $total=$total+$row4['MI_PRICE'];
+        };
+
+        ?>
+
         <div class="container">
             <a href="single_combo.php?id=<?= $row['MI_ID'] ?>" class="info-more">
                 <div class="container2">
                     <img src="<?=$row['MI_IMG']?>">
                     <p><?= $row['MI_NAME'] ?></p>
                     <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
+                    <p>You save <?=number_format($total-$row['MI_PRICE'],2) ?>KM </p>
                     <button>Add to Cart</button>
                 </div>
             </a>
