@@ -3,7 +3,7 @@
 $title = 'Homepage';
 include('includes/DB.php');
 
-$query = oci_parse($conn, 'select * from(select * from MENU_ITEMS ORDER BY DBMS_RANDOM.RANDOM) where ROWNUM<6');
+$query = oci_parse($conn, "select * from(select * from MENU_ITEMS where MI_TYPE='single' ORDER BY DBMS_RANDOM.RANDOM) where ROWNUM<6");
 oci_execute($query);
 
 ?>
