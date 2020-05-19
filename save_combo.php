@@ -10,7 +10,7 @@ if ($_POST) {
     $name = $_POST['name'];
     $description = $_POST['description'];
     $price = $_POST['price'];
-    $price2 = $_POST['price_supply'];
+    $price2 = 0;
     $image = $_POST['image'];
 
     if(checkRequiredField($name) && checkRequiredField($description) && checkRequiredField($image) && checkRequiredField($price) && 1<count($combo_product)){

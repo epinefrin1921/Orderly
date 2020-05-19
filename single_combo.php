@@ -20,9 +20,10 @@ if(checkRequiredField($id)){
         $total=$total+$row3['MI_PRICE'];
     };
 
-
     oci_execute($query2);
 
+    $query3 = oci_parse($conn, "UPDATE MENU_ITEMS set  MI_SUPPLY_PRICE={$total} where MI_ID={$id}");
+    oci_execute($query3);
 
     $row = oci_fetch_assoc($query);
 }

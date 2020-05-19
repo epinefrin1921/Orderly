@@ -43,6 +43,7 @@ $title = $row['MI_NAME'];
         <div class="info">
             <h2><?= $row['MI_NAME'] ?></h2>
             <p>Price: <?= $row['MI_PRICE'] ?>KM</p>
+            <p>Supply price: <?= $row['MI_SUPPLY_PRICE'] ?>KM</p>
             <p>Description: <?= $row['MI_DESCRIPTION'] ?></p>
             <a href="edit_product.php?id=<?= $row['MI_ID'] ?>">Edit product </a>
             <a href="delete_product.php?id=<?= $row['MI_ID']?>">Delete product</a>

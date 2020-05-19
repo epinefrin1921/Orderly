@@ -45,8 +45,8 @@ else{
         <input type="text" placeholder="Product description" name="description" value="<?= $row['MI_DESCRIPTION'] ?>" required>
     </div>
     <div class="textbox">
-        <label for="price_supply">Product supply price:</label>
-        <input type="number" placeholder="Product supply price" name="price_supply" value="<?= $row['MI_SUPPLY_PRICE'] ?>" min="0" step="0.1">
+        <label for="price_supply">Combo products price combined:</label>
+        <input type="number" placeholder="Product supply price" name="price_supply" value="<?= $row['MI_SUPPLY_PRICE'] ?>" min="0" step="0.1" readonly>
     </div>
     <div class="textbox">
         <label for="image">Product image:</label>

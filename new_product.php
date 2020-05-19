@@ -40,13 +40,20 @@ oci_execute($query);
         <input type="text" placeholder="Product image" name="image" required>
     </div>
     <h2>Check ingredients in menu (if applicable):</h2>
-    <div>
+    <div style="width: 100%">
         <?php while($row=oci_fetch_assoc($query)):?>
             <label class="container" style="display: block">
-                <?= $row['IN_NAME']  ?>
+               <p style="width: 50%"><?= $row['IN_NAME']  ?></p>
                 <input type="checkbox" name="ingredients[]" value="<?=$row['IN_ID']?>">
                 <span class="checkmark"></span>
+                <div  class="temp">
+                     <span style="float: right">Quantity
+                     <input type="number" name="ingrquant[]" step="0.01">
+                </div>
+                </span>
+                <br>
             </label>
+
         <?php endwhile; ?>
     </div>
 

@@ -30,10 +30,7 @@ oci_execute($query);
         <label for="description">Combo description:</label>
         <input type="text" placeholder="Combo description" name="description" value="" required>
     </div>
-    <div class="textbox">
-        <label for="price_supply">Combo supply price:</label>
-        <input type="number" placeholder="Combo supply price" name="price_supply" value="" min="0" step="0.5">
-    </div>
+
     <div class="textbox">
         <label for="image">Combo image:</label>
         <input type="text" placeholder="Combo image" name="image" required>
