@@ -44,12 +44,10 @@ if ($_POST) {
     if(checkRequiredField($name) && checkRequiredField($price) && checkRequiredField($image) && checkRequiredField($description)) {
         $query = oci_parse($conn, "UPDATE MENU_ITEMS set MI_NAME='$name', MI_DESCRIPTION='$description', MI_PRICE={$price}, MI_SUPPLY_PRICE={$total}, MI_IMG='{$image}' where MI_ID={$id}");
         oci_execute($query);
-        oci_commit($conn);
 
         $query2 = oci_parse($conn, "delete from RECIPE_LINE where RL_MENU={$id}");
 
         oci_execute($query2);
-        oci_commit($conn);
 
         for($i = 0; $i<count($ingr);$i++)
         {
@@ -59,6 +57,7 @@ if ($_POST) {
                       VALUES ({$father}, {$ingr[$i]},{$quant})");
             oci_execute($query3);
         }
+        oci_commit($conn);
         header('Location: single_product.php?id=' . $id);
 
     }

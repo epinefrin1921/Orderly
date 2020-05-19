@@ -1,7 +1,7 @@
 <?php
 include('includes/DB.php');
   $title = 'Add new product';
-$query = oci_parse($conn, "select * from INGREDIENTS");
+$query = oci_parse($conn, "select * from INGREDIENTS where IN_DELETED is null ");
 oci_execute($query);
 ?>
 <!doctype html>
@@ -53,10 +53,8 @@ oci_execute($query);
                 </span>
                 <br>
             </label>
-
         <?php endwhile; ?>
     </div>
-
     <input class="butt" type="submit" name="" value="Add product to database">
 
 </form>

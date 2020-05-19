@@ -15,19 +15,13 @@ if (isset($_GET['id'])) {
         oci_execute($query3);
 
 
-        $query2 = oci_parse($conn, "delete from RECIPE_LINE where RL_MENU={$id}");
-
-        oci_execute($query2);
-        oci_commit($conn);
-
        while($row=oci_fetch_assoc($query3)){
            $FatherID=$row['PL_FATHER_ID'];
-           $query4 = oci_parse($conn, "DELETE FROM MENU_ITEMS WHERE MI_ID ={$FatherID}");
+           $query4 = oci_parse($conn, "update MENU_ITEMS set MI_DELETED=sysdate WHERE MI_ID ={$FatherID}");
            oci_execute($query4);
-           oci_commit($conn);
        };
 
-        $query = oci_parse($conn, "DELETE FROM MENU_ITEMS WHERE MI_ID ={$id}");
+        $query = oci_parse($conn, "update MENU_ITEMS set MI_DELETED=sysdate  WHERE MI_ID ={$id}");
         oci_execute($query);
         oci_commit($conn);
 

@@ -4,7 +4,7 @@ include('includes/DB.php');
 
 $id = $_GET['id'];
 
-$query = oci_parse($conn, 'select * from MENU_ITEMS where MENU_ITEMS.MI_ID = '. $id);
+$query = oci_parse($conn, "select * from MENU_ITEMS where MENU_ITEMS.MI_ID = ". $id);
 oci_execute($query);
 
 $row = oci_fetch_assoc($query);
@@ -17,7 +17,7 @@ oci_execute($query2);
 
 $query3 = oci_parse($conn, 'select distinct m.*
 FROM PACKAGE_LINE p, MENU_ITEMS m
-where p.PL_FATHER_ID=m.MI_ID and p.PL_CHILD_ID='.$id);
+where m.MI_DELETED is null and p.PL_FATHER_ID=m.MI_ID and p.PL_CHILD_ID='.$id);
 oci_execute($query3);
 
 
@@ -45,8 +45,21 @@ $title = $row['MI_NAME'];
             <p>Price: <?= $row['MI_PRICE'] ?>KM</p>
             <p>Supply price: <?= $row['MI_SUPPLY_PRICE'] ?>KM</p>
             <p>Description: <?= $row['MI_DESCRIPTION'] ?></p>
+            <p>Date added: <?= date("d.m.Y", strtotime($row['MI_CREATED'])) ?></p>
             <a href="edit_product.php?id=<?= $row['MI_ID'] ?>">Edit product </a>
-            <a href="delete_product.php?id=<?= $row['MI_ID']?>">Delete product</a>
+
+            <?php
+                 if($row['MI_DELETED']==null){
+                     ?>
+                     <a href="delete_product.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure? Deleting this product will delete all combos in which this product is included');">Delete product</a>
+                     <?php
+                 };
+                 if($row['MI_DELETED']!=null){
+                     ?>
+                     <a href="activate_product.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure?');">Activate product</a>
+
+            <?php
+                 }?>
         </div>
         <img src="<?=$row['MI_IMG']?>">
     </div>

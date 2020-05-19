@@ -15,7 +15,7 @@ if(checkRequiredField($id)){
     oci_execute($query);
     $row = oci_fetch_assoc($query);
 
-    $query2 = oci_parse($conn, "select * from INGREDIENTS");
+    $query2 = oci_parse($conn, "select * from INGREDIENTS where IN_DELETED is null ");
     oci_execute($query2);
     $row2 = oci_fetch_assoc($query);
 

@@ -13,19 +13,16 @@ if(checkRequiredField($id)){
 
     $query2 = oci_parse($conn, 'select P.*, M.* from PACKAGE_LINE P ,MENU_ITEMS M where P.PL_CHILD_ID = MI_ID AND P.PL_FATHER_ID = '. $id);
     oci_execute($query2);
-
     $total=0;
-
     while($row3=oci_fetch_assoc($query2)){
         $total=$total+$row3['MI_PRICE'];
     };
-
     oci_execute($query2);
-
-    $query3 = oci_parse($conn, "UPDATE MENU_ITEMS set  MI_SUPPLY_PRICE={$total} where MI_ID={$id}");
+    $query3 = oci_parse($conn, "UPDATE MENU_ITEMS set MI_SUPPLY_PRICE={$total} where MI_ID={$id}");
     oci_execute($query3);
 
     $row = oci_fetch_assoc($query);
+    oci_commit($conn);
 }
 else{
     header('Location: error.php');
@@ -51,7 +48,18 @@ $title = $row['MI_NAME'];
             <p>Description: <?= $row['MI_DESCRIPTION'] ?></p>
             <p>You save <?=  number_format($total-$row['MI_PRICE'],2) ?>KM if you buy this combo! </p>
             <a href="edit_combo.php?id=<?= $row['MI_ID'] ?>">Edit combo </a>
-            <a href="delete_combo.php?id=<?= $row['MI_ID']?>">Delete combo</a>
+            <?php
+            if($row['MI_DELETED']==null){
+                ?>
+                <a href="delete_combo.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure?');">Delete combo</a>
+                <?php
+            };
+            if($row['MI_DELETED']!=null){
+                ?>
+                <a href="activate_combo.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure?');">Activate combo</a>
+
+                <?php
+            }?>
         </div>
         <img src="<?=$row['MI_IMG']?>">
     </div>

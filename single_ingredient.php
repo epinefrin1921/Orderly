@@ -36,10 +36,22 @@ $title = $row['IN_NAME'];
             <p>Quantity: <?= $row['IN_QUANTITY'] ?></p>
             <p>Price: <?= $row['IN_PRICE'] ?>KM</p>
             <a href="edit_ingredient.php?id=<?= $row['IN_ID'] ?>">Edit ingredient </a>
-            <a href="delete_ingredient.php?id=<?= $row['IN_ID']?>">Delete ingredient</a>
             <a href="add_quantity_ingredient.php?id=<?= $row['IN_ID'] ?>">Add new quantity</a>
+            <?php
+            if($row['IN_DELETED']==null){
+                ?>
+                <a href="delete_ingredient.php?id=<?= $row['IN_ID']?>" onclick="return confirm('Are you sure you want to delete ingredient? All products and combos that contain this ingredient will be deleted!');">Delete ingredient</a>
+                <?php
+            };
+            if($row['IN_DELETED']!=null){
+                ?>
+                <a href="activate_ingredient.php?id=<?= $row['IN_ID']?>" onclick="return confirm('Are you sure?');">Activate ingredient</a>
+
+                <?php
+            }?>
         </div>
     </div>
+
     <a href="storage.php">Back to ingredients</a>
     <?php if($row2=oci_fetch_assoc($query2)){
         oci_execute($query2);

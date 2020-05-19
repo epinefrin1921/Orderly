@@ -10,7 +10,7 @@ if(checkRequiredField($id)){
     $query = oci_parse($conn, 'select * from MENU_ITEMS where MI_ID = ' . $id);
     oci_execute($query);
     $row = oci_fetch_assoc($query);
-    $query2 = oci_parse($conn, "select * from MENU_ITEMS where lower(MI_TYPE)='single'");
+    $query2 = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is null and lower(MI_TYPE)='single'");
     oci_execute($query2);
     $query3 = oci_parse($conn, 'select * from PACKAGE_LINE where PL_FATHER_ID='.$id);
     oci_execute($query3);

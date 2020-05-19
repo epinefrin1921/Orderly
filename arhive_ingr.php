@@ -3,7 +3,7 @@
 $title = 'Products';
 include('includes/DB.php');
 
-$query = oci_parse($conn, "select * from INGREDIENTS where IN_DELETED is null");
+$query = oci_parse($conn, "select * from INGREDIENTS where IN_DELETED is not null");
 
 oci_execute($query);
 ?>
@@ -20,8 +20,8 @@ oci_execute($query);
 <?php include('includes/header.php') ?>
 <div class="wrap2 jumbotron">
     <p><a href="new_ingredient.php">Add new ingredient</a> </p>
-    <p><a href="arhive_ingr.php">Go to the archived storage</a> </p>
-    <h1 id="naslov3">Ingredients:</h1>
+    <p><a href="storage.php">Back to thestorage</a> </p>
+    <h1 id="naslov3">Archived ingredients:</h1>
 </div>
 
 <section class="wrap" id="s3">
