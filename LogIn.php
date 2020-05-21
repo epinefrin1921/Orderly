@@ -14,17 +14,17 @@ $title = 'Log in';
 
 <body>
 <h1><a href="index.php">Welcome to orderly</a></h1>
-<form class="Login">
+<form class="Login" action="validatelogin.php" method="post">
     <h2>Log in</h2>
     <div class="textbox">
         <i style='font-size:24px' class='far'>&#xf2bd;</i>
-        <input type="text" placeholder="Username" name="" value="">
+        <input type="email" placeholder="E-mail" name="email" value="">
     </div>
     <div class="textbox">
         <i class="fas fa-lock"></i>
-        <input type="password" placeholder="Password" name="" value="">
+        <input type="password" placeholder="Password" name="password" value="">
     </div>
-    <input class="butt" type="button" name="" value="Sign In">
+    <input class="butt" type="submit" name="" value="Sign In">
     <div id="pass"><a href="PasswordForgot.php" id="pw">Forgot password?</a> |
         <a href="Register.php" id="pw">Don't have an account?</a></div>
 

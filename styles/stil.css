@@ -29,6 +29,10 @@ header{
 #d2{
     display: none;
 }
+
+.nav1{
+    margin-left: 30px;
+}
 .wrap{
     width: 80%;
     margin:0 auto;
@@ -40,9 +44,11 @@ header a{
     text-decoration: none;
     color:white;
 }
-
+.marg a{
+  margin-left: 30px;
+}
 header nav a{
-    margin-left: 30px;
+
     padding:9px;
     border-radius:10px;
     font-weight: bold;
@@ -76,12 +82,16 @@ header nav a:hover{
     color:#89253e;
 
 }
-#hamburger{
+#hamburger2{
     display: none;
 }
+
+#hamburger{
+    font-size: 1.05rem;
+}
+
 footer{
     margin-top: 20px;
-    text-align: center;
     color: white;
     padding: 8px;
     font-size: 20px;
@@ -92,6 +102,7 @@ footer{
     color:white;
     padding:5px;
     text-decoration: none;
+    float:right;
 }
 html{
     scroll-behavior: smooth;
@@ -263,7 +274,7 @@ header ul .has-drop:hover>div{
     position: absolute;
     left: -20px;
     top: 100%;
-    width: 220px;
+    width: 150px;
     background: white;
     color:#89253e;
     display: none;

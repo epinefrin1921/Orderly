@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $title = 'Homepage';
 include('includes/DB.php');
 
@@ -29,6 +29,19 @@ oci_execute($query);
     <div class="slika" id="slika">
         <img src="1529573631.png">
     </div>
+    <?php
+
+
+    if (isset($_SESSION['id'])) {
+
+
+    echo 'Hello ' . $_SESSION['user_first_name'];
+
+
+    }
+
+
+    ?>
 </section>
 <section class="wrap" id="s2">
     <button>Order Now</button>
