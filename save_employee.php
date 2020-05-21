@@ -16,7 +16,6 @@ function checkRequiredField($value)
 {
     return isset($value) && !empty($value);
 }
-
 if ($_POST) {
     $fname=$_POST['fname'];
     $lname=$_POST['lname'];
@@ -25,10 +24,8 @@ if ($_POST) {
     $password=$_POST['password'];
     $salary = $_POST['salary'];
     $type = $_POST['type'];
-    $manager=5;
-    if(checkRequiredField($_POST['manager'])){
-        $manager=$_POST['manager'];
-    }
+    $manager=$_POST['manager'];
+
     $confirmpassword=$_POST['confirmpassword'];
 
     $dob2=date('d-m-Y',$dob);

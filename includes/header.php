@@ -34,7 +34,7 @@
             <nav class="menu-item notactive logout2">
                 <ul>
                     <li class="has-drop">
-                        <a id="hamburger"  class="icon" onclick="myFunction()">
+                        <a id="hamburger" class="icon" onclick="myFunction()">
                             <i class="fa fa-bars"></i>
                         </a>
                         <div class="dropdown">
@@ -68,7 +68,7 @@
                     <a href="Register.php">Register</a>
                 </div>
             </nav>
-            <a id="hamburger2"  class="icon" onclick="myFunction()">
+            <a id="hamburger2" class="icon" onclick="myFunction()">
                 <i class="fa fa-bars"></i>
             </a>
         </div>

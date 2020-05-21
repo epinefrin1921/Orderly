@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include('includes/DB.php');
 
 if(!isset($_SESSION['id'])){
     header('Location: index.php');
@@ -10,12 +10,14 @@ if($_SESSION['type']==0){
     header('Location: index.php');
     exit();
 }
-
-
 $title = 'Register';
 
-?>
+$query = oci_parse($conn, "select * from EMPLOYEE");
+oci_execute($query);
 
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +57,13 @@ $today = date("Y-m-d");
         <input type="text" placeholder="Position" name="type" value="" required>
     </div>
     <div class="textbox">
-        <input type="number" placeholder="Manager" name="manager" step="1" >
+        <p style="color: rgba(255,255,255,0.6)">Employee manager</p>
+        <select name="manager" id="manager" required>
+            <option value="" selected disabled hidden>Choose manager here</option>
+            <?php while($row = oci_fetch_assoc($query)): ?>
+            <option value="<?= $row['E_ID'] ?>"><?= $row['E_FNAME']." ".$row['E_LNAME'] ?></option>
+            <?php endwhile; ?>
+        </select>
     </div>
     <input class="butt" type="submit" name="" value="Submit" >
 </form>

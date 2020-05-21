@@ -92,6 +92,13 @@ header nav a:hover{
     font-weight: bold;
     transition: ease-in 0.3s;
 }
+header nav a:hover i{
+    background-color: white;
+    color:#89253e;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+}
+
 .scrolled {
     background: #3a6186; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #89253e, #3a6186); /* Chrome 10-25, Safari 5.1-6 */
@@ -104,10 +111,10 @@ header nav a:hover{
     opacity: 100%;
 }
 .scrolled .dropdown a{
-    color:white;
+    color:#89253e;
 }
 .scrolled header nav a:hover,.scrolled header div a:hover{
-    color:white;
+    color:#89253e;
 
 }
 #hamburger2{
@@ -116,6 +123,7 @@ header nav a:hover{
 
 #hamburger{
     font-size: 1.05rem;
+    color: white;
 }
 
 footer{
@@ -405,6 +413,9 @@ header ul .has-drop:hover>div{
         padding: 20px;
     }
     .scrolled #hamburger{
+        color: white;
+    }
+    .scrolled #hamburger2{
         color: white;
     }
     .scrolled header div a #naslov {
