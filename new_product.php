@@ -17,7 +17,7 @@ oci_execute($query);
 </head>
 <body>
 <h1><a href="index.php">Welcome to orderly</a></h1>
-<form class="Login" action="save_product.php" method="POST" >
+<form class="Login" action="save_product.php" method="POST" enctype="multipart/form-data">
     <h2>Add new product</h2>
     <div class="textbox">
         <label for="name">Product name:</label>
@@ -37,7 +37,7 @@ oci_execute($query);
     </div>
     <div class="textbox">
         <label for="image">Product image:</label>
-        <input type="text" placeholder="Product image" name="image" required>
+        <input type="file" placeholder="Product image" id="image" name="image" required>
     </div>
     <h2>Check ingredients in menu (if applicable):</h2>
     <div style="width: 100%">

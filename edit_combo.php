@@ -29,7 +29,7 @@ else{
 </head>
 <body>
 <h1><a href="index.php">Welcome to orderly</a></h1>
-<form class="Login" action="update_combo.php" method="POST">
+<form class="Login" action="update_combo.php" method="POST" enctype="multipart/form-data">
     <h2>Edit combo</h2>
     <input type="hidden" name="id" value="<?= $id ?>">
     <div class="textbox">
@@ -49,8 +49,8 @@ else{
         <input type="number" placeholder="Product supply price" name="price_supply" value="<?= $row['MI_SUPPLY_PRICE'] ?>" min="0" step="0.1" readonly>
     </div>
     <div class="textbox">
-        <label for="image">Product image:</label>
-        <input type="text" placeholder="Product image" name="image" value="<?= $row['MI_IMG']?>" required>
+        <label for="image">Combo image:</label>
+        <input type="file" placeholder="Product image" id="image" name="image">
     </div>
     <h2>Check products in combo:</h2>
     <div>

@@ -13,8 +13,20 @@ if ($_POST) {
     $price = $_POST['price'];
     $price2 = $_POST['price_supply'];
     $id = $_POST['id'];
-    $image = $_POST['image'];
+
+    if(checkRequiredField($_FILES['image']['name'])){
+        $image = $_FILES['image']['name'];
+        move_uploaded_file($_FILES['image']['tmp_name'], 'images/' . $image);
+    }
+    else{
+        $query = oci_parse($conn, "select * from MENU_ITEMS where MI_ID={$id}");
+        oci_execute($query);
+        $row=oci_fetch_assoc($query);
+        $image = $row['MI_IMG'];
+    }
     $total=0;
+
+    move_uploaded_file($_FILES['image']['tmp_name'], 'images/' . $image);
 
     $ingr_quant=array_values(array_filter($ingr_quant2));
 
@@ -40,7 +52,6 @@ if ($_POST) {
         }
 
     }
-
     if(checkRequiredField($name) && checkRequiredField($price) && checkRequiredField($image) && checkRequiredField($description)) {
         $query = oci_parse($conn, "UPDATE MENU_ITEMS set MI_NAME='$name', MI_DESCRIPTION='$description', MI_PRICE={$price}, MI_SUPPLY_PRICE={$total}, MI_IMG='{$image}' where MI_ID={$id}");
         oci_execute($query);

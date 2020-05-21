@@ -61,14 +61,15 @@ $title = $row['MI_NAME'];
                 <?php
             }?>
         </div>
-        <img src="<?=$row['MI_IMG']?>">
+        <img src="images/<?=$row['MI_IMG']?>">
     </div>
 <h1 style="text-align: center"> Combo includes: </h1>
 <section class="wrap" id="s3" style="color: black; padding-top: 20px">
     <?php while($row=oci_fetch_assoc($query2)):?>
         <div class="container">
             <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
-            <img src="<?=$row['MI_IMG']?>">
+                <img src="images/<?=$row['MI_IMG']?>">
+
             <p><?= $row['MI_NAME'] ?></p>
             <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
             </a>

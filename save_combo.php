@@ -11,7 +11,9 @@ if ($_POST) {
     $description = $_POST['description'];
     $price = $_POST['price'];
     $price2 = 0;
-    $image = $_POST['image'];
+    $image = $_FILES['image']['name'];;
+
+    move_uploaded_file($_FILES['image']['tmp_name'], 'images/' . $image);
 
     if(checkRequiredField($name) && checkRequiredField($description) && checkRequiredField($image) && checkRequiredField($price) && 1<count($combo_product)){
         $query = oci_parse($conn, "INSERT INTO MENU_ITEMS (MI_NAME, MI_PRICE, MI_DESCRIPTION, MI_SUPPLY_PRICE, MI_IMG, MI_TYPE) 

@@ -11,9 +11,20 @@ if ($_POST) {
     $description = $_POST['description'];
     $price = $_POST['price'];
     $price2 = $_POST['price_supply'];
+    $image = $_FILES['image']['name'];
     $id = $_POST['id'];
-    $image = $_POST['image'];
+    $image = $_FILES['image']['name'];
 
+    if(checkRequiredField($_FILES['image']['name'])){
+        $image = $_FILES['image']['name'];
+        move_uploaded_file($_FILES['image']['tmp_name'], 'images/' . $image);
+    }
+    else{
+        $query = oci_parse($conn, "select * from MENU_ITEMS where MI_ID={$id}");
+        oci_execute($query);
+        $row=oci_fetch_assoc($query);
+        $image = $row['MI_IMG'];
+    }
 
     if(checkRequiredField($name) && checkRequiredField($description) && checkRequiredField($image) && checkRequiredField($price)) {
 

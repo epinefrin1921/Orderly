@@ -61,7 +61,7 @@ $title = $row['MI_NAME'];
             <?php
                  }?>
         </div>
-        <img src="<?=$row['MI_IMG']?>">
+        <img src="images/<?=$row['MI_IMG']?>">
     </div>
     <?php if($row2=oci_fetch_assoc($query2)){
     oci_execute($query2);
@@ -88,7 +88,7 @@ $title = $row['MI_NAME'];
             <div class="container">
                 <a href="single_combo.php?id=<?= $row3['MI_ID'] ?>" class="info-more">
                     <div class="container2" >
-                        <img src="<?=$row3['MI_IMG']?>">
+                        <img src="images/<?=$row3['MI_IMG']?>">
                         <p><?= $row3['MI_NAME'] ?></p>
                         <p>Price: <?= number_format($row3['MI_PRICE'],2)?>KM</p>
                         <button>Add to Cart</button>

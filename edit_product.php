@@ -48,7 +48,7 @@ else{
 <body>
 
 <h1><a href="index.php">Welcome to orderly</a></h1>
-<form class="Login" action="update_product.php" method="POST">
+<form class="Login" action="update_product.php" method="POST" enctype="multipart/form-data">
     <h2>Edit product</h2>
     <input type="hidden" name="id" value="<?= $id ?>">
     <div class="textbox">
@@ -69,7 +69,7 @@ else{
     </div>
     <div class="textbox">
         <label for="image">Product image:</label>
-        <input type="text" placeholder="Product image" name="image" value="<?= $row['MI_IMG']?>" required>
+        <input type="file" placeholder="Product image" id="image" name="image">
     </div>
     <div>
         <?php while($row2=oci_fetch_assoc($query2)):?>

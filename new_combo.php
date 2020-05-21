@@ -16,7 +16,7 @@ oci_execute($query);
 </head>
 <body>
 <h1><a href="index.php">Welcome to orderly</a></h1>
-<form class="Login" action="save_combo.php" method="POST" >
+<form class="Login" action="save_combo.php" method="POST" enctype="multipart/form-data" >
     <h2>Add new combo</h2>
     <div class="textbox">
         <label for="name">Combo name:</label>
@@ -30,10 +30,9 @@ oci_execute($query);
         <label for="description">Combo description:</label>
         <input type="text" placeholder="Combo description" name="description" value="" required>
     </div>
-
     <div class="textbox">
-        <label for="image">Combo image:</label>
-        <input type="text" placeholder="Combo image" name="image" required>
+        <label for="image">Product image:</label>
+        <input type="file" placeholder="Product image" id="image" name="image" required>
     </div>
     <h2>Check products in combo:</h2>
     <div>

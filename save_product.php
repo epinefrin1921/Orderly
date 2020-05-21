@@ -12,9 +12,11 @@ if ($_POST) {
     $description = $_POST['description'];
     $price = $_POST['price'];
     $price2 = $_POST['price_supply'];
-    $image = $_POST['image'];
+    $image = $_FILES['image']['name'];
     $date = date("d-m-y H:i:s");
     $total=0;
+
+    move_uploaded_file($_FILES['image']['tmp_name'], 'images/' . $image);
 
     $ingr_quant=array_filter($ingr_quant, 'strlen');
 

@@ -61,7 +61,7 @@ $title = $row['IN_NAME'];
             <?php while($row2=oci_fetch_assoc($query2)):?>
                 <div class="container">
                     <a href="single_product.php?id=<?= $row2['MI_ID'] ?>" class="info-more">
-                        <img src="<?=$row2['MI_IMG']?>">
+                        <img src="images/<?=$row2['MI_IMG']?>">
                         <p><?= $row2['MI_NAME'] ?></p>
                         <p>Price: <?= number_format($row2['MI_PRICE'],2)?>KM</p>
                         <p><?= number_format($row2['RL_QUANTITY'],2)?> is used</p>
