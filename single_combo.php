@@ -1,6 +1,8 @@
 <?php
 include('includes/DB.php');
 
+session_start();
+
 function checkRequiredField ($value) {
     return isset($value) && !empty($value);
 }
@@ -47,19 +49,34 @@ $title = $row['MI_NAME'];
             <p>Price: <?= $row['MI_PRICE'] ?>KM</p>
             <p>Description: <?= $row['MI_DESCRIPTION'] ?></p>
             <p>You save <?=  number_format($total-$row['MI_PRICE'],2) ?>KM if you buy this combo! </p>
-            <a href="edit_combo.php?id=<?= $row['MI_ID'] ?>">Edit combo </a>
+
             <?php
-            if($row['MI_DELETED']==null){
-                ?>
-                <a href="delete_combo.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure?');">Delete combo</a>
-                <?php
-            };
-            if($row['MI_DELETED']!=null){
-                ?>
-                <a href="activate_combo.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure?');">Activate combo</a>
+            if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
+
+                <p>Date added: <?= date("d.m.Y", strtotime($row['MI_CREATED'])) ?></p>
 
                 <?php
-            }?>
+                 if($row['MI_DELETED']!=null):
+                ?>
+                <p>Date deleted: <?= date("d.m.Y", strtotime($row['MI_DELETED'])) ?></p>
+                 <?php endif;?>
+
+                <a href="edit_combo.php?id=<?= $row['MI_ID'] ?>">Edit combo </a>
+                <?php
+                if($row['MI_DELETED']==null){
+                    ?>
+                    <a href="delete_combo.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure?');">Delete combo</a>
+                    <?php
+                };
+                if($row['MI_DELETED']!=null){
+                    ?>
+                    <a href="activate_combo.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure?');">Activate combo</a>
+
+                    <?php
+                }?>
+
+            <?php endif;?>
+
         </div>
         <img src="images/<?=$row['MI_IMG']?>">
     </div>

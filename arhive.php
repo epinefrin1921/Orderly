@@ -2,6 +2,16 @@
 $title = 'Products';
 include('includes/DB.php');
 
+session_start();
+if(!isset($_SESSION['id'])){
+    header('Location: index.php');
+    exit();
+}
+if($_SESSION['type']==0){
+    header('Location: index.php');
+    exit();
+}
+
 $query = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is not null and lower(MI_TYPE)='single'");
 
 $query2 = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is not null and lower(MI_TYPE)='combo'");

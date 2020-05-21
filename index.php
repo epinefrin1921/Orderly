@@ -19,8 +19,16 @@ oci_execute($query);
 
 <section class="wrap" id="s1">
     <div id="podnaslov">
+        <?php
+
+        $name=null;
+
+        if (isset($_SESSION['id'])) {
+           $name=", ".$_SESSION['user_first_name'];
+        }
+        ?>
         <h1>
-            Feeling hungry?
+            Feeling hungry<?=$name?>?
         </h1>
         <p>
             Order now and avoid waiting!
@@ -29,19 +37,6 @@ oci_execute($query);
     <div class="slika" id="slika">
         <img src="1529573631.png">
     </div>
-    <?php
-
-
-    if (isset($_SESSION['id'])) {
-
-
-    echo 'Hello ' . $_SESSION['user_first_name'];
-
-
-    }
-
-
-    ?>
 </section>
 <section class="wrap" id="s2">
     <button>Order Now</button>

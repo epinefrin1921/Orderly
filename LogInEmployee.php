@@ -1,15 +1,11 @@
 <?php
 session_start();
-
 if(isset($_SESSION['id'])){
     header('Location: index.php');
     exit();
 }
 $title = 'Log in';
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +16,8 @@ $title = 'Log in';
 
 <body>
 <h1><a href="index.php">Welcome to orderly</a></h1>
-<form class="Login" action="validatelogin.php" method="post">
-    <h2>Log in</h2>
+<form class="Login" action="validateloginemployee.php" method="post">
+    <h2>Log in as employee</h2>
     <div class="textbox">
         <i style='font-size:24px' class='far'>&#xf2bd;</i>
         <input type="email" placeholder="E-mail" name="email" value="">
@@ -32,6 +28,7 @@ $title = 'Log in';
     </div>
     <input class="butt" type="submit" name="" value="Sign In">
     <div id="pass"><a href="PasswordForgot.php" id="pw">Forgot password?</a> |
+        <a href="LogIn.php" id="pw">Not an employee password?</a> |
         <a href="Register.php" id="pw">Don't have an account?</a></div>
 </form>
 </body>

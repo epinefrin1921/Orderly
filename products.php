@@ -1,11 +1,11 @@
 <?php
+
 $title = 'Products';
 include('includes/DB.php');
 
+session_start();
  $query = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is null and lower(MI_TYPE)='single'");
-
 $query2 = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is null and lower(MI_TYPE)='combo'");
-
  oci_execute($query);
 oci_execute($query2);
 
@@ -22,13 +22,18 @@ oci_execute($query2);
 
 <body>
 <?php include('includes/header.php') ?>
-<div class="wrap2 jumbotron">
+
+    <div class="wrap2 jumbotron"
+<?php
+if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
     <p><a href="new_product.php">Add new product</a> </p>
     <p><a href="new_combo.php">Add new combo</a> </p>
     <p><a href="storage.php">Open storage</a></p>
     <p><a href="arhive.php">Open deleted products and combos</a></p>
-    <h1 id="naslov3">Products:</h1>
-</div>
+<?php endif;?>
+    </div>
+
+<h1 id="naslov3">Products:</h1>
 
 <section class="wrap" id="s3">
 <?php while($row=oci_fetch_assoc($query)):?>

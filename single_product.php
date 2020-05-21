@@ -2,6 +2,8 @@
 
 include('includes/DB.php');
 
+session_start();
+
 $id = $_GET['id'];
 
 $query = oci_parse($conn, "select * from MENU_ITEMS where MENU_ITEMS.MI_ID = ". $id);
@@ -39,30 +41,37 @@ $title = $row['MI_NAME'];
 <body>
 <?php include('includes/header.php') ?>
 <main class="wrap">
+
     <div class="prikaz">
         <div class="info">
             <h2><?= $row['MI_NAME'] ?></h2>
             <p>Price: <?= $row['MI_PRICE'] ?>KM</p>
             <p>Supply price: <?= $row['MI_SUPPLY_PRICE'] ?>KM</p>
             <p>Description: <?= $row['MI_DESCRIPTION'] ?></p>
-            <p>Date added: <?= date("d.m.Y", strtotime($row['MI_CREATED'])) ?></p>
-            <a href="edit_product.php?id=<?= $row['MI_ID'] ?>">Edit product </a>
 
             <?php
-                 if($row['MI_DELETED']==null){
-                     ?>
-                     <a href="delete_product.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure? Deleting this product will delete all combos in which this product is included');">Delete product</a>
-                     <?php
-                 };
-                 if($row['MI_DELETED']!=null){
-                     ?>
-                     <a href="activate_product.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure?');">Activate product</a>
+            if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
 
-            <?php
-                 }?>
+                <p>Date added: <?= date("d.m.Y", strtotime($row['MI_CREATED'])) ?></p>
+                <a href="edit_product.php?id=<?= $row['MI_ID'] ?>">Edit product </a>
+
+                <?php
+                if($row['MI_DELETED']==null){
+                    ?>
+                    <a href="delete_product.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure? Deleting this product will delete all combos in which this product is included');">Delete product</a>
+                    <?php
+                };
+                if($row['MI_DELETED']!=null){
+                    ?>
+                    <a href="activate_product.php?id=<?= $row['MI_ID']?>" onclick="return confirm('Are you sure?');">Activate product</a>
+
+                    <?php
+                }?>
+            <?php endif;?>
         </div>
         <img src="images/<?=$row['MI_IMG']?>">
     </div>
+
     <?php if($row2=oci_fetch_assoc($query2)){
     oci_execute($query2);
     $row2 = oci_fetch_assoc($query);

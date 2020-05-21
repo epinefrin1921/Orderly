@@ -5,14 +5,15 @@ $title = 'About';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles/stilabout.css">
+    <link rel="stylesheet" href="styles/stil.css">
+
     <?php include('includes/head.php') ?>
 </head>
 
 <body>
 <?php include 'includes/header.php';?>
 <div class="cont">
-<section class="wrap" id="s4">
+<section class="wrap" id="s8">
     <div class="container">
         <div>
             <h3>About</h3>
@@ -23,7 +24,7 @@ $title = 'About';
         </div>
     </div>
     <div class="container">
-        <div id="slika">
+        <div id="slika2">
             <img src="https://ssst.edu.ba/images/objave/1529573631.png">
         </div>
         <div>

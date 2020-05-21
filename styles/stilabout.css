@@ -82,6 +82,11 @@ header nav a:hover{
     color:#89253e;
 
 }
+fa-bars:before {
+    content: "\f0c9";
+    font-size: 1.7rem;
+}
+
 #hamburger{
     display: none;
 }

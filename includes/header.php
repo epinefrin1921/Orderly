@@ -7,9 +7,29 @@
                 <a href="index.php"  class="nav1">Home</a>
                 <a href="about.php" class="nav1">About</a>
                 <a href="products.php" class="nav1">Menu</a>
-                <a href="#" class="logout">Log out</a>
-                <a href="./LogIn.php" class="logout">My profile</a>
+
+                <?php
+                if (isset($_SESSION['id']) and $_SESSION['type']==0):?>
+                    <a href="#" class="logout">My account</a>
+                    <a href="#" class="logout">Previous orders</a>
+                    <a href="#" class="logout">Balance</a>
+                    <a href="logout.php" class="logout">Log out</a>
+                <?php endif;?>
+                <?php
+                if (!isset($_SESSION['id']) ):?>
+                    <a href="LogIn.php" class="logout">Log in</a>
+                    <a href="Register.php" class="logout">Register</a>
+                    <a href="LogInEmployee.php" class="logout">Log in as employee</a>
+                <?php endif;?>
+                <?php
+                if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
+                    <a href="#" class="logout">My account</a>
+                    <a href="#" class="logout">My orders</a>
+                    <a href="registerEmployee.php" class="logout">Register new employee</a>
+                    <a href="logout.php" class="logout">Log out</a>
+                <?php endif;?>
             </nav>
+
 
             <nav class="menu-item notactive logout2">
                 <ul>
@@ -18,10 +38,28 @@
                             <i class="fa fa-bars"></i>
                         </a>
                         <div class="dropdown">
+                            <?php
+                            if (isset($_SESSION['id']) and $_SESSION['type']==0):?>
+                                <a href="#">My account</a>
+                                <a href="#">Previous orders</a>
+                                <a href="#">Balance</a>
+                                <a href="logout.php">Log out</a>
+                            <?php endif;?>
+                            <?php
+                            if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
                             <a href="#">My account</a>
-                            <a href="#">Previous orders</a>
-                            <a href="#">Balance</a>
-                            <a href="logout.php">Log out</a>
+                            <a href="#">My orders</a>
+
+                                <a href="registerEmployee.php">Register new employee</a>
+                                <a href="logout.php">Log out</a>
+
+                            <?php endif;?>
+                            <?php
+                            if (!isset($_SESSION['id'])):?>
+                                <a href="LogIn.php">Log in</a>
+                                <a href="Register.php">Register</a>
+                                <a href="LogInEmployee.php">Log in as employee</a>
+                            <?php endif;?>
                         </div>
                     </li>
                 </ul>

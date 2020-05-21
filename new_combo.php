@@ -1,4 +1,15 @@
 <?php
+
+session_start();
+if(!isset($_SESSION['id'])){
+    header('Location: index.php');
+    exit();
+}
+if($_SESSION['type']==0){
+    header('Location: index.php');
+    exit();
+}
+
 include('includes/DB.php');
 $title = 'Add new product';
 $query = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is null and lower(MI_TYPE)='single'");

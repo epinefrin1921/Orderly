@@ -13,6 +13,7 @@ header{
 #fix{
     position: fixed;
     width: 100%;
+    z-index: 5;
 }
 #naslov{
     font-family: 'Lobster', cursive;
@@ -20,7 +21,34 @@ header{
     font-size: 2.5rem;
     margin: 0;
 }
-
+.cont{
+    padding-top: 100px;
+}
+#s8 div{
+    width:100%;
+    padding: 15px;
+    background: white;
+    margin:10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    line-height: 30px;
+}
+#s8 img{
+    width: 100%;
+}
+#s8{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+#s8 h3{
+    text-align: center;
+    border-bottom: 1px solid #89253e;
+}
 #d1{
     display: flex;
     justify-content: space-between;
@@ -76,10 +104,10 @@ header nav a:hover{
     opacity: 100%;
 }
 .scrolled .dropdown a{
-    color:#89253e;
+    color:white;
 }
 .scrolled header nav a:hover,.scrolled header div a:hover{
-    color:#89253e;
+    color:white;
 
 }
 #hamburger2{
@@ -210,7 +238,11 @@ html{
     border:solid 1px white;
     margin-bottom: 10px;
 }
-
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 #s3 button:hover{
     color:#89253e;
     background: white ;
@@ -239,6 +271,10 @@ html{
     text-align: center;
     border-bottom: 1px solid #89253e;
 }
+.fa-bars:before {
+    content: "\f0c9";
+    font-size: 1.7rem;
+}
 
 
 @media (max-width: 930px) {
@@ -254,6 +290,17 @@ html{
     #s3 div.container{
         width: 30%;
     }
+    .container{
+        flex-wrap: wrap;
+    }
+    .container div{
+        width: 100%;
+        order: 1;
+    }
+    #slika2{
+        order: 2;
+    }
+
 }
 
 header ul{
@@ -272,7 +319,7 @@ header ul .has-drop:hover>div{
 .dropdown{
     margin-top: 5px;
     position: absolute;
-    left: -20px;
+    left: -100px;
     top: 100%;
     width: 150px;
     background: white;
@@ -312,6 +359,10 @@ header ul .has-drop:hover>div{
     }
     .wrap{
         width: 95%;
+    }
+    #hamburger2{
+        display: inline-block;
+
     }
     #hamburger{
         display: inline-block;
