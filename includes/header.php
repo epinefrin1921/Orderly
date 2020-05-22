@@ -19,7 +19,6 @@
                 if (!isset($_SESSION['id']) ):?>
                     <a href="LogIn.php" class="logout">Log in</a>
                     <a href="Register.php" class="logout">Register</a>
-                    <a href="LogInEmployee.php" class="logout">Log in as employee</a>
                 <?php endif;?>
                 <?php
                 if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
@@ -58,7 +57,6 @@
                             if (!isset($_SESSION['id'])):?>
                                 <a href="LogIn.php">Log in</a>
                                 <a href="Register.php">Register</a>
-                                <a href="LogInEmployee.php">Log in as employee</a>
                             <?php endif;?>
                         </div>
                     </li>

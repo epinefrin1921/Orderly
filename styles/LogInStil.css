@@ -7,7 +7,13 @@ body{
     font-family: 'Roboto', sans-serif;
     background-size: cover;
 }
-
+.sek{
+    width:40%;
+    border:1px solid white;
+    padding:10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+}
 h1{
     font-size: 35px;
     font-weight:bold;
@@ -17,7 +23,7 @@ h1{
     margin-bottom: 100px;
 }
 .Login {
-    width: 50%;
+    width: 80%;
     margin:0 auto;
     color:white;
     display: flex;
@@ -43,7 +49,10 @@ h2{
     margin:8px 0;
     border-bottom: 1px solid whitesmoke ;
 }
-
+main{
+    display: flex;
+    justify-content: space-around;
+}
 .textbox input{
     border: none;
     outline:none;
@@ -104,8 +113,17 @@ h1 a{
     color:#89253e;
 }
 @media screen and (max-width: 660px) {
-    .Login {
-        width: 80%;
+
+    .sek{
+        width: 95%;
+        box-sizing: border-box;
+        margin:10px auto;
     }
+    main{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
 }
 
