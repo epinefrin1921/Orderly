@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $title = 'About';
 ?>
 <!DOCTYPE html>

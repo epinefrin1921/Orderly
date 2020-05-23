@@ -46,17 +46,12 @@ $title = $row['MI_NAME'];
         <div class="info">
             <h2><?= $row['MI_NAME'] ?></h2>
             <p>Price: <?= $row['MI_PRICE'] ?>KM</p>
+            <p>Supply price: <?= $row['MI_SUPPLY_PRICE'] ?>KM</p>
             <p>Description: <?= $row['MI_DESCRIPTION'] ?></p>
 
             <?php
             if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
-                <?php
-                    if($row['MI_PRICE']<$row['MI_SUPPLY_PRICE']):?>
-                        <p style="color: red">Supply price: <?= $row['MI_SUPPLY_PRICE'] ?>KM</p>
-                        <p>Restaurant is losing money on this product!</p>
-                    <?php else:?>
-                <p>Supply price: <?= $row['MI_SUPPLY_PRICE'] ?>KM</p>
-                    <?php endif;?>
+
                 <p>Date added: <?= date("d.m.Y", strtotime($row['MI_CREATED'])) ?></p>
                 <a href="edit_product.php?id=<?= $row['MI_ID'] ?>">Edit product </a>
 
@@ -105,6 +100,7 @@ $title = $row['MI_NAME'];
                         <img src="../../images/<?=$row3['MI_IMG']?>">
                         <p><?= $row3['MI_NAME'] ?></p>
                         <p>Price: <?= number_format($row3['MI_PRICE'],2)?>KM</p>
+                        <button>Add to Cart</button>
                     </div>
                 </a>
             </div>

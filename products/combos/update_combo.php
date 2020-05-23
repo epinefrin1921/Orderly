@@ -24,7 +24,7 @@ if ($_POST) {
 
     if(checkRequiredField($_FILES['image']['name'])){
         $image = $_FILES['image']['name'];
-        move_uploaded_file($_FILES['image']['tmp_name'], '../../images/' . $image);
+        move_uploaded_file($_FILES['image']['tmp_name'], 'images/' . $image);
     }
     else{
         $query = oci_parse($conn, "select * from MENU_ITEMS where MI_ID={$id}");
@@ -35,14 +35,13 @@ if ($_POST) {
 
     if(checkRequiredField($name) && checkRequiredField($description) && checkRequiredField($image) && checkRequiredField($price)) {
 
+        $query = oci_parse($conn, "UPDATE MENU_ITEMS set MI_NAME='$name', MI_DESCRIPTION='$description', MI_PRICE={$price}, MI_SUPPLY_PRICE={$price2}, MI_IMG='{$image}' where MI_ID={$id}");
+
+        oci_execute($query,OCI_NO_AUTO_COMMIT);
 
         $query2 = oci_parse($conn, "delete from PACKAGE_LINE where PL_FATHER_ID={$id}");
 
         oci_execute($query2,OCI_NO_AUTO_COMMIT);
-
-        $query = oci_parse($conn, "UPDATE MENU_ITEMS set MI_NAME='$name', MI_DESCRIPTION='$description', MI_PRICE={$price}, MI_SUPPLY_PRICE=0, MI_IMG='{$image}' where MI_ID={$id}");
-
-        oci_execute($query,OCI_NO_AUTO_COMMIT);
 
         for($i = 0; $i<count($combo_product);$i++)
         {

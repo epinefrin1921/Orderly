@@ -38,24 +38,32 @@ oci_execute($query);
         <img src="1529573631.png">
     </div>
 </section>
+
 <section class="wrap" id="s2">
     <button>Order Now</button>
 </section>
-
+<?php
+if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
+    <p>Order has been placed</p>
+<?php endif;?>
 <section class="wrap" id="s3">
     <section id="ss">
         <h3>Recommended by others:</h3>
     </section>
     <?php while($row=oci_fetch_assoc($query) ):?>
         <div class="container">
-            <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more" onclick="$(this).stopPropagation();">
-                <div class="container2">
-                    <img src="images/<?=$row['MI_IMG']?>">
-                    <p><?= $row['MI_NAME'] ?></p>
-                    <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
-                    <button>Add to Cart</button>
-                </div>
-            </a>
+            <div class="container2">
+                <form method="post" action="orders/addtocart.php?ID=<?php echo $row['MI_ID']; ?>">
+                    <a href="products/products/single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
+                        <img src="images/<?=$row['MI_IMG']?>">
+                        <p><?= $row['MI_NAME'] ?></p>
+                        <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
+                    </a>
+                    <?php if(isset($_SESSION['id']) and $_SESSION['type']==0){?>
+                        <div class="cart-action"><label for="quantity">Quantity:</label> <input type="number" class="product-quantity" name="quantity" value="1" min="1"/><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+                    <?php } ?>
+                </form>
+            </div>
         </div>
     <?php endwhile; ?>
 </section>
@@ -75,8 +83,9 @@ oci_execute($query);
             No need to wait for Maca to show up.</p>
     </div>
 </section>
-
-<?php include 'includes/footer.php'; ?>
+<?php
+$_SESSION['order_placed']=false;
+include 'includes/footer.php'; ?>
 
 </body>
 </html>

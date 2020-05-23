@@ -17,7 +17,7 @@ function checkRequiredField ($value) {
 
 if ($_POST) {
     $ingr= $_POST['ingredients'];
-    $ingr_quant2=$_POST['ingrquant'];
+    $ingr_quant=$_POST['ingrquant'];
     $name = $_POST['name'];
     $description = $_POST['description'];
     $price = $_POST['price'];
@@ -25,15 +25,24 @@ if ($_POST) {
     $image = $_FILES['image']['name'];
     $date = date("d-m-y H:i:s");
     $total=0;
-    $type=$_POST['type'];
 
-    move_uploaded_file($_FILES['image']['tmp_name'], '../../images/' . $image);
+    move_uploaded_file($_FILES['image']['tmp_name'], 'images/' . $image);
 
-    $ingr_quant=array_values(array_filter($ingr_quant2));
+    $ingr_quant=array_filter($ingr_quant, 'strlen');
+
+    $check='select * from INGREDIENTS where IN_ID in (';
+    $check.=implode(",", $ingr);
+    $check.=')';
 
 
     if(!checkRequiredField($price2)){
-        $total=0;
+        $query2=oci_parse($conn, $check);
+        oci_execute($query2);
+        $i=0;
+        while($row2=oci_fetch_assoc($query2)){
+            $total=$total+($row2['IN_PRICE']*$ingr_quant[$i]);
+            $i++;
+        }
     }
     else{
         $total=$price2;
@@ -41,10 +50,10 @@ if ($_POST) {
 
     if(checkRequiredField($name) && checkRequiredField($price) && checkRequiredField($image) && checkRequiredField($description)) {
         $query = oci_parse($conn, "INSERT INTO MENU_ITEMS (MI_NAME, MI_PRICE, MI_DESCRIPTION, MI_SUPPLY_PRICE, MI_IMG, MI_TYPE, MI_CREATED, MI_DELETED) 
-                      VALUES ('{$name}', {$price},'{$description}',{$total},'{$image}','{$type}', to_date('{$date}','DD-MM-YY HH24:MI:SS'), NULL)");
+                      VALUES ('{$name}', {$price},'{$description}',{$total},'{$image}','single', to_date('{$date}','DD-MM-YY HH24:MI:SS'), NULL)");
         oci_execute($query);
 
-        $query2=oci_parse($conn, "select * from MENU_ITEMS where  MI_NAME='{$name}' and MI_DESCRIPTION='{$description}'");
+        $query2=oci_parse($conn, "select * from MENU_ITEMS where  MI_NAME='{$name}'");
 
         oci_execute($query2);
 
