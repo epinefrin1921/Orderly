@@ -50,7 +50,6 @@ oci_execute($query2);
                     <img src="../../images/<?=$row['MI_IMG']?>">
                     <p><?= $row['MI_NAME'] ?></p>
                     <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
-                    <button>Add to Cart</button>
                 </div>
             </a>
         </div>
@@ -83,7 +82,6 @@ oci_execute($query2);
                     <p><?= $row['MI_NAME'] ?></p>
                     <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
                     <p>You save <?=number_format($total-$row['MI_PRICE'],2) ?>KM </p>
-                    <button>Add to Cart</button>
                 </div>
             </a>
         </div>

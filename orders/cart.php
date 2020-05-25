@@ -50,7 +50,7 @@ $title='Your cart';
         <div class="container">
             <div class="container2">
                 <form method="post" action="updatecart.php?ID=<?php echo $row['MI_ID']; ?>">
-                    <a href="single_<?= $row['MI_TYPE']=='single'? 'product' : 'combo'  ?>.php?id=<?= $row['MI_ID'] ?>" class="info-more">
+                    <a href="../products/<?= $row['MI_TYPE']=='single'? 'products' : 'combos'  ?>/single_<?= $row['MI_TYPE']=='single'? 'product' : 'combo'  ?>.php?id=<?= $row['MI_ID'] ?>" class="info-more">
                         <img src="../images/<?=$row['MI_IMG']?>">
                         <p><?= $row['MI_NAME'] ?></p>
                         <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>

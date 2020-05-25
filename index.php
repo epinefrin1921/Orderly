@@ -40,7 +40,16 @@ oci_execute($query);
 </section>
 
 <section class="wrap" id="s2">
-    <button>Order Now</button>
+    <?php  if (isset($_SESSION['id'])) { ?>
+        <a href="products/products/products.php">
+            <button>Order Now</button>
+        </a>
+     <?php  }else { ?>
+        <a href="validation/LogIn.php">
+            <button>Order Now</button>
+        </a>
+     <?php }?>
+
 </section>
 <?php
 if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>

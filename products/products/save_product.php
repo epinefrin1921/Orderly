@@ -26,7 +26,7 @@ if ($_POST) {
     $date = date("d-m-y H:i:s");
     $total=0;
 
-    move_uploaded_file($_FILES['image']['tmp_name'], 'images/' . $image);
+    move_uploaded_file($_FILES['image']['tmp_name'], '../../images/' . $image);
 
     $ingr_quant=array_filter($ingr_quant, 'strlen');
 

@@ -14,8 +14,8 @@ if(!isset($_SESSION['id'])){
 foreach($_SESSION['products'] as $index=>$item){
     if($item[0]==$product){
         $_SESSION['products'][$index][1]+=$quantity;
-        header('Location: products.php');
         $_SESSION['product_added']=true;
+        header('Location: ../products/products/products.php');
         exit();
     }
 }

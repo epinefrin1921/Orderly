@@ -21,9 +21,8 @@
                 <?php endif;?>
                 <?php
                 if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
-                    <a href="/Orderly/employee/myaccountemp.php" class="logout">My account</a>
-                    <a href="#" class="logout">My orders</a>
-                    <a href="/Orderly/employee/registerEmployee.php" class="logout">Register new employee</a>
+                    <a href="/Orderly/employee/myaccount.php" class="logout">My account</a>
+                    <a href="#" class="logout">All orders</a>
                     <a href="/Orderly/validation/logout.php" class="logout">Log out</a>
                 <?php endif;?>
             </nav>
@@ -44,10 +43,8 @@
                             <?php endif;?>
                             <?php
                             if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
-                            <a href="/Orderly/employee/myaccountemp.php">My account</a>
-                            <a href="#">My orders</a>
-
-                                <a href="/Orderly/employee/registerEmployee.php">Register new employee</a>
+                            <a href="/Orderly/employee/myaccount.php">My account</a>
+                            <a href="/Orderly/orders/allorders.php">All orders</a>
                                 <a href="/Orderly/validation/logout.php">Log out</a>
 
                             <?php endif;?>

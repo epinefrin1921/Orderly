@@ -26,7 +26,7 @@ if ($_POST) {
 
     if(checkRequiredField($_FILES['image']['name'])){
         $image = $_FILES['image']['name'];
-        move_uploaded_file($_FILES['image']['tmp_name'], 'images/' . $image);
+        move_uploaded_file($_FILES['image']['tmp_name'], '../../images/' . $image);
     }
     else{
         $query = oci_parse($conn, "select * from MENU_ITEMS where MI_ID={$id}");
@@ -36,7 +36,7 @@ if ($_POST) {
     }
     $total=0;
 
-    move_uploaded_file($_FILES['image']['tmp_name'], 'images/' . $image);
+    move_uploaded_file($_FILES['image']['tmp_name'], '../../images/' . $image);
 
     $ingr_quant=array_values(array_filter($ingr_quant2));
 
