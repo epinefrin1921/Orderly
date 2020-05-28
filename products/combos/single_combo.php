@@ -13,7 +13,7 @@ if(checkRequiredField($id)){
     $query = oci_parse($conn, 'select * from MENU_ITEMS where MENU_ITEMS.MI_ID = '. $id);
     oci_execute($query);
 
-    $query2 = oci_parse($conn, 'select m.*, pl.* from MENU_ITEMS m, PACKAGE_LINE pl where m.MI_ID=pl.PL_CHILD_ID ');
+    $query2 = oci_parse($conn, 'select m.*, pl.* from MENU_ITEMS m, PACKAGE_LINE pl where m.MI_ID=pl.PL_CHILD_ID and pl.PL_FATHER_ID= '.$id);
 
     $row = oci_fetch_assoc($query);
     oci_commit($conn);
@@ -76,11 +76,11 @@ $title = $row['MI_NAME'];
 <section class="wrap" id="s3" style="color: black; padding-top: 20px">
     <?php while($row=oci_fetch_assoc($query2)):?>
         <div class="container">
-            <a href="../products/single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
-                <img src="../../images/<?=$row['MI_IMG']?>">
+            <a href="../products/single_product.php?id=<?= $row[0] ?>" class="info-more">
+                <img src="../../images/<?=$row[4]?>">
 
             <p><?= $row['MI_NAME'] ?></p>
-            <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
+            <p>Price: <?= number_format($row[1],2)?>KM</p>
             </a>
         </div>
     <?php endwhile; ?>
