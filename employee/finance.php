@@ -33,7 +33,7 @@ if($_POST) {
           $totalamount=$totalamount+$row['O_TOTAL_AMOUNT'];
             $number=$number+1;
         };
-        $found=false;
+        $found=true;
         $query2 = oci_parse($conn, "select ol.OL_MENU, m.MI_NAME, m.MI_PRICE , sum(ol.OL_QUANTITY) as t
                              FROM ORDER_LINE ol, MENU_ITEMS m, ORDERS o
                              where m.MI_ID=ol.OL_MENU and o.O_ID=ol.OL_ORDER and O_DATE_RECEIVED>to_date('{$start}','YYYY-MM-DD') and O_DATE_RECEIVED<to_date('{$end}','YYYY-MM-DD')
@@ -93,7 +93,7 @@ $title='Financial results';
                 else{
                     $no=$row3['T'];
                 }
-            ?>
+            $found=false; ?>
             <h3>Item name: <?=$row3['MI_NAME']?></h3>
             <h4><a href="../products/products/single_product.php?id=<?=$row3['OL_MENU']?>">Link to the item</a></h4>
             <h4>Total amount sold: <?=$no?></h4>

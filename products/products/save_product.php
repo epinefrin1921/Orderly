@@ -24,36 +24,20 @@ if ($_POST) {
     $price2 = $_POST['price_supply'];
     $image = $_FILES['image']['name'];
     $date = date("d-m-y H:i:s");
-    $total=0;
 
     move_uploaded_file($_FILES['image']['tmp_name'], '../../images/' . $image);
 
     $ingr_quant=array_filter($ingr_quant, 'strlen');
 
-    $check='select * from INGREDIENTS where IN_ID in (';
-    $check.=implode(",", $ingr);
-    $check.=')';
 
 
-    if(!checkRequiredField($price2)){
-        $query2=oci_parse($conn, $check);
-        oci_execute($query2);
-        $i=0;
-        while($row2=oci_fetch_assoc($query2)){
-            $total=$total+($row2['IN_PRICE']*$ingr_quant[$i]);
-            $i++;
-        }
-    }
-    else{
-        $total=$price2;
-    }
 
     if(checkRequiredField($name) && checkRequiredField($price) && checkRequiredField($image) && checkRequiredField($description)) {
         $query = oci_parse($conn, "INSERT INTO MENU_ITEMS (MI_NAME, MI_PRICE, MI_DESCRIPTION, MI_SUPPLY_PRICE, MI_IMG, MI_TYPE, MI_CREATED, MI_DELETED) 
-                      VALUES ('{$name}', {$price},'{$description}',{$total},'{$image}','single', to_date('{$date}','DD-MM-YY HH24:MI:SS'), NULL)");
+                      VALUES ('{$name}', {$price},'{$description}',0,'{$image}','single', to_date('{$date}','DD-MM-YY HH24:MI:SS'), NULL)");
         oci_execute($query);
 
-        $query2=oci_parse($conn, "select * from MENU_ITEMS where  MI_NAME='{$name}'");
+        $query2=oci_parse($conn, "select * from MENU_ITEMS where  MI_NAME='{$name}' and MI_DESCRIPTION='{$description}'");
 
         oci_execute($query2);
 

@@ -84,16 +84,7 @@ if (isset($_SESSION['id']) and $_SESSION['type']==0  and  $_SESSION['product_add
 
 <section class="wrap" id="s3">
     <?php while($row=oci_fetch_assoc($query2)):?>
-    <?php
 
-        $query3 = oci_parse($conn, 'select P.*, M.* from PACKAGE_LINE P ,MENU_ITEMS M where P.PL_CHILD_ID = MI_ID  AND P.PL_FATHER_ID = '. $row['MI_ID']);
-        oci_execute($query3);
-        $total=0;
-        while($row4=oci_fetch_assoc($query3)){
-            $total=$total+$row4['MI_PRICE'];
-        };
-
-        ?>
         <div class="container">
             <div class="container2">
                 <form method="post" action="../../orders/addtocart.php?ID=<?php echo $row['MI_ID']; ?>">
@@ -101,7 +92,7 @@ if (isset($_SESSION['id']) and $_SESSION['type']==0  and  $_SESSION['product_add
                         <img src="../../images/<?=$row['MI_IMG']?>">
                         <p><?= $row['MI_NAME'] ?></p>
                         <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
-                        <p>You save <?=number_format($total-$row['MI_PRICE'],2) ?>KM </p>
+                        <p>You save <?=number_format($row['MI_SUPPLY_PRICE']-$row['MI_PRICE'],2) ?>KM </p>
                     </a>
                     <?php if(isset($_SESSION['id'])and $_SESSION['type']==0){?>
                     <div class="cart-action"><label for="quantity">Quantity:</label> <input type="number" class="product-quantity" name="quantity" value="1" min="1"/><input type="submit" value="Add to Cart" class="btnAddAction" /></div>

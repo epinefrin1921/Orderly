@@ -13,15 +13,6 @@ if(checkRequiredField($id)){
     $query = oci_parse($conn, 'select * from MENU_ITEMS where MENU_ITEMS.MI_ID = '. $id);
     oci_execute($query);
 
-    $query2 = oci_parse($conn, 'select P.*, M.* from PACKAGE_LINE P ,MENU_ITEMS M where P.PL_CHILD_ID = MI_ID AND P.PL_FATHER_ID = '. $id);
-    oci_execute($query2);
-    $total=0;
-    while($row3=oci_fetch_assoc($query2)){
-        $total=$total+$row3['MI_PRICE'];
-    };
-    oci_execute($query2);
-    $query3 = oci_parse($conn, "UPDATE MENU_ITEMS set MI_SUPPLY_PRICE={$total} where MI_ID={$id}");
-    oci_execute($query3);
 
     $row = oci_fetch_assoc($query);
     oci_commit($conn);
@@ -48,7 +39,7 @@ $title = $row['MI_NAME'];
             <h2><?= $row['MI_NAME'] ?></h2>
             <p>Price: <?= $row['MI_PRICE'] ?>KM</p>
             <p>Description: <?= $row['MI_DESCRIPTION'] ?></p>
-            <p>You save <?=  number_format($total-$row['MI_PRICE'],2) ?>KM if you buy this combo! </p>
+            <p>You save <?=  number_format($row['MI_SUPPLY_PRICE']-$row['MI_PRICE'],2) ?>KM if you buy this combo! </p>
 
             <?php
             if (isset($_SESSION['id']) and $_SESSION['type']==1):?>

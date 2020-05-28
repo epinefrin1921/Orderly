@@ -38,8 +38,6 @@ if ($_POST) {
 
         $row = oci_fetch_row($query2);
 
-        var_dump($row);
-
 
         for($i = 0; $i<count($combo_product);$i++)
         {

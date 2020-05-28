@@ -39,7 +39,7 @@ if(!isset($_SESSION['id']))
     header('Location: ../index.php');
     exit();
 }
-if($_SESSION['id']!=$row2[4] and $_SESSION['type']!=1)
+if($_SESSION['id']!=$row2[2] and $_SESSION['type']!=1)
 {
     header('Location: ../index.php');
     exit();
@@ -76,7 +76,7 @@ $title='Order '.$id;
         <input type="submit">
     </form>
 <?php } ?>
-<p>Order time received: <?= $row2[1] ?></p>
+<p>Order time received: <?= $row2[5] ?></p>
 <p>Waiter: <?= $row2[14]." ".$row2[15] ?></p>
 <p>Order total: <?= $row2[2] ?>KM</p>
 <p>Client: <?= $row2[7]." ".$row2[8] ?></p>

@@ -28,7 +28,7 @@ foreach ($_SESSION['products']  as $line)
     $row=oci_fetch_row($query2);
 
     $price=$row[1];
-        $supply_price=$row[4];
+        $supply_price=$row[3];
 
     $oid=$row2[0];
 
