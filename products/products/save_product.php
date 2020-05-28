@@ -48,7 +48,7 @@ if ($_POST) {
 
     if(checkRequiredField($name) && checkRequiredField($price) && checkRequiredField($image) && checkRequiredField($description)) {
         $query = oci_parse($conn, "INSERT INTO MENU_ITEMS (MI_NAME, MI_PRICE, MI_DESCRIPTION, MI_SUPPLY_PRICE, MI_IMG, MI_TYPE, MI_CREATED, MI_DELETED) 
-                      VALUES ('{$name}', {$price},'{$description}',{$total}},'{$image}','single', to_date('{$date}','DD-MM-YY HH24:MI:SS'), NULL)");
+                      VALUES ('{$name}', {$price},'{$description}',{$total},'{$image}','single', to_date('{$date}','DD-MM-YY HH24:MI:SS'), NULL)");
         oci_execute($query);
 
         $query2=oci_parse($conn, "select * from MENU_ITEMS where  MI_NAME='{$name}' and MI_DESCRIPTION='{$description}'");
