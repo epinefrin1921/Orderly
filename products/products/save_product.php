@@ -17,7 +17,7 @@ function checkRequiredField ($value) {
 
 if ($_POST) {
     $ingr= $_POST['ingredients'];
-    $ingr_quant=$_POST['ingrquant'];
+    $ingr_quant2=$_POST['ingrquant'];
     $name = $_POST['name'];
     $description = $_POST['description'];
     $price = $_POST['price'];
