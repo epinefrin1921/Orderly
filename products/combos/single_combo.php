@@ -77,11 +77,11 @@ $title = $row['MI_NAME'];
 <section class="wrap" id="s3" style="color: black; padding-top: 20px">
     <?php while($row=oci_fetch_assoc($query2)):?>
         <div class="container">
-            <a href="../products/single_product.php?id=<?= $row[0] ?>" class="info-more">
-                <img src="../../images/<?=$row[4]?>">
+            <a href="../products/single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
+                <img src="../../images/<?=$row['MI_IMG']?>">
 
             <p><?= $row['MI_NAME'] ?></p>
-            <p>Price: <?= number_format($row[1],2)?>KM</p>
+            <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
             </a>
         </div>
     <?php endwhile; ?>
