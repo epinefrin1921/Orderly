@@ -39,11 +39,6 @@ if(!isset($_SESSION['id']))
     header('Location: ../index.php');
     exit();
 }
-if($_SESSION['id']!=$row2[2] and $_SESSION['type']!=1)
-{
-    header('Location: ../index.php');
-    exit();
-}
 $title='Order '.$id;
 ?>
 <!doctype html>
