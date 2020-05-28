@@ -27,9 +27,7 @@ if ($_POST) {
 
     move_uploaded_file($_FILES['image']['tmp_name'], '../../images/' . $image);
 
-    $ingr_quant=array_filter($ingr_quant, 'strlen');
-
-
+    $ingr_quant=array_values(array_filter($ingr_quant2));
 
 
     if(checkRequiredField($name) && checkRequiredField($price) && checkRequiredField($image) && checkRequiredField($description)) {
