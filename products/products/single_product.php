@@ -100,7 +100,6 @@ $title = $row['MI_NAME'];
                         <img src="../../images/<?=$row3['MI_IMG']?>">
                         <p><?= $row3['MI_NAME'] ?></p>
                         <p>Price: <?= number_format($row3['MI_PRICE'],2)?>KM</p>
-                        <button>Add to Cart</button>
                     </div>
                 </a>
             </div>

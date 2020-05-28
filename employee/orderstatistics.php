@@ -23,19 +23,18 @@ if($_POST) {
             exit();
         }
 
-        $query = oci_parse($conn, "select * from ORDERS where O_DATE_RECEIVED>to_date('{$start}','YYYY-MM-DD') and O_DATE_RECEIVED<to_date('{$end}','YYYY-MM-DD') ");
+        $query = oci_parse($conn, "select o.*, c.*, e.*
+                                   FROM orders o, client c, EMPLOYEE e
+                                   where e.E_ID=o.O_EMPLOYEE and o.O_CLIENT=c.C_ID and  O_DATE_RECEIVED>to_date('{$start}','YYYY-MM-DD') and O_DATE_RECEIVED<to_date('{$end}','YYYY-MM-DD') ");
         oci_execute($query);
-        $totalamount=0;
-        $number=0;
-        while($row=oci_fetch_assoc($query)){
-            $totalamount=$totalamount+$row['O_TOTAL_AMOUNT'];
-            $number=$number+1;
-        };
+
+
+
         $start = date('d.m.Y', strtotime($start));
         $end = date('d.m.Y', strtotime($end));
     }
 }
-$title='Financial results';
+$title='Order statistics';
 
 ?>
 <!DOCTYPE html>
@@ -50,7 +49,7 @@ $title='Financial results';
 <div id="helping"></div>
 
 <div>
-    <form action="finance.php" method="post">
+    <form action="orderstatistics.php" method="post">
         <label for="start">Start date</label>
         <input type="date" id="start" name="start">
         <label for="end">End date</label>
@@ -58,10 +57,24 @@ $title='Financial results';
         <input type="submit">
     </form>
 </div>
-
-
-
-
+<?php if($_POST):?>
+<?php if($row=oci_fetch_assoc($query)){
+oci_execute($query);
+?>
+<h1 style="text-align: center"> All orders: </h1>
+<section class="wrap" id="s3" style="color: black; padding-top: 20px">
+    <?php while($row=oci_fetch_assoc($query)):?>
+        <div class="container" style="color: #89253e">
+            <p>Order ID <?= $row['O_ID']?></p>
+            <p>Client <?= $row['C_FNAME']." ".$row['C_LNAME']?></p>
+            <p>Waiter <?= $row['E_FNAME']." ".$row['E_LNAME']?></p>
+            <p>Price: <?= number_format($row['O_TOTAL_AMOUNT'],2)?></p>
+            <p><a href="../orders/single_order.php?id=<?= $row['O_ID']?>">See this order</a></p>
+        </div>
+    <?php endwhile; ?>
+</section>
+<?php };?>
+<?php endif; ?>
 
 <?php include '../includes/footer.php'; ?>
 
