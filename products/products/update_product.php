@@ -23,6 +23,7 @@ if ($_POST) {
     $price = $_POST['price'];
     $price2 = $_POST['price_supply'];
     $id = $_POST['id'];
+    $total=0;
 
     if(checkRequiredField($_FILES['image']['name'])){
         $image = $_FILES['image']['name'];
@@ -45,12 +46,28 @@ if ($_POST) {
         header('Location: ../../error.php');
         exit();
     }
+    if(count($ingr_quant)==0){
+        $total=$price2;
+    }
+    else{
+        $check='select * from INGREDIENTS where IN_ID in (';
+        $check.=implode(",", $ingr);
+        $check.=')';
+        $query2=oci_parse($conn, $check);
+        oci_execute($query2);
+        $i=0;
+        while($row2=oci_fetch_assoc($query2)){
+            $total=$total+($row2['IN_PRICE']*$ingr_quant[$i]);
+            $i++;
+        }
+
+    }
 
     if(checkRequiredField($name) && checkRequiredField($price) && checkRequiredField($image) && checkRequiredField($description)) {
         $query2 = oci_parse($conn, "delete from RECIPE_LINE where RL_MENU={$id}");
         oci_execute($query2);
 
-        $query = oci_parse($conn, "UPDATE MENU_ITEMS set MI_NAME='$name', MI_DESCRIPTION='$description', MI_PRICE={$price}, MI_SUPPLY_PRICE=0, MI_IMG='{$image}' where MI_ID={$id}");
+        $query = oci_parse($conn, "UPDATE MENU_ITEMS set MI_NAME='$name', MI_DESCRIPTION='$description', MI_PRICE={$price}, MI_SUPPLY_PRICE={$total}, MI_IMG='{$image}' where MI_ID={$id}");
         oci_execute($query);
 
         for($i = 0; $i<count($ingr);$i++)
