@@ -13,6 +13,7 @@ if(checkRequiredField($id)){
     $query = oci_parse($conn, 'select * from MENU_ITEMS where MENU_ITEMS.MI_ID = '. $id);
     oci_execute($query);
 
+    $query2 = oci_parse($conn, 'select m.*, pl.* from MENU_ITEMS m, PACKAGE_LINE pl where m.MI_ID=pl.PL_CHILD_ID ');
 
     $row = oci_fetch_assoc($query);
     oci_commit($conn);
