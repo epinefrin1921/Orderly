@@ -10,7 +10,7 @@ $total=$_GET['total'];
 $id=$_SESSION['id'];
 
 $query = oci_parse($conn, "INSERT INTO ORDERS(O_DATE_RECEIVED, O_TOTAL_AMOUNT, O_STATUS, O_CLIENT, O_EMPLOYEE) 
-                      VALUES(sysdate, {$total},'pending', {$id}, 5)");
+                      VALUES(sysdate, {$total},'pending', {$id}, 2)");
 oci_execute($query);
 
 
