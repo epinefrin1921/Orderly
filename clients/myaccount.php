@@ -12,17 +12,17 @@ $row = oci_fetch_assoc($query);
 
 $query2 = oci_parse($conn, "select *
                                    FROM orders
-                                   where O_STATUS='pending' and O_CLIENT=". $id);
+                                   where O_STATUS='pending' and O_CLIENT=". $id." order by O_ID desc");
 oci_execute($query2);
 
 $query4 = oci_parse($conn, "select *
                                    FROM orders
-                                   where O_STATUS='active' and O_CLIENT=". $id);
+                                   where O_STATUS='active' and O_CLIENT=". $id." order by O_ID desc");
 oci_execute($query4);
 
 $query3 = oci_parse($conn, "select *
                                    FROM orders
-                                   where O_STATUS!='active' and O_STATUS!='pending' and O_CLIENT=". $id);
+                                   where O_STATUS!='active' and O_STATUS!='pending' and O_CLIENT=". $id." order by O_ID desc");
 oci_execute($query3);
 
 

@@ -3,7 +3,7 @@ session_start();
 $title = 'Homepage';
 include('includes/DB.php');
 
-$query = oci_parse($conn, "select * from(select * from MENU_ITEMS where MI_DELETED is null and MI_TYPE='single' ORDER BY DBMS_RANDOM.RANDOM) where ROWNUM<6");
+$query = oci_parse($conn, "select * from(select * from MENU_ITEMS where MI_DELETED is null and MI_TYPE='single' ORDER BY DBMS_RANDOM.RANDOM) where ROWNUM<5");
 oci_execute($query);
 
 ?>
@@ -58,7 +58,7 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
 
 <section class="wrap" id="s3">
     <section id="ss">
-        <h3>Recommended by others:</h3>
+        <h3>We recommend:</h3>
     </section>
     <?php while($row=oci_fetch_assoc($query) ):?>
         <div class="container">

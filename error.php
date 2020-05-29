@@ -14,6 +14,9 @@ $title = 'Error';
 <body>
 <?php include 'includes/header.php';?>
 
+<div id="helping"></div>
+
+
 <section class="wrap" id="s1">
     <div id="podnaslov">
         <h1>

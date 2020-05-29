@@ -16,22 +16,22 @@ include('../includes/DB.php');
 
 $query = oci_parse($conn, "select o.*, c.*
                                    FROM orders o, client c
-                                   where o.O_CLIENT=c.C_ID and o.O_STATUS='pending' and rownum<30");
+                                   where o.O_CLIENT=c.C_ID and o.O_STATUS='pending' and rownum<30 order by o.O_ID desc");
 oci_execute($query);
 
 $query2 = oci_parse($conn, "select o.*, c.*
                                    FROM orders o, client c
-                                   where o.O_CLIENT=c.C_ID and o.O_STATUS='active' and rownum<30");
+                                   where o.O_CLIENT=c.C_ID and o.O_STATUS='active' and rownum<30 order by o.O_ID desc");
 oci_execute($query2);
 
 $query3 = oci_parse($conn, "select o.*, c.*
                                    FROM orders o, client c
-                                   where o.O_CLIENT=c.C_ID and o.O_STATUS='prepared' and rownum<30");
+                                   where o.O_CLIENT=c.C_ID and o.O_STATUS='prepared' and rownum<30 order by o.O_ID desc");
 oci_execute($query3);
 
 $query4 = oci_parse($conn, "select o.*, c.*
                                    FROM orders o, client c
-                                   where o.O_CLIENT=c.C_ID and o.O_STATUS in ('deleted', 'finished') and rownum<10");
+                                   where o.O_CLIENT=c.C_ID and o.O_STATUS in ('deleted', 'finished') and rownum<10 order by o.O_ID desc");
 oci_execute($query4);
 
 ?>

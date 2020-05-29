@@ -17,14 +17,15 @@ if(isset($_GET['type'])){
     $type=$_GET['type'];
     $query = oci_parse($conn, "select o.*, c.*
                                    FROM orders o, client c
-                                   where o.O_CLIENT=c.C_ID and o.O_STATUS='{$type}'");
+                                   where o.O_CLIENT=c.C_ID and o.O_STATUS='{$type}' 
+                                   order by o.O_ID desc");
     oci_execute($query);
 }
 else{
     $type=null;
     $query = oci_parse($conn, "select o.*, c.*
                                    FROM orders o, client c
-                                   where o.O_CLIENT=c.C_ID");
+                                   where o.O_CLIENT=c.C_ID order by o.O_ID desc");
     oci_execute($query);
 }
 
