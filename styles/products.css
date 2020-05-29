@@ -7,17 +7,45 @@ form{
 }
 .cart-action{
     width: 100%;
+    margin-top: 5px;
 }
-input{
+h3{
+    color:white;
+    text-decoration: none;
+}
+.up{
+    width:98%;
+    background: white;
+    color:red;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 50px;
+    border-radius: 15px;
+
+}
+.open_cart{
+    color:white;
+    text-decoration: none;
+}
+
+input[type=number]{
+    width: 93%;
+    color:white;
+    background-color: #89253e;
+    border-radius: 10px;
+}
+input[type=submit]{
     width: 100%;
+    color:white;
+    background-color: #89253e;
+    border-radius: 10px;
 }
 .wrap2{
     width: 80%;
     margin:0 auto;
 }
-.jumbotron{
-    padding: 20px 15px 15px 0;
-}
+
 #helping{
     padding-bottom: 100px;
 }
@@ -41,9 +69,17 @@ button{
     width: 100%;
     text-decoration: none;
 }
+ a img{
+     width:100%;
+ }
 a{
     color: white;
 }
 .kolicina{
     display: inline-block;
+}
+input[type=text]{
+    background-color:red;
+    box-sizing: border-box;
+    border-radius: 10px;
 }

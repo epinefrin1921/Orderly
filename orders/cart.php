@@ -20,6 +20,7 @@ $title='Your cart';
     <?php include('../includes/head.php') ?>
     <link rel="stylesheet" href="../styles/stil.css">
     <link rel="stylesheet" href="../styles/products.css">
+    <link rel="stylesheet" href="../styles/cart.css">
 </head>
 
 <body>
@@ -28,14 +29,14 @@ $title='Your cart';
 <div id="helping"></div>
 
 <div class="wrap2 jumbotron">
-    <a href="../products/products/products.php"><h3>Continue shopping</h3></a>
+    <a href="../products/products/products.php"><h3 id="continue">Continue shopping</h3></a>
 <?php if($_SESSION['isUpdate']){?>
-<p> Cart updated</p>
+<div class="up"><p>Cart updated!</p></div>
 <?php }?>
 </div>
 
 <?php if(!isset($_SESSION['products']) or is_null($_SESSION['products']) or count($_SESSION['products'])==0){ ?>
-<h1>Shopping cart is empty!</h1>
+    <div class="wrap"><h1 class="up">Shopping cart is empty!</h1></div>
 
 <?php } else if(isset($_SESSION['products'])){ ?>
 <h1 id="naslov3">Products in your cart:</h1>
@@ -56,15 +57,15 @@ $title='Your cart';
                         <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
                     </a>
                     <input type="number" class="product-quantity" name="quantity" value="<?=$item[1]?>" min="1"/>
-                    <a href="deletefromcart.php?ID=<?php echo $row['MI_ID']; ?>">Delete from cart</a>
                     <input type="submit" value="Update cart" class="btnAddAction" />
+                    <a href="deletefromcart.php?ID=<?php echo $row['MI_ID']; ?>" id="del">Delete from cart</a>
                 </form>
             </div>
         </div>
     <?php endforeach; ?>
 </section>
-    <h1>Total amount: <?=$total_price?></h1>
-    <h1><a href="checkout.php?total=<?=$total_price?>" onclick="return confirm('Are you sure? Order will be placed');">Place your order</a></h1>
+    <div class="car"><h1>Total price: <span style="color:red"><?=$total_price?> KM</span></h1></div>
+    <div class="car" <h1><a href="checkout.php?total=<?=$total_price?>" onclick="return confirm('Are you sure? Order will be placed');" class="place">Place your order</a></h1></div>
 <?php }?>
 
 

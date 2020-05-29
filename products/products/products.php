@@ -16,6 +16,7 @@ oci_execute($query2);
 <html lang="en">
 <head>
     <?php include('../../includes/head.php') ?>
+    <link rel="stylesheet" href="../../styles/cart.css">
     <link rel="stylesheet" href="../../styles/stil.css">
     <link rel="stylesheet" href="../../styles/products.css">
 </head>
@@ -25,7 +26,7 @@ oci_execute($query2);
 <div id="helping"></div>
 
 
-    <div class="wrap2 jumbotron">
+    <div class="wrap2">
 <?php
 if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
     <p><a href="new_product.php">Add new product</a> </p>
@@ -34,23 +35,23 @@ if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
     <p><a href="arhive.php">Open deleted products and combos</a></p>
 <?php endif;?>
     </div>
-<div class="wrap2 jumbotron"
+<div class="wrap2">
 <?php
 if(!isset($_SESSION['id']) and !isset($_SESSION['products'])){?>
     <p>Not registered yet? <a href="../../validation/Register.php">Register now!</a> <a href="../../validation/LogIn.php">Log in</a> </p>
 <?php }
 else if (isset($_SESSION['id']) and $_SESSION['type']==0 and (is_null($_SESSION['products']) or count($_SESSION['products'])==0)):?>
-    <p>Your shopping cart is empty</p>
+    <p class="up">Your shopping cart is empty!</p>
 <?php endif;?>
 </div>
-<div class="wrap2 jumbotron"
+<div class="wrap2">
 <?php
 if (isset($_SESSION['products']) and count($_SESSION['products'])!=0):?>
-    <p><a href="../../orders/cart.php">Open cart</a></p>
+    <p class="open_cart"><a href="../../orders/cart.php" style="text-decoration: none"><i class="fas fa-shopping-cart"></i> Open cart</a></p>
 <?php endif;?>
 <?php
 if (isset($_SESSION['id']) and $_SESSION['type']==0  and  $_SESSION['product_added']):?>
-<p>Product added</p>
+<p class="up">Product added</p>
 <?php endif;?>
 
 
@@ -59,7 +60,7 @@ if (isset($_SESSION['id']) and $_SESSION['type']==0  and  $_SESSION['product_add
 
 <h1 id="naslov3">Products:</h1>
 
-<section class="wrap" id="s3">
+<section class="wrap2" id="s3">
 <?php while($row=oci_fetch_assoc($query)):?>
     <div class="container">
         <div class="container2">
@@ -82,7 +83,7 @@ if (isset($_SESSION['id']) and $_SESSION['type']==0  and  $_SESSION['product_add
     <h1 id="naslov3">Combos:</h1>
 </div>
 
-<section class="wrap" id="s3">
+<section class="wrap2" id="s3">
     <?php while($row=oci_fetch_assoc($query2)):?>
 
         <div class="container">
