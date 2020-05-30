@@ -47,6 +47,7 @@ oci_execute($query4);
 <?php include('../includes/header.php') ?>
 <div id="helping"></div>
 
+<div id="first">
 <?php if($row=oci_fetch_assoc($query)){
     oci_execute($query);
     ?>
@@ -63,7 +64,8 @@ oci_execute($query4);
         <?php endwhile; ?>
     </section>
 <?php };?>
-<?php if($row2=oci_fetch_assoc($query2)){
+<?php
+if($row2=oci_fetch_assoc($query2)){
     oci_execute($query2);
     ?>
     <h1 style="text-align: center"> All active orders: </h1>
@@ -111,6 +113,19 @@ oci_execute($query4);
         <?php endwhile; ?>
     </section>
 <?php };?>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        setInterval(timingLoad, 3000);
+        function timingLoad() {
+            $('#first').load(' #first', function() {
+            });
+        }
+    });
+</script>
+
 <?php include('../includes/footer.php') ?>
 </body>
 </html>

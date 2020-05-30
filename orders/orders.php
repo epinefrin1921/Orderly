@@ -10,7 +10,6 @@ if($_SESSION['type']==0){
     header('Location: ../../index.php');
     exit();
 }
-
 $title = 'All orders';
 include('../includes/DB.php');
 if(isset($_GET['type'])){
@@ -42,7 +41,7 @@ else{
 <body>
 <?php include('../includes/header.php') ?>
 <div id="helping"></div>
-
+<div id="first">
 <?php if($row=oci_fetch_assoc($query)){
     oci_execute($query);
     ?>
@@ -58,6 +57,20 @@ else{
         <?php endwhile; ?>
     </section>
 <?php };?>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        setInterval(timingLoad, 3000);
+        function timingLoad() {
+            $('#first').load(' #first', function() {
+            });
+        }
+    });
+</script>
+
 <?php include('../includes/footer.php') ?>
 </body>
 </html>

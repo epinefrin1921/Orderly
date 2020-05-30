@@ -56,6 +56,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
         <img src="../1529573631.png">
     </div>
 
+<div id="first">
     <?php if($row2=oci_fetch_assoc($query2)){
         oci_execute($query2);
         ?>
@@ -101,7 +102,21 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
             <?php endwhile; ?>
         </section>
     <?php };?>
+</div>
 </main>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        setInterval(timingLoad, 3000);
+        function timingLoad() {
+            $('#first').load(' #first', function() {
+            });
+        }
+    });
+</script>
+
 <?php include('../includes/footer.php') ?>
 </body>
 </html>

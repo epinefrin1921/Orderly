@@ -25,7 +25,7 @@ oci_execute($query2);
 
 $query3 = oci_parse($conn, "select o.*, c.*
                                    FROM orders o, client c
-                                   where o.O_CLIENT=c.C_ID and o.O_STATUS in ('deleted', 'done') and O_EMPLOYEE=". $id);
+                                   where o.O_CLIENT=c.C_ID and o.O_STATUS in ('deleted', 'finished') and O_EMPLOYEE=". $id);
 oci_execute($query3);
 
 $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
@@ -58,6 +58,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
         </div>
         <img src="../1529573631.png">
     </div>
+    <div id="first">
     <?php if($row2=oci_fetch_assoc($query2)){
         oci_execute($query2);
         ?>
@@ -89,7 +90,19 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
             <?php endwhile; ?>
         </section>
     <?php };?>
+    </div>
 </main>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        setInterval(timingLoad, 5000);
+        function timingLoad() {
+            $('#first').load(' #first', function() {
+            });
+        }
+    });
+</script>
 <?php include('../includes/footer.php') ?>
 </body>
 </html>
