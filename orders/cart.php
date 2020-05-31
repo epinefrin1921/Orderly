@@ -60,7 +60,7 @@ $minutes2=$minutes%60;
     <div class="wrap"><h1 class="up">Shopping cart is empty!</h1></div>
 
 <?php } else if(isset($_SESSION['products'])){ ?>
-    <h2>Average waiting time is <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</h2>
+    <h3>Average waiting time is <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</h3>
     <h1 id="naslov3">Products in your cart:</h1>
     <section class="wrap" id="s3">
         <?php foreach($_SESSION['products'] as $item):?>

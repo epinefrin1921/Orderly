@@ -3,7 +3,10 @@ h2 a{
     text-decoration: none;
     color:white;
 }
-
+h3{
+    color: white;
+    text-align: center;
+}
 .car{
     box-sizing: border-box;
     color:white;
