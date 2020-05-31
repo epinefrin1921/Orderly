@@ -65,7 +65,9 @@ $title='Your cart';
     <?php endforeach; ?>
 </section>
     <div class="car"><h1>Total price: <span style="color:red"><?=$total_price?> KM</span></h1></div>
-    <div class="car" <h1><a href="checkout.php?total=<?=$total_price?>" onclick="return confirm('Are you sure? Order will be placed');" class="place">Place your order</a></h1></div>
+    <div class="m1"></div>
+    <div class="car"><h1><a href="checkout.php?total=<?=$total_price?>" onclick="return confirm('Are you sure? Order will be placed');" class="place">Place your order</a></h1></div>
+    <div class="m1"></div>
 <?php }?>
 
 

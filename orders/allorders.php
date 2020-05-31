@@ -41,6 +41,8 @@ oci_execute($query4);
     <?php include('../includes/head.php') ?>
     <link rel="stylesheet" href="../styles/stil.css">
     <link rel="stylesheet" href="../styles/products.css">
+    <link rel="stylesheet" href="../styles/myaccount.css">
+    <link rel="stylesheet" href="../styles/allorders.css">
 </head>
 
 <body>
@@ -52,14 +54,14 @@ oci_execute($query4);
     oci_execute($query);
     ?>
     <h1 style="text-align: center"> All pending orders:  </h1>
-    <a href="orders.php?type=pending">See more...</a>
-    <section class="wrap" id="s3" style="color: black; padding-top: 20px">
+    <div class="w1"><a href="orders.php?type=pending">See more...</a></div>
+    <section class="wrap" id="s3" style="color: white; padding-top: 20px">
         <?php while($row=oci_fetch_assoc($query)):?>
-            <div class="container" style="color: #89253e">
+            <div class="in-line" style="color: white">
                 <p>Order ID <?= $row['O_ID']?></p>
                 <p>Client <?= $row['C_FNAME']." ".$row['C_LNAME']?></p>
                 <p>Price: <?= number_format($row['O_TOTAL_AMOUNT'],2)?></p>
-                <p><a href="../orders/single_order.php?id=<?= $row['O_ID']?>">See this order</a></p>
+                <p><a href="../orders/single_order.php?id=<?= $row['O_ID']?>" style="text-decoration: none;">See this order</a></p>
             </div>
         <?php endwhile; ?>
     </section>
@@ -69,14 +71,14 @@ if($row2=oci_fetch_assoc($query2)){
     oci_execute($query2);
     ?>
     <h1 style="text-align: center"> All active orders: </h1>
-    <a href="orders.php?type=active">See more...</a>
-    <section class="wrap" id="s3" style="color: black; padding-top: 20px">
+    <div class="w1"><a href="orders.php?type=active">See more...</a></div>
+    <section class="wrap" id="s3" style="color: white; padding-top: 20px">
         <?php while($row2=oci_fetch_assoc($query2)):?>
-            <div class="container" style="color: #89253e">
+            <div class="in-line" style="color: white">
                 <p>Order ID <?= $row2['O_ID']?></p>
                 <p>Client <?= $row2['C_FNAME']." ".$row2['C_LNAME']?></p>
                 <p>Price: <?= number_format($row2['O_TOTAL_AMOUNT'],2)?></p>
-                <p><a href="../orders/single_order.php?id=<?= $row2['O_ID']?>">See this order</a></p>
+                <p><a href="../orders/single_order.php?id=<?= $row2['O_ID']?>" style="text-decoration: none;">See this order</a></p>
             </div>
         <?php endwhile; ?>
     </section>
@@ -85,14 +87,14 @@ if($row2=oci_fetch_assoc($query2)){
     oci_execute($query3);
     ?>
     <h1 style="text-align: center"> All prepared orders: </h1>
-    <a href="orders.php?type=prepared">See more...</a>
-    <section class="wrap" id="s3" style="color: black; padding-top: 20px">
+    <div class="w1"><a href="orders.php?type=prepared">See more...</a></div>
+    <section class="wrap" id="s3" style="color: white; padding-top: 20px">
         <?php while($row3=oci_fetch_assoc($query3)):?>
-            <div class="container" style="color: #89253e">
+            <div class="in-line" style="color: white">
                 <p>Order ID <?= $row3['O_ID']?></p>
                 <p>Client <?= $row3['C_FNAME']." ".$row3['C_LNAME']?></p>
                 <p>Price: <?= number_format($row3['O_TOTAL_AMOUNT'],2)?></p>
-                <p><a href="../orders/single_order.php?id=<?= $row3['O_ID']?>">See this order</a></p>
+                <p><a href="../orders/single_order.php?id=<?= $row3['O_ID']?>" style="text-decoration: none;">See this order</a></p>
             </div>
         <?php endwhile; ?>
     </section>
@@ -101,14 +103,14 @@ if($row2=oci_fetch_assoc($query2)){
     oci_execute($query4);
     ?>
     <h1 style="text-align: center"> Orders history: </h1>
-    <a href="orders.php">See more...</a>
-    <section class="wrap" id="s3" style="color: #000000; padding-top: 20px">
+    <div class="w1"><a href="orders.php">See more...</a></div>
+    <section class="wrap" id="s3" style="color: white; padding-top: 20px">
         <?php while($row4=oci_fetch_assoc($query4)):?>
-            <div class="container" style="color: #89253e">
-                <p>Order ID <?= $row4['O_ID']?></p>
-                <p>Client <?= $row4['C_FNAME']." ".$row4['C_LNAME']?></p>
-                <p>Price: <?= number_format($row4['O_TOTAL_AMOUNT'],2)?></p>
-                <p><a href="../orders/single_order.php?id=<?= $row4['O_ID']?>">See this order</a></p>
+            <div class="in-line" style="color: white">
+                <p style="color:white">Order ID <?= $row4['O_ID']?></p>
+                <p style="color:white">Client <?= $row4['C_FNAME']." ".$row4['C_LNAME']?></p>
+                <p style="color:white">Price: <?= number_format($row4['O_TOTAL_AMOUNT'],2)?></p>
+                <p style="color:white"><a href="../orders/single_order.php?id=<?= $row4['O_ID']?>" style="text-decoration: none">See this order</a></p>
             </div>
         <?php endwhile; ?>
     </section>

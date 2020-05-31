@@ -39,6 +39,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
     <?php include('../includes/head.php') ?>
     <link rel="stylesheet" href="../styles/productsingle.css">
     <link rel="stylesheet" href="../styles/stil.css">
+    <link rel="stylesheet" href="../styles/myaccount.css">
 
 </head>
 
@@ -63,9 +64,9 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
         <h1 style="text-align: center"> Pending orders: </h1>
         <section class="wrap" id="s3" style="color: black; padding-top: 20px">
             <?php while($row2=oci_fetch_assoc($query2)):?>
-                <div class="container" style="color: #89253e">
-                    <p>Order ID <?= $row2['O_ID']?></p>
-                    <p>Price: <?= number_format($row2['O_TOTAL_AMOUNT'],2)?></p>
+                <div class="in-line" style="color: #89253e">
+                    <p style="color: white">Order ID <?= $row2['O_ID']?></p>
+                    <p style="color: white">Price: <?= number_format($row2['O_TOTAL_AMOUNT'],2)?></p>
                     <p><a href="../orders/single_order.php?id=<?= $row2['O_ID']?>">See this order</a></p>
                 </div>
             <?php endwhile; ?>
@@ -78,7 +79,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
         <h1 style="text-align: center"> Active orders: </h1>
         <section class="wrap" id="s3" style="color: black; padding-top: 20px">
             <?php while($row4=oci_fetch_assoc($query4)):?>
-                <div class="container" style="color: #89253e">
+                <div class="in-line" style="color: #89253e">
                     <p>Order ID <?= $row4['O_ID']?></p>
                     <p>Price: <?= number_format($row4['O_TOTAL_AMOUNT'],2)?></p>
                     <p><a href="../orders/single_order.php?id=<?= $row4['O_ID']?>">See this order</a></p>
@@ -94,7 +95,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
         <h1 style="text-align: center"> Your order history: </h1>
         <section class="wrap" id="s3" style="color: black; padding-top: 20px">
             <?php while($row3=oci_fetch_assoc($query3)):?>
-                <div class="container" style="color: #89253e">
+                <div class="in-line" style="color: #89253e">
                     <p>Order ID <?= $row3['O_ID']?></p>
                     <p>Price: <?= number_format($row3['O_TOTAL_AMOUNT'],2)?></p>
                     <p><a href="../orders/single_order.php?id=<?= $row3['O_ID']?>">See this order</a></p>

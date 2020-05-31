@@ -36,6 +36,7 @@ else{
     <?php include('../includes/head.php') ?>
     <link rel="stylesheet" href="../styles/stil.css">
     <link rel="stylesheet" href="../styles/products.css">
+    <link rel="stylesheet" href="../styles/myaccount.css">
 </head>
 
 <body>
@@ -48,11 +49,11 @@ else{
     <h1 style="text-align: center"> All <?= $type ?> orders: </h1>
     <section class="wrap" id="s3" style="color: black; padding-top: 20px">
         <?php while($row=oci_fetch_assoc($query)):?>
-            <div class="container" style="color: #89253e">
+            <div class="in-line" style="color: white">
                 <p>Order ID <?= $row['O_ID']?></p>
                 <p>Client <?= $row['C_FNAME']." ".$row['C_LNAME']?></p>
                 <p>Price: <?= number_format($row['O_TOTAL_AMOUNT'],2)?></p>
-                <p><a href="../orders/single_order.php?id=<?= $row['O_ID']?>">See this order</a></p>
+                <p><a href="../orders/single_order.php?id=<?= $row['O_ID']?>" style="text-decoration: none;">See this order</a></p>
             </div>
         <?php endwhile; ?>
     </section>

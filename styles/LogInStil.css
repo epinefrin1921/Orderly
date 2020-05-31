@@ -126,4 +126,7 @@ h1 a{
     }
 
 }
-
+.erroneus{
+    color:red;
+    width:100%;
+}

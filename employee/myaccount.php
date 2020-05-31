@@ -36,6 +36,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
     <?php include('../includes/head.php') ?>
     <link rel="stylesheet" href="../styles/productsingle.css">
     <link rel="stylesheet" href="../styles/stil.css">
+    <link rel="stylesheet" href="../styles/myaccount.css">
 
 </head>
 
@@ -65,7 +66,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
         <h1 style="text-align: center"> My active orders: </h1>
         <section class="wrap" id="s3" style="color: black; padding-top: 20px">
             <?php while($row2=oci_fetch_assoc($query2)):?>
-                <div class="container" style="color: #89253e">
+                <div class="in-line" style="color: white">
                     <p>Order ID <?= $row2['O_ID']?></p>
                     <p>Client <?= $row2['C_FNAME']." ".$row2['C_LNAME']?></p>
                     <p>Price: <?= number_format($row2['O_TOTAL_AMOUNT'],2)?></p>
@@ -79,9 +80,9 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
         oci_execute($query3);
         ?>
         <h1 style="text-align: center"> My order history: </h1>
-        <section class="wrap" id="s3" style="color: black; padding-top: 20px">
+        <section class="wrap" id="s3" style="color: white; padding-top: 20px">
             <?php while($row3=oci_fetch_assoc($query3)):?>
-                <div class="container" style="color: #89253e">
+                <div class="in-line" style="color: white">
                     <p>Order ID <?= $row3['O_ID']?></p>
                     <p>Client <?= $row3['C_FNAME']." ".$row3['C_LNAME']?></p>
                     <p>Price: <?= number_format($row3['O_TOTAL_AMOUNT'],2)?></p>

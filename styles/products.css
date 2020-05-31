@@ -83,3 +83,22 @@ input[type=text]{
     box-sizing: border-box;
     border-radius: 10px;
 }
+#supp{
+    text-align: center;
+    color:white;
+    font-weight: bold;
+}
+
+#supp a{
+    border:1px solid white;
+    padding: 5px 10px;
+    border-radius:15px ;
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#supp a:hover{
+    background-color: white;
+    color:#89253e;
+}

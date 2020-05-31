@@ -14,18 +14,7 @@
 #divi p{
     margin-bottom:5px;
 }
-.temp
-{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    margin: 0 auto;
-    align-items: center;
-}
-.temp div{
-    width: 48%;
-    margin: 0 auto;
-}
+
 #status{
     text-align: center;
     padding:5px;
@@ -34,9 +23,7 @@
     font-weight: bold;
     margin-bottom: 10px;
 }
-::-webkit-scrollbar {
-    display: none;
-}
+
 #like{
     text-align: center;
     padding: 5px;
@@ -76,23 +63,17 @@
     color:white;
 }
 
-.sub{
+#sub{
     text-align: center;
 }
 
-.sub input{
+#sub input{
     width:25%;
 }
 
-.order_type{
+#order_type{
     background-color: #89253e;
     color: white;
     font-weight: bold;
     padding: 3px;
-}
-
-#divir{
-    text-align: center;
-    font-size: 18px;
-    color:white;
 }

@@ -47,6 +47,7 @@ $title='Order '.$id;
     <?php include('../includes/head.php') ?>
     <link rel="stylesheet" href="../styles/stil.css">
     <link rel="stylesheet" href="../styles/products.css">
+    <link rel="stylesheet" href="../styles/single_order.css"
 </head>
 
 <body>
@@ -58,26 +59,28 @@ $title='Order '.$id;
         <p>Time from placing the order to order being delivered to the costumer: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</p>
    <?php }
 ?>
-<p>Order status: <?= $status ?></p>
+<div id="status"><p1>Order status: <?= $status ?></p1></div>
 <?php if($_SESSION['type']==1 and $row2[3]!='deleted' and $row2[3]!='finished') {?>
     <form method="post" action="updateorder.php?ID=<?=$id?>">
-        <label for="type">Choose a status of the order:</label>
+       <div id="label"><label for="type">Choose a status of the order:</label>
         <select name="type" id="order_type">
             <option value="pending">Pending</option>
             <option value="active">Active</option>
             <option value="prepared">Prepared</option>
             <option value="finished">Finished</option>
-        </select>
-        <input type="submit">
+        </select></div>
+        <div id="sub"><input type="submit"></div>
     </form>
 <?php } ?>
+<div id="divi">
 <p>Order time received: <?= $row2[5] ?></p>
 <p>Waiter: <?= $row2[14]." ".$row2[15] ?></p>
 <p>Order total: <?= $row2[2] ?>KM</p>
 <p>Client: <?= $row2[7]." ".$row2[8] ?></p>
+</div>
 <?php if($_SESSION['type']==0):?>
-    <p>Liked this order last time?</p>
-    <a href="repeatorder.php?id=<?=$id?>" onclick="return confirm('Are you sure? You will be redirected to cart');">Order again</a>
+    <div id="like"><p>Liked this order last time?</p></div>
+    <div class="are"><a href="repeatorder.php?id=<?=$id?>" onclick="return confirm('Are you sure? You will be redirected to cart');" style="text-decoration: none">Order again</a></div>
 <?php endif; ?>
 <h1 id="naslov3">Products in the order:</h1>
 <section class="wrap" id="s3">
@@ -96,9 +99,9 @@ $title='Order '.$id;
         </div>
     <?php endwhile; ?>
 </section>
-
+  <div class="m1"></div>
 <?php if($_SESSION['type']==0 and $status=='pending'):?>
-   <a href="deleteorder.php?id=<?=$id?>" onclick="return confirm('Are you sure? Order will be deleted');">Delete order</a>
+   <div class="are"><a href="deleteorder.php?id=<?=$id?>" onclick="return confirm('Are you sure? Order will be deleted');" style="text-decoration: none">Delete order</a></div>
 <?php endif; ?>
 
 <?php include('../includes/footer.php') ?>
