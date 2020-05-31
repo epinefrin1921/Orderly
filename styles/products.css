@@ -96,9 +96,16 @@ input[type=text]{
     color:white;
     font-weight: bold;
     text-decoration: none;
+    margin: 15px;
 }
 
 #supp a:hover{
     background-color: white;
     color:#89253e;
+}
+@media (max-width: 500px) {
+    #supp span{
+        display: block;
+        margin-bottom:20px;
+    }
 }

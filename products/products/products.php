@@ -38,7 +38,7 @@ if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
 <div class="wrap2">
 <?php
 if(!isset($_SESSION['id']) and !isset($_SESSION['products'])){?>
-    <div id="supp">Not registered yet? <a href="../../validation/Register.php">Register now!</a> <a href="../../validation/LogIn.php">Log in</a></div>
+    <div id="supp"><span>Not registered yet?</span> <a href="../../validation/Register.php">Register now!</a> <a href="../../validation/LogIn.php">Log in</a></div>
 <?php }
 else if (isset($_SESSION['id']) and $_SESSION['type']==0 and (is_null($_SESSION['products']) or count($_SESSION['products'])==0)):?>
     <p class="up">Your shopping cart is empty!</p>
