@@ -2,7 +2,9 @@
     width:80%;
     margin: 0 auto;
 }
-
+h1{
+    color: white;
+}
 .w1 a{
     text-decoration: none;
     padding: 8px;

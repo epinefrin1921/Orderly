@@ -46,7 +46,7 @@ else{
 <?php if($row=oci_fetch_assoc($query)){
     oci_execute($query);
     ?>
-    <h1 style="text-align: center"> All <?= $type ?> orders: </h1>
+    <h1 style="text-align: center; color: white"> All <?= $type ?> orders: </h1>
     <section class="wrap" id="s3" style="color: black; padding-top: 20px">
         <?php while($row=oci_fetch_assoc($query)):?>
             <div class="in-line" style="color: white">
