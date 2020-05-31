@@ -51,6 +51,7 @@ else{
         <?php while($row=oci_fetch_assoc($query)):?>
             <div class="in-line" style="color: white">
                 <p>Order ID <?= $row['O_ID']?></p>
+                <p style="color:white">Status: <?= $row['O_STATUS']?></p>
                 <p>Client <?= $row['C_FNAME']." ".$row['C_LNAME']?></p>
                 <p>Price: <?= number_format($row['O_TOTAL_AMOUNT'],2)?></p>
                 <p><a href="../orders/single_order.php?id=<?= $row['O_ID']?>" style="text-decoration: none;">See this order</a></p>

@@ -25,15 +25,16 @@ if($_POST) {
             exit();
         }
 
-        $query = oci_parse($conn, "select e.E_FNAME, e.E_LNAME, max(o.O_TOTAL_AMOUNT) as max, min(o.O_TOTAL_AMOUNT) as min, avg(o.O_TOTAL_AMOUNT) as avg, count(distinct o.O_ID) as cnt, sum(o.O_TOTAL_AMOUNT) as sum
+        $query = oci_parse($conn, "select e.E_FNAME, e.E_LNAME, e.E_ID, max(o.O_TOTAL_AMOUNT) as max, min(o.O_TOTAL_AMOUNT) as min, avg(o.O_TOTAL_AMOUNT) as avg, count(distinct o.O_ID) as cnt, sum(o.O_TOTAL_AMOUNT) as sum
         FROM EMPLOYEE e, ORDERS o
         where o.O_EMPLOYEE=e.E_ID and O_DATE_RECEIVED>to_date('{$start}','YYYY-MM-DD') and O_DATE_RECEIVED<to_date('{$end}','YYYY-MM-DD') 
-        group by e.E_FNAME, e.E_LNAME");
+        group by e.E_FNAME, e.E_LNAME, e.E_ID");
         oci_execute($query);
         $found=true;
 
-        $start = date('d.m.Y', strtotime($start));
-        $end = date('d.m.Y', strtotime($end));
+
+        $start = date('Y-m-d', strtotime($_POST['start']));
+        $end = date('Y-m-d', strtotime($_POST['end']));
     }
 }
 
@@ -62,17 +63,43 @@ $title='Employee statistics';
 <?php if($_POST and $found):?>
     <h3>Period: <?=$start?> to <?=$end?>, excluding last day</h3>
 
-<div>
-    <h1>Waiter statistics: </h1>
-    <?php while($row=oci_fetch_assoc($query)): ?>
-    <h3>Name: <?= $row['E_FNAME']." ".$row['E_LNAME'] ?></h3>
-    <h4>Total orders delivered in that period: <?=$row['CNT']?></h4>
-        <h4>Highest paid order delivered in that period: <?=$row['MAX']?></h4>
-        <h4>Minimum paid order in that period: <?=$row['MIN']?></h4>
-        <h4>Average order paid in that period: <?=$row['AVG']?></h4>
-        <h4>Total amount generated in that period: <?=$row['SUM']?></h4>
-    <?php endwhile; ?>
-</div>
+    <div>
+        <h1>Waiter statistics: </h1>
+        <?php while($row=oci_fetch_assoc($query)): ?>
+            <h3>Name: <?= $row['E_FNAME']." ".$row['E_LNAME'] ?></h3>
+            <h4>Total orders delivered in that period: <?=$row['CNT']?></h4>
+            <h4>Highest paid order delivered in that period: <?=$row['MAX']?></h4>
+            <h4>Minimum paid order in that period: <?=$row['MIN']?></h4>
+            <h4>Average order paid in that period: <?=$row['AVG']?></h4>
+            <h4>Total amount generated in that period: <?=$row['SUM']?></h4>
+            <?php
+            $query3 = oci_parse($conn, "select o.O_ID, e.E_FNAME, e.E_LNAME ,TO_CHAR(max(OH_TIME_CHANGED), 'YYYY-MM-DD HH24:MI:SS') as max, TO_CHAR(min(OH_TIME_CHANGED), 'YYYY-MM-DD HH24:MI:SS') as min
+                        from orders_history oh, orders o, employee e
+                        where OH_ORDER=o.O_ID and o.O_EMPLOYEE=e.E_ID and o.O_EMPLOYEE={$row['E_ID']} and O_DATE_RECEIVED>to_date('{$start}','YYYY-MM-DD') and O_DATE_RECEIVED<to_date('{$end}','YYYY-MM-DD') and o.O_STATUS='finished'
+                        group by o.O_ID, E_FNAME, E_LNAME");
+
+            oci_execute($query3);
+            $i=0;
+            $totaltime=0;
+
+            while($row7=oci_fetch_assoc($query3)){
+                $time1=date('d.m.Y H:i:s', strtotime($row7['MAX']));
+                $time2=date('d.m.Y H:i:s', strtotime($row7['MIN']));
+                $time3=abs(strtotime($time1)-strtotime($time2));
+                $totaltime=$totaltime+$time3;
+                $i++;
+            }
+            $totaltime=$totaltime/$i;
+
+            $minutes=$totaltime/60;
+
+            $hours=floor($minutes/60);
+
+            $minutes2=$minutes%60;
+            ?>
+            <h4>Average waiting time in that period: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</h4>
+        <?php endwhile; ?>
+    </div>
 <?php endif; ?>
 
 

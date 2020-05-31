@@ -79,7 +79,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
         <h1 style="text-align: center"> Active orders: </h1>
         <section class="wrap" id="s3" style="color: black; padding-top: 20px">
             <?php while($row4=oci_fetch_assoc($query4)):?>
-                <div class="in-line" style="color: #89253e">
+                <div class="in-line">
                     <p>Order ID <?= $row4['O_ID']?></p>
                     <p>Price: <?= number_format($row4['O_TOTAL_AMOUNT'],2)?></p>
                     <p><a href="../orders/single_order.php?id=<?= $row4['O_ID']?>">See this order</a></p>
@@ -95,7 +95,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
         <h1 style="text-align: center"> Your order history: </h1>
         <section class="wrap" id="s3" style="color: black; padding-top: 20px">
             <?php while($row3=oci_fetch_assoc($query3)):?>
-                <div class="in-line" style="color: #89253e">
+                <div class="in-line" >
                     <p>Order ID <?= $row3['O_ID']?></p>
                     <p>Price: <?= number_format($row3['O_TOTAL_AMOUNT'],2)?></p>
                     <p><a href="../orders/single_order.php?id=<?= $row3['O_ID']?>">See this order</a></p>

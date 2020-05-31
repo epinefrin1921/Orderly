@@ -32,7 +32,7 @@ oci_execute($query);
 
 <div class="wrap2 jumbotron">
     <p><a href="new_ingredient.php">Add new ingredient</a> </p>
-    <p><a href="storage.php">Back to thestorage</a> </p>
+    <p><a href="storage.php">Back to the storage</a> </p>
     <h1 id="naslov3">Archived ingredients:</h1>
 </div>
 
@@ -55,3 +55,4 @@ oci_execute($query);
 <?php include('../../includes/footer.php') ?>
 </body>
 </html>
+
