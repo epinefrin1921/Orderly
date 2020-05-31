@@ -53,6 +53,7 @@ $title='Order '.$id;
 <body>
 <?php include('../includes/header.php') ?>
 <div id="helping"></div>
+<div id="first">
 <?php
     if($row2[3]=='finished')
     {?>
@@ -103,9 +104,21 @@ $title='Order '.$id;
 <?php if($_SESSION['type']==0 and $status=='pending'):?>
    <div class="are"><a href="deleteorder.php?id=<?=$id?>" onclick="return confirm('Are you sure? Order will be deleted');" style="text-decoration: none">Delete order</a></div>
 <?php endif; ?>
+</div>
 
 <?php include('../includes/footer.php') ?>
 
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        setInterval(timingLoad, 3000);
+        function timingLoad() {
+            $('#first').load(' #first', function() {
+            });
+        }
+    });
+</script>
 
 <?php $_SESSION['isUpdate']=null;?>
 </body>
