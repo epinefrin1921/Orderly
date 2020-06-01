@@ -18,13 +18,7 @@ $title = 'Password recovery';
 <h1>Welcome to orderly</h1>
 <div class="Login">
     <h2>Password recovery</h2>
-    <p>Enter your email address below. You will get mail from our support with instructions how to recover you password.<br><br> Thank you for using our site!</p>
-    <form action="sendEmail.php" method="post">
-        <div class="textbox">
-            <input type="text" placeholder="E-mail" name="" value="">
-        </div>
-        <input class="butt" type="submit" name="" value="Submit">
-    </form>
+    <p>Please contact out IT depatment at e-mail: info@orderly.com<br><br> Thank you for using our site!</p>
 </div>
 </body>
 </html>
