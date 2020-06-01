@@ -25,6 +25,9 @@ img{
     position: fixed;
     width: 100%;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 #naslov{
     font-family: 'Lobster', cursive;
     letter-spacing: 2px;

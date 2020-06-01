@@ -29,6 +29,9 @@ header{
 #d2{
     display: none;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 .wrap{
     width: 80%;
     margin:0 auto;

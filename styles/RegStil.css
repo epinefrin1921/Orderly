@@ -20,7 +20,9 @@ h1{
     font-family: 'Lobster', cursive;
     margin-bottom: 40px;
 }
-
+::-webkit-scrollbar {
+    display: none;
+}
 .Login {
     width: 50%;
     margin:0 auto;

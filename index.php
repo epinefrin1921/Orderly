@@ -13,7 +13,11 @@ oci_execute($query);
     <link rel="stylesheet" href="styles/stil.css">
     <?php include('includes/head.php') ?>
 </head>
-
+<style>
+    ::-webkit-scrollbar {
+        display: none;
+    }
+</style>
 <body>
 <?php include 'includes/header.php';?>
 <div id="helping"></div>

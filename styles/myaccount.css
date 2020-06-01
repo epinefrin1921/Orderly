@@ -14,7 +14,9 @@
 .in-line a:hover{background-color: white;
     color: #89253e;
 }
-
+::-webkit-scrollbar {
+    display: none;
+}
 .in-line p,.in-line a{
     width:23%;
     text-align: center;

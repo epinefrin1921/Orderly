@@ -9,7 +9,11 @@ $title = 'About';
 
     <?php include('includes/head.php') ?>
 </head>
-
+<style>
+    ::-webkit-scrollbar {
+        display: none;
+    }
+</style>
 <body>
 <?php include 'includes/header.php';?>
 <div class="cont">

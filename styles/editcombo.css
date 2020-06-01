@@ -13,7 +13,9 @@
     -ms-user-select: none;
     user-select: none;
 }
-
+::-webkit-scrollbar {
+    display: none;
+}
 /* Hide the browser's default checkbox */
 .container input[type=checkbox] {
     position: absolute;
