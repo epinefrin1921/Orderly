@@ -1,10 +1,17 @@
 <?php
-$to      = 'nedim.ajdin1@gmail.com';
-$subject = 'Test';
-$message = 'hello test 123';
-$headers = 'From: Orderly' . "\r\n" .
-    'Reply-To: nedim.ajdin@stu.ssst.edu.ba' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+$sender = 'nedim.ajdin1@gmail.com';
+$recipient = 'nedim.ajdin@stu.ssst.edu.ba';
 
-mail($to, $subject, $message, $headers);
+$subject = "php mail test";
+$message = "php test message";
+$headers = 'From:' . $sender;
+
+if (mail($recipient, $subject, $message, $headers))
+{
+    echo "Message accepted";
+}
+else
+{
+    echo "Error: Message not accepted";
+}
 ?>
