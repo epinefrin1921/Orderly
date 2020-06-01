@@ -46,12 +46,11 @@ $title = $row['MI_NAME'];
         <div class="info">
             <h2><?= $row['MI_NAME'] ?></h2>
             <p>Price: <?= $row['MI_PRICE'] ?>KM</p>
-            <p>Supply price: <?= $row['MI_SUPPLY_PRICE'] ?>KM</p>
             <p>Description: <?= $row['MI_DESCRIPTION'] ?></p>
 
             <?php
             if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
-
+                <p>Supply price: <?= $row['MI_SUPPLY_PRICE'] ?>KM</p>
                 <p>Date added: <?= date("d.m.Y", strtotime($row['MI_CREATED'])) ?></p>
                 <a href="edit_product.php?id=<?= $row['MI_ID'] ?>">Edit product </a>
 
