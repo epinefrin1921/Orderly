@@ -54,12 +54,6 @@ $title='Order '.$id;
 <?php include('../includes/header.php') ?>
 <div id="helping"></div>
 <div id="first">
-<?php
-    if($row2[3]=='finished')
-    {?>
-        <p>Time from placing the order to order being delivered to the costumer: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</p>
-   <?php }
-?>
 <div id="status"><p1>Order status: <?= $status ?></p1></div>
 <?php if($_SESSION['type']==1 and $row2[3]!='deleted' and $row2[3]!='finished') {?>
     <form method="post" action="updateorder.php?ID=<?=$id?>">
@@ -78,6 +72,12 @@ $title='Order '.$id;
 <p>Waiter: <?= $row2[14]." ".$row2[15] ?></p>
 <p>Order total: <?= $row2[2] ?>KM</p>
 <p>Client: <?= $row2[7]." ".$row2[8] ?></p>
+    <?php
+    if($row2[3]=='finished')
+    {?>
+        <p>Time from placing the order to order being delivered to the costumer: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</p>
+    <?php }
+    ?>
 </div>
 <?php if($_SESSION['type']==0):?>
     <div id="like"><p>Liked this order last time?</p></div>
