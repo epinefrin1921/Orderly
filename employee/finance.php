@@ -86,7 +86,7 @@ $title='Financial results';
     <div class="fin1"><h3>Number of orders for a given period: <?=$number?></h3></div>
     <div class="fin1"><h3>Best sold item is : <a href="../products/products/single_product.php?id=<?=$item_id?>" style="color:red; text-decoration: none"><?=$item_name?></a> , that has been sold <span style="color:green;"><?=$item_number?></span> times</h3></div>
     <?php  while($row3=oci_fetch_assoc($query3)): ?>
-        <div>
+        <div id="pok">
             <?php
                 if(is_null($row3['T'])){
                     $no=0;
@@ -112,10 +112,7 @@ $title='Financial results';
     <h1>No orders were found in given period!</h1>
 <?php endif; $found=false; ?>
 
-
-
-
-<?php include '../includes/footer.php'; ?>
 </main>
+<?php include '../includes/footer.php'; ?>
 </body>
 </html>
