@@ -24,16 +24,16 @@ if($_POST) {
             header('Location: ../error.php');
             exit();
         }
-
+        $found=false;
         $query = oci_parse($conn, "select * from ORDERS where O_DATE_RECEIVED>to_date('{$start}','YYYY-MM-DD') and O_DATE_RECEIVED<to_date('{$end}','YYYY-MM-DD') ");
         oci_execute($query);
         $totalamount=0;
         $number=0;
         while($row=oci_fetch_assoc($query)){
-          $totalamount=$totalamount+$row['O_TOTAL_AMOUNT'];
+            $totalamount=$totalamount+$row['O_TOTAL_AMOUNT'];
             $number=$number+1;
+            $found=true;
         };
-        $found=true;
         $query2 = oci_parse($conn, "select ol.OL_MENU, m.MI_NAME, m.MI_PRICE , sum(ol.OL_QUANTITY) as t
                              FROM ORDER_LINE ol, MENU_ITEMS m, ORDERS o
                              where m.MI_ID=ol.OL_MENU and o.O_ID=ol.OL_ORDER and O_DATE_RECEIVED>to_date('{$start}','YYYY-MM-DD') and O_DATE_RECEIVED<to_date('{$end}','YYYY-MM-DD')
@@ -62,7 +62,6 @@ $title='Financial results';
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../styles/stil.css">
-    <link rel="stylesheet" href="../styles/finance.css">
     <?php include('../includes/head.php') ?>
 </head>
 
@@ -95,7 +94,7 @@ $title='Financial results';
                 else{
                     $no=$row3['T'];
                 }
-            $found=false; ?>
+            ?>
             <div class="fin1"><h3>Item name: <?=$row3['MI_NAME']?></h3></div>
             <div class="fin1"><h4><a href="../products/products/single_product.php?id=<?=$row3['OL_MENU']?>">Link to the item</a></h4></div>
             <div class="fin1"><h4>Total amount sold: <?=$no?></h4></div>
@@ -109,8 +108,9 @@ $title='Financial results';
     <?php endwhile; ?>
 <?php endif; ?>
 <?php if($_POST and !$found):?>
-<h1>No orders were found in given period!</h1>
-<?php endif; ?>
+    <h1>No orders were found in given period!</h1>
+<?php endif; $found=false; ?>
+
 
 
 
