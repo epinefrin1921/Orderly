@@ -45,25 +45,27 @@ $title='Employee statistics';
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../styles/stil.css">
+    <link rel="stylesheet" href="../styles/empstat.css">
     <?php include('../includes/head.php') ?>
 </head>
 
 <body>
 <?php include '../includes/header.php';?>
 <div id="helping"></div>
-<div>
+<div id="empstaty">
     <form action="employeestatistics.php" method="post">
-        <label for="start">Start date</label>
+        <label for="start"  style="color:white;">Start date</label>
         <input type="date" id="start" name="start">
-        <label for="end">End date</label>
+        <label for="end"  style="color:white; margin-left:10px;">End date</label>
         <input type="date" id="end" name="end">
-        <input type="submit">
+        <div id="empy"><input type="submit" style="width: 30%"></div>
     </form>
 </div>
 <?php if($_POST and $found):?>
-    <h3>Period: <?=$start?> to <?=$end?>, excluding last day</h3>
+    <h3 style="color: white;text-align: center;">Period: <?=$start?> to <?=$end?>, excluding last day</h3>
 
-    <div>
+    <div class="prikaz" style="width: 80%;margin:30px auto;">
+        <div style="width:50%; text-align: center; color:white;">
         <h1>Waiter statistics: </h1>
         <?php while($row=oci_fetch_assoc($query)): ?>
             <h3>Name: <?= $row['E_FNAME']." ".$row['E_LNAME'] ?></h3>
@@ -97,8 +99,9 @@ $title='Employee statistics';
 
             $minutes2=$minutes%60;
             ?>
-            <h4>Average waiting time in that period: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</h4>
+            <h4 style="text-align: center;color: white;">Average waiting time in that period: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</h4>
         <?php endwhile; ?>
+        </div>
     </div>
 <?php endif; ?>
 
