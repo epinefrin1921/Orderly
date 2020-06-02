@@ -79,7 +79,7 @@ $title='Financial results';
         <div id="f1"><input type="submit" style="width: 30%;"></div>
     </form>
 </div>
-<main id="finmain">
+<main id="finmain" class="wrap">
 <?php if($_POST and $found):?>
 <div class="fin1"><h3>Period: <?=$start?> to <?=$end?>, excluding last day</h3></div>
 <div class="fin1"><h3>Total money made for a given period: <?=$totalamount?></h3></div>
@@ -96,14 +96,10 @@ $title='Financial results';
                     $no=$row3['T'];
                 }
             ?>
-            <div class="fin1"><h3>Item name: <?=$row3['MI_NAME']?></h3></div>
-            <div class="fin1"><h4><a href="../products/products/single_product.php?id=<?=$row3['OL_MENU']?>">Link to the item</a></h4></div>
-            <div class="fin1"><h4>Total amount sold: <?=$no?></h4></div>
-            <div class="fin1"><h4>Total money earned for this item: <?=$row3['P']?></h4></div>
-            </br>
-            </br>
-            </br>
-            </br>
+            <div class="fin1"><h3 style="color:#89253e; text-align: center">Item name: <?=$row3['MI_NAME']?></h3></div>
+            <div class="fin1"><h4 style="color:#89253e; text-align: center"><a href="../products/products/single_product.php?id=<?=$row3['OL_MENU']?>" style="text-decoration: none;color:#89253e;">Link to the item</a></h4></div>
+            <div class="fin1"><h4 style="color:#89253e; text-align: center">Total amount sold: <?=$no?></h4></div>
+            <div class="fin1"><h4 style="color:#89253e; text-align: center">Total money earned for this item: <?=$row3['P']?></h4></div>
 
         </div>
     <?php endwhile; ?>

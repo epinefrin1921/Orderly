@@ -20,9 +20,14 @@ input{
 
 main{
     background: rgba(255,255,255,0.1);
+    padding: 10px;
 }
 
 #pok{
     background: white ;
     color:#89253e;
+    width:80%;
+    border-radius: 15px;
+    padding: 10px;
+    margin:15px auto;
 }
