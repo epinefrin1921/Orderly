@@ -62,6 +62,7 @@ $title='Financial results';
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../styles/stil.css">
+    <link rel="stylesheet" href="../styles/finance.css">
     <?php include('../includes/head.php') ?>
 </head>
 
