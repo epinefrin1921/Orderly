@@ -8,9 +8,9 @@ if(!isset($_SESSION['id'])){
 }
 $total=$_GET['total'];
 $id=$_SESSION['id'];
-
+$waiter=$_POST['waiter'];
 $query = oci_parse($conn, "INSERT INTO ORDERS(O_DATE_RECEIVED, O_TOTAL_AMOUNT, O_STATUS, O_CLIENT, O_EMPLOYEE) 
-                      VALUES(sysdate, {$total},'pending', {$id}, 1)");
+                      VALUES(sysdate, {$total},'pending', {$id}, {$waiter})");
 oci_execute($query);
 
 

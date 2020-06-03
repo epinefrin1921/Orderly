@@ -20,6 +20,9 @@ oci_execute($query3);
 $i=0;
 $totaltime=0;
 
+$query3 = oci_parse($conn, "select * from EMPLOYEE where E_TYPE='waiter'");
+oci_execute($query3);
+
 while($row7=oci_fetch_assoc($query3)){
     $time1=date('d.m.Y H:i:s', strtotime($row7['MAX']));
     $time2=date('d.m.Y H:i:s', strtotime($row7['MIN']));
@@ -87,7 +90,18 @@ $minutes2=$minutes%60;
         <?php endforeach; ?>
     </section>
     <div class="car"><h1>Total price: <span style="color:red"><?=$total_price?> KM</span></h1></div>
-    <div class="car" <h1><a href="checkout.php?total=<?=$total_price?>" onclick="return confirm('Are you sure? Order will be placed');" class="place">Place your order</a></h1></div>
+    <form action="checkout.php?total=<?=$total_price?>" method="post">
+        <div class="textbox">
+            <p style="color: rgba(255,255,255,0.6)">Choose your waiter</p>
+            <select name="waiter" id="waiter" required>
+                <option value="" selected disabled hidden>Choose waiter here</option>
+                <?php while($row3 = oci_fetch_assoc($query3)): ?>
+                    <option value="<?= $row3['E_ID'] ?>"><?= $row3['E_FNAME']." ".$row3['E_LNAME'] ?></option>
+                <?php endwhile; ?>
+            </select>
+        </div>
+    </form>
+    <div class="car"><h1><input type="submit" onclick="return confirm('Are you sure? Order will be placed');" class="place">Place your order</input></h1></div>
 <?php }?>
 
 
