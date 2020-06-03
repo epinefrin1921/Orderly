@@ -101,9 +101,8 @@ $minutes2=$minutes%60;
                 <?php endwhile; ?>
             </select>
         </div>
+        <div class="car"><h1><input type="submit" onclick="return confirm('Are you sure? Order will be placed');" class="place">Place your order</input></h1></div>
     </form>
-
-    <div class="car"><h1><input type="submit" onclick="return confirm('Are you sure? Order will be placed');" class="place">Place your order</input></h1></div>
 <?php }?>
 
 
