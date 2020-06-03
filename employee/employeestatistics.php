@@ -99,8 +99,9 @@ $title='Employee statistics';
 
             $minutes=$totaltime/60;
 
-            $hours=floor($minutes/60);
-
+            if(!floor($minutes/60)==NAN){
+                $hours=floor($minutes/60);
+            }
             $minutes2=$minutes%60;
             ?>
             <h4 style="text-align: center;color: white;">Average waiting time in that period: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</h4>
