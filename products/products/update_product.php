@@ -50,17 +50,7 @@ if ($_POST) {
         $total=$price2;
     }
     else{
-        $check='select * from INGREDIENTS where IN_ID in (';
-        $check.=implode(",", $ingr);
-        $check.=')';
-        $query2=oci_parse($conn, $check);
-        oci_execute($query2);
-        $i=0;
-        while($row2=oci_fetch_assoc($query2)){
-            $total=$total+($row2['IN_PRICE']*$ingr_quant[$i]);
-            $i++;
-        }
-
+        $total=0;
     }
 
     if(checkRequiredField($name) && checkRequiredField($price) && checkRequiredField($image) && checkRequiredField($description)) {
