@@ -73,7 +73,7 @@ $title='Employee statistics';
             <h4>Total orders delivered in that period: <?=$row['CNT']?></h4>
             <h4>Highest paid order delivered in that period: <?=$row['MAX']?></h4>
             <h4>Minimum paid order in that period: <?=$row['MIN']?></h4>
-            <h4>Average order paid in that period: <?=$row['AVG']?></h4>
+            <h4>Average order paid in that period: <?=number_format($row['AVG'], 2)?></h4>
             <h4>Total amount generated in that period: <?=$row['SUM']?></h4>
             <?php
             $query3 = oci_parse($conn, "select o.O_ID, e.E_FNAME, e.E_LNAME ,TO_CHAR(max(OH_TIME_CHANGED), 'YYYY-MM-DD HH24:MI:SS') as max, TO_CHAR(min(OH_TIME_CHANGED), 'YYYY-MM-DD HH24:MI:SS') as min
@@ -84,6 +84,9 @@ $title='Employee statistics';
             oci_execute($query3);
             $i=0;
             $totaltime=0;
+
+            $hours=0;
+            $minutes=0;
 
             while($row7=oci_fetch_assoc($query3)){
                 $time1=date('d.m.Y H:i:s', strtotime($row7['MAX']));
@@ -100,7 +103,7 @@ $title='Employee statistics';
 
             $minutes2=$minutes%60;
             ?>
-            <h4 style="text-align: center;color: white;">Average waiting time in that period: <?= $hours!=0 or !isset($hours) or is_null($hours)? $hours.' hours and': null ?> <?=$minutes2?> minutes</h4>
+            <h4 style="text-align: center;color: white;">Average waiting time in that period: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</h4>
         </div>
             <?php endwhile; ?>
         </div>
