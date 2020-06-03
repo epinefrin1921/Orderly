@@ -100,7 +100,7 @@ $title='Employee statistics';
 
             $minutes2=$minutes%60;
             ?>
-            <h4 style="text-align: center;color: white;">Average waiting time in that period: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</h4>
+            <h4 style="text-align: center;color: white;">Average waiting time in that period: <?= $hours!=0 or !isset($hours) or is_null($hours)? $hours.' hours and': null ?> <?=$minutes2?> minutes</h4>
         </div>
             <?php endwhile; ?>
         </div>
