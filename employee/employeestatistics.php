@@ -65,9 +65,10 @@ $title='Employee statistics';
     <h3 style="color: white;text-align: center;">Period: <?=$start?> to <?=$end?>, excluding last day</h3>
 
     <div class="prikaz" style="width: 80%;margin:30px auto;">
-        <div style="width:50%; text-align: center; color:white;">
+        <div style="text-align: center; color:white;">
         <h1>Waiter statistics: </h1>
         <?php while($row=oci_fetch_assoc($query)): ?>
+        <div id="dim">
             <h3>Name: <?= $row['E_FNAME']." ".$row['E_LNAME'] ?></h3>
             <h4>Total orders delivered in that period: <?=$row['CNT']?></h4>
             <h4>Highest paid order delivered in that period: <?=$row['MAX']?></h4>
@@ -100,7 +101,8 @@ $title='Employee statistics';
             $minutes2=$minutes%60;
             ?>
             <h4 style="text-align: center;color: white;">Average waiting time in that period: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</h4>
-        <?php endwhile; ?>
+        </div>
+            <?php endwhile; ?>
         </div>
     </div>
 <?php endif; ?>
