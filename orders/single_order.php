@@ -83,7 +83,7 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
     </form>
     <form action="changewaiter.php?ID=<?=$id?>" method="post">
         <div class="textbox" id="divir">
-            <p>Waiter: <?= $row2[14]." ".$row2[15] ?></p>
+            <p>Current waiter: <?= $row2[14]." ".$row2[15] ?></p>
             <p style="color:white;">Choose another waiter</p>
             <select name="waiter" id="waiter" class="order_type" required >
                 <option value="" selected disabled hidden>Choose waiter here</option>
