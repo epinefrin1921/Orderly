@@ -92,16 +92,15 @@ $title='Employee statistics';
                 $time1=date('d.m.Y H:i:s', strtotime($row7['MAX']));
                 $time2=date('d.m.Y H:i:s', strtotime($row7['MIN']));
                 $time3=abs(strtotime($time1)-strtotime($time2));
-                echo $time3." ";
                 $totaltime=$totaltime+$time3;
                 $i++;
             }
+
             $totaltime=$totaltime/$i;
-            echo $totaltime." ".$i;
 
             $minutes=$totaltime/60;
 
-            if(!floor($minutes/60)==NAN){
+            if($minutes>60){
                 $hours=floor($minutes/60);
             }
             $minutes2=$minutes%60;
