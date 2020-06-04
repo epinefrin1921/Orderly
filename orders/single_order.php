@@ -65,6 +65,10 @@ $title='Order '.$id;
 <?php include('../includes/header.php') ?>
 <div id="helping"></div>
 <div id="first">
+    <?php
+    if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
+        <p class="up" id="nestat">Order has been placed</p>
+    <?php endif;?>
 <div id="status"><p1>Order status: <?= $status ?></p1></div>
 <?php if($_SESSION['type']==1 and $row2[3]!='canceled' and $row2[3]!='finished') {?>
     <form method="post" action="updateorder.php?ID=<?=$id?>">
@@ -145,6 +149,9 @@ $title='Order '.$id;
     });
 </script>
 
-<?php $_SESSION['isUpdate']=null;?>
+<?php
+$_SESSION['order_placed']=false;
+
+$_SESSION['isUpdate']=null;?>
 </body>
 </html>

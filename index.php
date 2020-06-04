@@ -21,10 +21,6 @@ oci_execute($query);
 <body>
 <?php include 'includes/header.php';?>
 <div id="helping"></div>
-<?php
-if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
-    <p class="up" id="nestat">Order has been placed</p>
-<?php endif;?>
 <section class="wrap" id="s1">
     <div id="podnaslov">
         <?php
@@ -98,7 +94,6 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
     </div>
 </section>
 <?php
-$_SESSION['order_placed']=false;
 include 'includes/footer.php'; ?>
 
 </body>
