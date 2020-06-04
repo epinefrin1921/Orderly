@@ -64,22 +64,21 @@ $title='Order '.$id;
 <body>
 <?php include('../includes/header.php') ?>
 <div id="helping"></div>
-<div id="first">
-    <?php
-    if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
-        <p class="up" id="nestat">Order has been placed</p>
-    <?php endif;?>
+<?php
+if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
+    <p class="up" id="nestat">Order has been placed</p>
+<?php endif;?>
 <div id="status"><p1>Order status: <?= $status ?></p1></div>
 <?php if($_SESSION['type']==1 and $row2[3]!='canceled' and $row2[3]!='finished') {?>
     <form method="post" action="updateorder.php?ID=<?=$id?>">
-       <div id="label"><label for="type">Choose a status of the order:</label>
-        <select name="type" id="order_type">
-            <option value="pending">Pending</option>
-            <option value="active">Active</option>
-            <option value="prepared">Prepared</option>
-            <option value="finished">Finished</option>
-            <option value="canceled">Canceled</option>
-        </select></div>
+        <div id="label"><label for="type">Choose a status of the order:</label>
+            <select name="type" id="order_type">
+                <option value="pending">Pending</option>
+                <option value="active">Active</option>
+                <option value="prepared">Prepared</option>
+                <option value="finished">Finished</option>
+                <option value="canceled">Canceled</option>
+            </select></div>
         <div id="sub"><input type="submit"></div>
     </form>
     <form action="changewaiter.php?ID=<?=$id?>" method="post">
@@ -94,8 +93,10 @@ $title='Order '.$id;
                 <?php endwhile; ?>
             </select>
         </div>
+        <input type="submit">
     </form>
 <?php } ?>
+<div id="first">
 <div id="divi">
 <p>Order time received: <?= $row2[5] ?></p>
 <p>Waiter: <?= $row2[14]." ".$row2[15] ?></p>
