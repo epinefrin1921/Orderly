@@ -72,20 +72,20 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
 <?php if($_SESSION['type']==1 and $row2[3]!='canceled' and $row2[3]!='finished') {?>
     <form method="post" action="updateorder.php?ID=<?=$id?>">
         <div id="label"><label for="type">Choose a status of the order:</label>
-            <select name="type" id="order_type">
+            <select name="type" class="order_type">
                 <option value="pending">Pending</option>
                 <option value="active">Active</option>
                 <option value="prepared">Prepared</option>
                 <option value="finished">Finished</option>
                 <option value="canceled">Canceled</option>
             </select></div>
-        <div id="sub"><input type="submit"></div>
+        <div class="sub"><input type="submit"></div>
     </form>
     <form action="changewaiter.php?ID=<?=$id?>" method="post">
-        <div class="textbox">
+        <div class="textbox" id="divir">
             <p>Waiter: <?= $row2[14]." ".$row2[15] ?></p>
-            <p style="color: rgba(255,255,255,0.6)">Choose another waiter</p>
-            <select name="waiter" id="waiter" required>
+            <p style="color:white;">Choose another waiter</p>
+            <select name="waiter" id="waiter" class="order_type" required >
                 <option value="" selected disabled hidden>Choose waiter here</option>
                 <?php oci_execute($query4);
                 while($row4 = oci_fetch_assoc($query4)): ?>
@@ -93,7 +93,7 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
                 <?php endwhile; ?>
             </select>
         </div>
-        <input type="submit">
+        <div class="sub"><input type="submit"></div>
     </form>
 <?php } ?>
 <div id="first">

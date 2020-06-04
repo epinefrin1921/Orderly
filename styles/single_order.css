@@ -65,17 +65,23 @@
     color:white;
 }
 
-#sub{
+.sub{
     text-align: center;
 }
 
-#sub input{
+.sub input{
     width:25%;
 }
 
-#order_type{
+.order_type{
     background-color: #89253e;
     color: white;
     font-weight: bold;
     padding: 3px;
+}
+
+#divir{
+    text-align: center;
+    font-size: 18px;
+    color:white;
 }
