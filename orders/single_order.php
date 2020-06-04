@@ -82,7 +82,6 @@ $title='Order '.$id;
                 <?php endwhile; ?>
             </select>
         </div>
-        <div class="car"><h1><input type="submit" onclick="return confirm('Are you sure? Order will be placed');" class="place">Place your order</input></h1></div>
     </form>
 <?php } ?>
 <div id="divi">
@@ -120,7 +119,7 @@ $title='Order '.$id;
 </section>
   <div class="m1"></div>
 <?php if($_SESSION['type']==0 and $status=='pending'):?>
-   <div class="are"><a href="deleteorder.php?id=<?=$id?>" onclick="return confirm('Are you sure? Order will be deleted');" style="text-decoration: none">Delete order</a></div>
+   <div class="are"><a href="deleteorder.php?id=<?=$id?>" onclick="return confirm('Are you sure? Order will be canceled');" style="text-decoration: none">Cancel order</a></div>
 <?php endif; ?>
 </div>
 
