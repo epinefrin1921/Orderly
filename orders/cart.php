@@ -77,6 +77,7 @@ $minutes2=$minutes%60;
                         <a href="../products/<?= $row['MI_TYPE']=='single'? 'products' : 'combos'  ?>/single_<?= $row['MI_TYPE']=='single'? 'product' : 'combo'  ?>.php?id=<?= $row['MI_ID'] ?>" class="info-more">
                             <img src="../images/<?=$row['MI_IMG']?>">
                             <p><?= $row['MI_NAME'] ?></p>
+                            <p>Price per unit: <?= number_format($row['MI_PRICE'],2)?>KM</p>
                             <p>Total price for this item: <?= number_format($row['MI_PRICE']*$item[1],2)?>KM</p>
                         </a>
                         <input type="number" class="product-quantity" name="quantity" value="<?=$item[1]?>" min="1"/>

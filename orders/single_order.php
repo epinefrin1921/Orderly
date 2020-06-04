@@ -16,7 +16,8 @@ oci_execute($query2);
 
 $row2=oci_fetch_row($query2);
 $status=$row2[3];
-
+$eid=$row2[13];
+$cid=$row2[6];
 
 $query3 = oci_parse($conn, "select TO_CHAR(max(OH_TIME_CHANGED), 'YYYY-MM-DD HH24:MI:SS'), TO_CHAR(min(OH_TIME_CHANGED), 'YYYY-MM-DD HH24:MI:SS')
                                    from orders_history
@@ -35,6 +36,7 @@ $hours=floor($minutes/60);
 $minutes2=$minutes%60;
 
 
+
 $query4 = oci_parse($conn, "select * from EMPLOYEE where E_TYPE='waiter'");
 
 if(!isset($_SESSION['id']))
@@ -42,6 +44,12 @@ if(!isset($_SESSION['id']))
     header('Location: ../index.php');
     exit();
 }
+
+if($_SESSION['id']!=$eid and $_SESSION['id']!=$cid){
+    header('Location: ../error.php');
+    exit();
+}
+
 $title='Order '.$id;
 ?>
 <!doctype html>
