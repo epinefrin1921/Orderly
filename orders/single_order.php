@@ -45,7 +45,7 @@ if(!isset($_SESSION['id']))
     exit();
 }
 
-if($_SESSION['id']!=$eid and $_SESSION['id']!=$cid){
+if($_SESSION['type']!=1 and $_SESSION['id']!=$cid){
     header('Location: ../error.php');
     exit();
 }
