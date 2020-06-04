@@ -69,7 +69,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
                 <div class="in-line" style="color: white">
                     <p>Order ID <?= $row2['O_ID']?></p>
                     <p>Client <?= $row2['C_FNAME']." ".$row2['C_LNAME']?></p>
-                    <p>Price: <?= number_format($row2['O_TOTAL_AMOUNT'],2)?></p>
+                    <p>Price: <?= number_format($row2['O_TOTAL_AMOUNT'],2)?>KM</p>
                     <p><a href="../orders/single_order.php?id=<?= $row2['O_ID']?>">See this order</a></p>
                 </div>
             <?php endwhile; ?>

@@ -82,7 +82,7 @@ $title='Financial results';
 <main id="finmain" class="wrap">
 <?php if($_POST and $found):?>
 <div class="fin1"><h3>Period: <?=$start?> to <?=$end?>, excluding last day</h3></div>
-<div class="fin1"><h3>Total money made for a given period: <?=$totalamount?></h3></div>
+<div class="fin1"><h3>Total money made for a given period: <?=$totalamount?>KM</h3></div>
     <div class="fin1"><h3>Number of orders for a given period: <?=$number?></h3></div>
     <div class="fin1"><h3>Best sold item is : <a href="../products/products/single_product.php?id=<?=$item_id?>" style="color:red; text-decoration: none"><?=$item_name?></a> , that has been sold <span style="color:green;"><?=$item_number?></span> times</h3></div>
     <?php  while($row3=oci_fetch_assoc($query3)): ?>
@@ -99,7 +99,7 @@ $title='Financial results';
             <div class="fin1"><h3 style="color:#89253e; text-align: center">Item name: <?=$row3['MI_NAME']?></h3></div>
             <div class="fin1"><h4 style="color:#89253e; text-align: center"><a href="../products/products/single_product.php?id=<?=$row3['OL_MENU']?>" style="text-decoration: none;color:#89253e;">Link to the item</a></h4></div>
             <div class="fin1"><h4 style="color:#89253e; text-align: center">Total amount sold: <?=$no?></h4></div>
-            <div class="fin1"><h4 style="color:#89253e; text-align: center">Total money earned for this item: <?=$row3['P']?></h4></div>
+            <div class="fin1"><h4 style="color:#89253e; text-align: center">Total money earned for this item: <?=$row3['P']?>KM</h4></div>
 
         </div>
     <?php endwhile; ?>

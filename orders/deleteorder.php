@@ -11,7 +11,7 @@ $status=$_POST['type'];
 $id=$_GET['id'];
 
 
-$query = oci_parse($conn, "update orders set O_STATUS='deleted' where O_ID={$id}");
+$query = oci_parse($conn, "update orders set O_STATUS='canceled' where O_ID={$id}");
 oci_execute($query);
 
 

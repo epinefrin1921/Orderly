@@ -20,7 +20,6 @@ oci_execute($query3);
 $i=0;
 $totaltime=0;
 
-$query4 = oci_parse($conn, "select * from EMPLOYEE where E_TYPE='waiter'");
 
 while($row7=oci_fetch_assoc($query3)){
     $time1=date('d.m.Y H:i:s', strtotime($row7['MAX']));
@@ -78,7 +77,7 @@ $minutes2=$minutes%60;
                         <a href="../products/<?= $row['MI_TYPE']=='single'? 'products' : 'combos'  ?>/single_<?= $row['MI_TYPE']=='single'? 'product' : 'combo'  ?>.php?id=<?= $row['MI_ID'] ?>" class="info-more">
                             <img src="../images/<?=$row['MI_IMG']?>">
                             <p><?= $row['MI_NAME'] ?></p>
-                            <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
+                            <p>Total price for this item: <?= number_format($row['MI_PRICE']*$item[1],2)?>KM</p>
                         </a>
                         <input type="number" class="product-quantity" name="quantity" value="<?=$item[1]?>" min="1"/>
                         <input type="submit" value="Update cart" class="btnAddAction" />
@@ -89,20 +88,7 @@ $minutes2=$minutes%60;
         <?php endforeach; ?>
     </section>
     <div class="car"><h1>Total price: <span style="color:red"><?=$total_price?> KM</span></h1></div>
-
-    <form action="checkout.php?total=<?=$total_price?>" method="post">
-        <div class="textbox">
-            <p style="color: rgba(255,255,255,0.6)">Choose your waiter</p>
-            <select name="waiter" id="waiter" required>
-                <option value="" selected disabled hidden>Choose waiter here</option>
-                <?php oci_execute($query4);
-                while($row4 = oci_fetch_assoc($query4)): ?>
-                    <option value="<?= $row4['E_ID'] ?>"><?= $row4['E_FNAME']." ".$row4['E_LNAME'] ?></option>
-                <?php endwhile; ?>
-            </select>
-        </div>
-        <div class="car"><h1><input type="submit" onclick="return confirm('Are you sure? Order will be placed');" class="place">Place your order</input></h1></div>
-    </form>
+    <div class="car" <h1><a href="checkout.php?total=<?=$total_price?>" onclick="return confirm('Are you sure? Order will be placed');" class="place">Place your order</a></h1></div>
 <?php }?>
 
 

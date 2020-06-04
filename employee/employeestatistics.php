@@ -71,10 +71,10 @@ $title='Employee statistics';
         <div id="dim">
             <h3>Name: <?= $row['E_FNAME']." ".$row['E_LNAME'] ?></h3>
             <h4>Total orders delivered in that period: <?=$row['CNT']?></h4>
-            <h4>Highest paid order delivered in that period: <?=$row['MAX']?></h4>
-            <h4>Minimum paid order in that period: <?=$row['MIN']?></h4>
-            <h4>Average order paid in that period: <?=number_format($row['AVG'], 2)?></h4>
-            <h4>Total amount generated in that period: <?=$row['SUM']?></h4>
+            <h4>Highest paid order delivered in that period: <?=$row['MAX']?>KM</h4>
+            <h4>Minimum paid order in that period: <?=$row['MIN']?>KM</h4>
+            <h4>Average order paid in that period: <?=number_format($row['AVG'], 2)?>KM</h4>
+            <h4>Total amount generated in that period: <?=$row['SUM']?>KM</h4>
             <?php
             $query3 = oci_parse($conn, "select o.O_ID, e.E_FNAME, e.E_LNAME ,TO_CHAR(max(OH_TIME_CHANGED), 'YYYY-MM-DD HH24:MI:SS') as max, TO_CHAR(min(OH_TIME_CHANGED), 'YYYY-MM-DD HH24:MI:SS') as min
                         from orders_history oh, orders o, employee e

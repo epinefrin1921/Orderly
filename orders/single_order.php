@@ -34,6 +34,9 @@ $hours=floor($minutes/60);
 
 $minutes2=$minutes%60;
 
+
+$query4 = oci_parse($conn, "select * from EMPLOYEE where E_TYPE='waiter'");
+
 if(!isset($_SESSION['id']))
 {
     header('Location: ../index.php');
@@ -55,7 +58,7 @@ $title='Order '.$id;
 <div id="helping"></div>
 <div id="first">
 <div id="status"><p1>Order status: <?= $status ?></p1></div>
-<?php if($_SESSION['type']==1 and $row2[3]!='deleted' and $row2[3]!='finished') {?>
+<?php if($_SESSION['type']==1 and $row2[3]!='canceled' and $row2[3]!='finished') {?>
     <form method="post" action="updateorder.php?ID=<?=$id?>">
        <div id="label"><label for="type">Choose a status of the order:</label>
         <select name="type" id="order_type">
@@ -63,8 +66,23 @@ $title='Order '.$id;
             <option value="active">Active</option>
             <option value="prepared">Prepared</option>
             <option value="finished">Finished</option>
+            <option value="canceled">Canceled</option>
         </select></div>
         <div id="sub"><input type="submit"></div>
+    </form>
+    <form action="changewaiter.php?ID=<?=$id?>" method="post">
+        <div class="textbox">
+            <p>Waiter: <?= $row2[14]." ".$row2[15] ?></p>
+            <p style="color: rgba(255,255,255,0.6)">Choose another waiter</p>
+            <select name="waiter" id="waiter" required>
+                <option value="" selected disabled hidden>Choose waiter here</option>
+                <?php oci_execute($query4);
+                while($row4 = oci_fetch_assoc($query4)): ?>
+                    <option value="<?= $row4['E_ID'] ?>"><?= $row4['E_FNAME']." ".$row4['E_LNAME'] ?></option>
+                <?php endwhile; ?>
+            </select>
+        </div>
+        <div class="car"><h1><input type="submit" onclick="return confirm('Are you sure? Order will be placed');" class="place">Place your order</input></h1></div>
     </form>
 <?php } ?>
 <div id="divi">
@@ -92,7 +110,7 @@ $title='Order '.$id;
                     <a href="../products/products/single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
                         <img src="../images/<?=$row['MI_IMG']?>">
                         <p><?= $row['MI_NAME'] ?></p>
-                        <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
+                        <p>Total price: <?= number_format($row['MI_PRICE']*$row['OL_QUANTITY'],2)?>KM</p>
                         <p>Quantity: <?= number_format($row['OL_QUANTITY'],2)?></p>
                     </a>
                 </form>

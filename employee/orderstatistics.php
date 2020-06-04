@@ -70,7 +70,7 @@ oci_execute($query);
             <p>Order ID <?= $row['O_ID']?></p>
             <p>Client <?= $row['C_FNAME']." ".$row['C_LNAME']?></p>
             <p>Waiter <?= $row['E_FNAME']." ".$row['E_LNAME']?></p>
-            <p>Price: <?= number_format($row['O_TOTAL_AMOUNT'],2)?></p>
+            <p>Price: <?= number_format($row['O_TOTAL_AMOUNT'],2)?>KM</p>
             <p><a href="../orders/single_order.php?id=<?= $row['O_ID']?>" style=" text-decoration: none;">See this order</a></p>
         </div>
     <?php endwhile; ?>

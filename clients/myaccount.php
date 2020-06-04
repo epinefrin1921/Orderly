@@ -66,7 +66,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
             <?php while($row2=oci_fetch_assoc($query2)):?>
                 <div class="in-line" style="color: #89253e">
                     <p style="color: white">Order ID <?= $row2['O_ID']?></p>
-                    <p style="color: white">Price: <?= number_format($row2['O_TOTAL_AMOUNT'],2)?></p>
+                    <p style="color: white">Price: <?= number_format($row2['O_TOTAL_AMOUNT'],2)?>KM</p>
                     <p><a href="../orders/single_order.php?id=<?= $row2['O_ID']?>">See this order</a></p>
                 </div>
             <?php endwhile; ?>
@@ -81,7 +81,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
             <?php while($row4=oci_fetch_assoc($query4)):?>
                 <div class="in-line">
                     <p>Order ID <?= $row4['O_ID']?></p>
-                    <p>Price: <?= number_format($row4['O_TOTAL_AMOUNT'],2)?></p>
+                    <p>Price: <?= number_format($row4['O_TOTAL_AMOUNT'],2)?>KM</p>
                     <p><a href="../orders/single_order.php?id=<?= $row4['O_ID']?>">See this order</a></p>
                 </div>
             <?php endwhile; ?>
@@ -97,7 +97,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
             <?php while($row3=oci_fetch_assoc($query3)):?>
                 <div class="in-line" >
                     <p>Order ID <?= $row3['O_ID']?></p>
-                    <p>Price: <?= number_format($row3['O_TOTAL_AMOUNT'],2)?></p>
+                    <p>Price: <?= number_format($row3['O_TOTAL_AMOUNT'],2)?>KM</p>
                     <p>Status: <?= $row3['O_STATUS']?></p>
                     <p><a href="../orders/single_order.php?id=<?= $row3['O_ID']?>">See this order</a></p>
                 </div>

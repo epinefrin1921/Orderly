@@ -31,7 +31,7 @@ oci_execute($query3);
 
 $query4 = oci_parse($conn, "select o.*, c.*
                                    FROM orders o, client c
-                                   where o.O_CLIENT=c.C_ID and o.O_STATUS in ('deleted', 'finished') and rownum<10 order by o.O_ID desc");
+                                   where o.O_CLIENT=c.C_ID and o.O_STATUS in ('canceled', 'finished') and rownum<10 order by o.O_ID desc");
 oci_execute($query4);
 
 ?>
@@ -60,7 +60,7 @@ oci_execute($query4);
             <div class="in-line" style="color: white">
                 <p>Order ID <?= $row['O_ID']?></p>
                 <p>Client <?= $row['C_FNAME']." ".$row['C_LNAME']?></p>
-                <p>Price: <?= number_format($row['O_TOTAL_AMOUNT'],2)?></p>
+                <p>Price: <?= number_format($row['O_TOTAL_AMOUNT'],2)?>KM</p>
                 <p><a href="../orders/single_order.php?id=<?= $row['O_ID']?>" style="text-decoration: none;">See this order</a></p>
             </div>
         <?php endwhile; ?>
@@ -77,7 +77,7 @@ if($row2=oci_fetch_assoc($query2)){
             <div class="in-line" style="color: white">
                 <p>Order ID <?= $row2['O_ID']?></p>
                 <p>Client <?= $row2['C_FNAME']." ".$row2['C_LNAME']?></p>
-                <p>Price: <?= number_format($row2['O_TOTAL_AMOUNT'],2)?></p>
+                <p>Price: <?= number_format($row2['O_TOTAL_AMOUNT'],2)?>KM</p>
                 <p><a href="../orders/single_order.php?id=<?= $row2['O_ID']?>" style="text-decoration: none;">See this order</a></p>
             </div>
         <?php endwhile; ?>
@@ -93,7 +93,7 @@ if($row2=oci_fetch_assoc($query2)){
             <div class="in-line" style="color: white">
                 <p>Order ID <?= $row3['O_ID']?></p>
                 <p>Client <?= $row3['C_FNAME']." ".$row3['C_LNAME']?></p>
-                <p>Price: <?= number_format($row3['O_TOTAL_AMOUNT'],2)?></p>
+                <p>Price: <?= number_format($row3['O_TOTAL_AMOUNT'],2)?>KM</p>
                 <p><a href="../orders/single_order.php?id=<?= $row3['O_ID']?>" style="text-decoration: none;">See this order</a></p>
             </div>
         <?php endwhile; ?>
@@ -109,7 +109,7 @@ if($row2=oci_fetch_assoc($query2)){
             <div class="in-line" style="color: white">
                 <p style="color:white">Order ID <?= $row4['O_ID']?></p>
                 <p style="color:white">Client <?= $row4['C_FNAME']." ".$row4['C_LNAME']?></p>
-                <p style="color:white">Price: <?= number_format($row4['O_TOTAL_AMOUNT'],2)?></p>
+                <p style="color:white">Price: <?= number_format($row4['O_TOTAL_AMOUNT'],2)?>KM</p>
                 <p style="color:white"><a href="../orders/single_order.php?id=<?= $row4['O_ID']?>" style="text-decoration: none">See this order</a></p>
             </div>
         <?php endwhile; ?>
