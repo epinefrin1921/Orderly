@@ -50,7 +50,13 @@ $title = $row['MI_NAME'];
 
             <?php
             if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
+                <?php
+                    if($row['MI_PRICE']<$row['MI_SUPPLY_PRICE']):?>
+                        <p style="color: red">Supply price: <?= $row['MI_SUPPLY_PRICE'] ?>KM</p>
+                        <p>Restaurant is losing money on this product!</p>
+                    <?php else:?>
                 <p>Supply price: <?= $row['MI_SUPPLY_PRICE'] ?>KM</p>
+                    <?php endif;?>
                 <p>Date added: <?= date("d.m.Y", strtotime($row['MI_CREATED'])) ?></p>
                 <a href="edit_product.php?id=<?= $row['MI_ID'] ?>">Edit product </a>
 
