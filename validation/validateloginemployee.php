@@ -9,7 +9,7 @@ if ($_POST) {
 
     $password=sha1($password);
 
-    $empexists = oci_parse($conn,"select * from EMAIL where E_EMAIL = '{$email}'");
+    $empexists = oci_parse($conn,"select * from EMPLOYEE where E_EMAIL = '{$email}'");
     oci_execute($empexists);
 
     $exists = oci_fetch_assoc($empexists);
@@ -38,6 +38,6 @@ if ($_POST) {
     }    else {
         $_SESSION['emp_login_error'] = true;
         $_SESSION['from_validate'] = true;
-        header('Location: login.php');
+        header('Location: LogIn.php');
     }
 }

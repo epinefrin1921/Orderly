@@ -47,7 +47,7 @@ if ($_POST) {
    else {
         $_SESSION['login_error'] = true;
         $_SESSION['from_validate'] = true;
-        header('Location: login.php');
+        header('Location: LogIn.php');
     }
 
 }
