@@ -29,7 +29,7 @@ if ($_POST) {
     if (!$exists) {
         $_SESSION['existance_error'] = true;
         $_SESSION['from_validate'] = true;
-        header('Location: login.php');
+        header('Location: LogIn.php');
         die();
     }
    if ($row) {
