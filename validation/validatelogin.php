@@ -15,13 +15,24 @@ if ($_POST) {
 
     $password=sha1($password);
 
+    $userexist = oci_parse($conn,"select * from CLIENT where C_EMAIL = '{$email}'");
+    oci_execute($userexist);
+
+    $exists = oci_fetch_assoc($userexist);
+
 
     $query = oci_parse($conn, "select * from CLIENT where C_EMAIL = '{$email}' and C_PASSWORD = '{$password}'");
     oci_execute($query);
 
     $row = oci_fetch_assoc($query);
 
-    if ($row) {
+    if (!$exists) {
+        $_SESSION['existance_error'] = true;
+        $_SESSION['from_validate'] = true;
+        header('Location: login.php');
+        die();
+    }
+   if ($row) {
         $_SESSION['id'] = $row['C_ID'];
         $_SESSION['type']= 0;
         $_SESSION['user_first_name'] = $row['C_FNAME'];
@@ -32,7 +43,14 @@ if ($_POST) {
         $_SESSION['product_added']=false;
         $_SESSION['order_placed']=false;
         header('Location: ../index.php');
-    } else {
-        header('Location: ../error.php');
+   }
+   else {
+        $_SESSION['login_error'] = true;
+        $_SESSION['from_validate'] = true;
+        header('Location: login.php');
     }
+
 }
+?>
+
+

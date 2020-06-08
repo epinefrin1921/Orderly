@@ -9,11 +9,22 @@ if ($_POST) {
 
     $password=sha1($password);
 
+    $empexists = oci_parse($conn,"select * from EMAIL where E_EMAIL = '{$email}'");
+    oci_execute($empexists);
+
+    $exists = oci_fetch_assoc($empexists);
+
     $query = oci_parse($conn, "select * from EMPLOYEE where E_EMAIL = '{$email}' and E_PASSWORD = '{$password}'");
     oci_execute($query);
 
     $row = oci_fetch_assoc($query);
 
+    if (!$exists) {
+        $_SESSION['emp_existance_error'] = true;
+        $_SESSION['from_validate'] = true;
+        header('Location: login.php');
+        die();
+    }
     if ($row) {
         $_SESSION['id'] = $row['E_ID'];
         $_SESSION['type']= 1;
@@ -24,7 +35,9 @@ if ($_POST) {
         $_SESSION['order_placed']=false;
         header('Location: ../index.php');
 
-    } else {
-        header("Location: ../error.php");
+    }    else {
+        $_SESSION['emp_login_error'] = true;
+        $_SESSION['from_validate'] = true;
+        header('Location: login.php');
     }
 }
