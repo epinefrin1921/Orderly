@@ -68,7 +68,6 @@ $title='Order '.$id;
 if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
     <p class="up" id="nestat">Order has been placed</p>
 <?php endif;?>
-<div id="status"><p1>Order status: <?= $status ?></p1></div>
 <?php if($_SESSION['type']==1 and $row2[3]!='canceled' and $row2[3]!='finished') {?>
     <form method="post" action="updateorder.php?ID=<?=$id?>">
         <div id="label"><label for="type">Choose a status of the order:</label>
@@ -97,7 +96,9 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
     </form>
 <?php } ?>
 <div id="first">
-<div id="divi">
+    <div id="status"><p1>Order status: <?= $status ?></p1></div>
+
+    <div id="divi">
 <p>Order time received: <?= $row2[5] ?></p>
 <p>Waiter: <?= $row2[14]." ".$row2[15] ?></p>
 <p>Order total: <?= $row2[2] ?>KM</p>
