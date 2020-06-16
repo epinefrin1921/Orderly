@@ -103,6 +103,7 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
 <p>Waiter: <?= $row2[15]." ".$row2[16] ?></p>
 <p>Order total: <?= $row2[2] ?>KM</p>
 <p>Client: <?= $row2[7]." ".$row2[8] ?></p>
+        <img src="../images/<?= $row2[13]?>">
     <?php
     if($row2[3]=='finished')
     {?>
