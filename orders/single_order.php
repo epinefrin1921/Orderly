@@ -8,13 +8,14 @@ $query = oci_parse($conn, "select o.*, m.*
                                    where m.MI_ID=o.OL_MENU  and  OL_ORDER=". $id);
 oci_execute($query);
 
-$query2 = oci_parse($conn, "select o.*, c.*, e.*
+$query2 = oci_parse($conn, "select o.*, c.*, e.*, to_char(o.O_DATE_RECEIVED, 'HH24:MI:SS DD-MM-YYYY')
                                    FROM  ORDERS o, CLIENT c, EMPLOYEE e
                                    where  o.O_CLIENT=c.C_ID and e.E_ID=o.O_EMPLOYEE and O_ID=". $id);
 oci_execute($query2);
 
 
 $row2=oci_fetch_row($query2);
+$time=$row2[count($row2)-1];
 $status=$row2[3];
 $eid=$row2[14];
 $cid=$row2[6];
@@ -99,7 +100,7 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
     <div id="status"><p1>Order status: <?= $status ?></p1></div>
 
     <div id="divi">
-<p>Order time received: <?= $row2[5] ?></p>
+<p>Order time received: <?= $time ?></p>
 <p>Waiter: <?= $row2[15]." ".$row2[16] ?></p>
 <p>Order total: <?= $row2[2] ?>KM</p>
 <p>Client: <?= $row2[7]." ".$row2[8] ?></p>
