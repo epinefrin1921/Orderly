@@ -10,20 +10,20 @@
 
                 <?php
                 if (isset($_SESSION['id']) and $_SESSION['type']==0):?>
-                    <a href="/Orderly/clients/myaccount.php" class="logout">My account</a>
-                    <a href="/Orderly/orders/cart.php" class="logout">My cart</a>
-                    <a href="/Orderly/validation/logout.php" class="logout">Log out</a>
+                    <a href="/Orderly/clients/myaccount.php" class="logout"><i class="far fa-user"></i> My account</a>
+                    <a href="/Orderly/orders/cart.php" class="logout"><i class="fas fa-shopping-cart"></i>  My cart</a>
+                    <a href="/Orderly/validation/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i>  Log out</a>
                 <?php endif;?>
                 <?php
                 if (!isset($_SESSION['id']) ):?>
-                    <a href="/Orderly/validation/LogIn.php" class="logout">Log in</a>
-                    <a href="/Orderly/validation/Register.php" class="logout">Register</a>
+                    <a href="/Orderly/validation/LogIn.php" class="logout"><i class="fab fa-instagram-square"></i> Log in</a>
+                    <a href="/Orderly/validation/Register.php" class="logout"><i class="far fa-user"></i> Register</a>
                 <?php endif;?>
                 <?php
                 if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
-                    <a href="/Orderly/employee/myaccount.php" class="logout">My account</a>
-                    <a href="/Orderly/orders/allorders.php" class="logout">All orders</a>
-                    <a href="/Orderly/validation/logout.php" class="logout">Log out</a>
+                    <a href="/Orderly/employee/myaccount.php" class="logout"><i class="far fa-user"></i> My account</a>
+                    <a href="/Orderly/orders/allorders.php" class="logout"><i class="far fa-folder"></i>  All orders</a>
+                    <a href="/Orderly/validation/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i>  Log out</a>
                 <?php endif;?>
             </nav>
 
@@ -37,28 +37,28 @@
                         <div class="dropdown">
                             <?php
                             if (isset($_SESSION['id']) and $_SESSION['type']==0):?>
-                                <a href="/Orderly/clients/myaccount.php" class="logout">My account</a>
-                                <a href="/Orderly/orders/cart.php" class="logout">My cart</a>
-                                <a href="/Orderly/validation/logout.php" class="logout">Log out</a>
+                                <a href="/Orderly/clients/myaccount.php" class="logout"><i class="far fa-user"></i> My account</a>
+                                <a href="/Orderly/orders/cart.php" class="logout"><i class="fas fa-shopping-cart"></i>  My cart</a>
+                                <a href="/Orderly/validation/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i>  Log out</a>
                             <?php endif;?>
                             <?php
                             if (isset($_SESSION['id']) and $_SESSION['type']==1):?>
-                            <a href="/Orderly/employee/myaccount.php">My account</a>
-                            <a href="/Orderly/orders/allorders.php">All orders</a>
-                                <a href="/Orderly/validation/logout.php">Log out</a>
+                            <a href="/Orderly/employee/myaccount.php"><i class="far fa-user"></i> My account</a>
+                            <a href="/Orderly/orders/allorders.php"><i class="fas fa-hamburger"></i>  All orders</a>
+                                <a href="/Orderly/validation/logout.php"><i class="fas fa-sign-out-alt"></i>  Log out</a>
 
                             <?php endif;?>
                             <?php
                             if (!isset($_SESSION['id'])):?>
-                                <a href="/Orderly/validation/LogIn.php">Log in</a>
-                                <a href="/Orderly/validation/Register.php">Register</a>
+                                <a href="/Orderly/validation/LogIn.php"><i class="fas fa-sign-in-alt"></i>  Log in</a>
+                                <a href="/Orderly/validation/Register.php"><i class="far fa-user"></i> Register</a>
                             <?php endif;?>
                         </div>
                     </li>
                 </ul>
                 <div id="d2">
-                    <a href="/Orderly/validation/LogIn.php">Log in</a>
-                    <a href="/Orderly/validation/Register.php">Register</a>
+                    <a href="/Orderly/validation/LogIn.php"><i class="fas fa-sign-in-alt"></i>  Log in</a>
+                    <a href="/Orderly/validation/Register.php"><i class="far fa-user"></i>  Register</a>
                 </div>
             </nav>
             <a id="hamburger2" class="icon" onclick="myFunction()">
