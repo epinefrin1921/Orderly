@@ -27,6 +27,16 @@ if ($_POST) {
            header('Location: ../error.php');
            exit();
        }
+       if(checkRequiredField($_FILES['image']['name'])){
+           $image = $_FILES['image']['name'];
+           move_uploaded_file($_FILES['image']['tmp_name'], '../../images/' . $image);
+       }
+       else{
+           $query = oci_parse($conn, "select * from CLIENT where C_ID={$id}");
+           oci_execute($query);
+           $row=oci_fetch_assoc($query);
+           $image = $row['CI_IMAGE'];
+       }
 
        $password = sha1($confirmpassword);
 

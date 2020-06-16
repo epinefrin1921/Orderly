@@ -21,7 +21,7 @@ $title = 'Register';
 <?php
 $today = date("Y-m-d");
 ?>
-<form class="Login" action="../clients/save_user.php" onsubmit="return Validate()" method="post"  name="regform">
+<form class="Login" action="../clients/save_user.php" onsubmit="return Validate()" method="post"  name="regform"  enctype="multipart/form-data">
     <h2>Register</h2>
     <div class="textbox">
         <input type="text" placeholder="Name" name="fname" value="" >
@@ -33,6 +33,10 @@ $today = date("Y-m-d");
     <div id="lname_error" class="erroneus"></div>
     <div class="textbox" id="date1">
         <input type="date" placeholder="Date of Birth" name="DOB" value="" min="1900-01-01" max="<?php echo $today?>" >
+    </div>
+    <div class="textbox">
+        <label for="image">Profile image:</label>
+        <input type="file" placeholder="Profile image" id="image" name="image" required>
     </div>
     <div id="dob_error" class="erroneus"></div>
     <div class="textbox">

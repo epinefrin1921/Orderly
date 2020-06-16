@@ -29,13 +29,17 @@ $row = oci_fetch_assoc($query);
 <?php
 $today = date("Y-m-d");
 ?>
-<form class="Login" action="update_user.php" method="post">
+<form class="Login" action="update_user.php" method="post" enctype="multipart/form-data">
     <h2>Register</h2>
     <div class="textbox">
         <input type="text" placeholder="Name" name="fname" value="<?= $row['C_FNAME']?>" required>
     </div>
     <div class="textbox">
         <input type="text" placeholder="Surname" name="lname" value="<?= $row['C_LNAME']?>" required>
+    </div>
+    <div class="textbox">
+        <label for="image">Profile image:</label>
+        <input type="file" placeholder="Profile image" id="image" name="image" required>
     </div>
     <div class="textbox">
         <input type="text" placeholder="E-mail" name="email" value="<?= $row['C_EMAIL']?>" required >

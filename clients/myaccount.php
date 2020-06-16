@@ -54,7 +54,11 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
             <p>Date of birth: <?= $row['C_DOB'] ?></p>
             <p><a href="edit_account.php">Edit my account</a></p>
         </div>
-        <img src="../1529573631.png">
+        <?php if(is_null($row['C_IMAGE'])){?>
+            <img src="../1529573631.png" alt="PICTURE">
+       <?php }else{ ?>
+            <img src="../images/<?= $row['C_IMAGE'] ?>" alt="PICTURE" >
+        <?php }?>
     </div>
 
 <div id="first">

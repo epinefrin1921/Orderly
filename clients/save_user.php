@@ -25,6 +25,10 @@ if ($_POST) {
     $password=$_POST['password'];
     $confirmpassword=$_POST['confirmpassword'];
     $dob2=date('d-m-Y',$dob);
+    $image = $_FILES['image']['name'];
+
+    move_uploaded_file($_FILES['image']['tmp_name'], '../images/' . $image);
+
 
     $select = oci_parse($conn,"SELECT C_EMAIL FROM CLIENT WHERE C_EMAIL='{$email}'");
     oci_execute($select);
@@ -41,8 +45,8 @@ if ($_POST) {
 
 
     if (checkRequiredField($fname) && checkRequiredField($lname) && checkRequiredField($dob) && checkRequiredField($email) && checkRequiredField($password)) {
-        $query = oci_parse($conn, "INSERT INTO CLIENT(C_FNAME,C_LNAME,C_DOB,C_EMAIL,C_PASSWORD) 
-                      VALUES('{$fname}','{$lname}',to_date('{$dob2}','DD-MM-YY'),'{$email}','{$password}')");
+        $query = oci_parse($conn, "INSERT INTO CLIENT(C_FNAME,C_LNAME,C_DOB,C_EMAIL,C_PASSWORD, C_IMAGE) 
+                      VALUES('{$fname}','{$lname}',to_date('{$dob2}','DD-MM-YY'),'{$email}','{$password}', '{$image}')");
         oci_execute($query);
 
         oci_commit($conn);
