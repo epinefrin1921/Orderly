@@ -12,7 +12,7 @@ if($_SESSION['type']==0){
     exit();
 }
 
-$query = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is not null and lower(MI_TYPE)='single'");
+$query = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is not null and lower(MI_TYPE)!='combo'");
 
 $query2 = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is not null and lower(MI_TYPE)='combo'");
 
