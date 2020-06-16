@@ -49,7 +49,8 @@ if($_POST) {
         $query3 = oci_parse($conn, "select ol.OL_MENU,m.MI_NAME, sum(ol.OL_QUANTITY) as t,  sum(ol.OL_QUANTITY*(ol.OL_PRICE-ol.OL_SUPPLY_PRICE)) as p, m.MI_ID
                              FROM ORDER_LINE ol, MENU_ITEMS m, ORDERS o
                              where m.MI_ID=ol.OL_MENU and o.O_ID=ol.OL_ORDER and O_DATE_RECEIVED>to_date('{$start}','YYYY-MM-DD') and O_DATE_RECEIVED<to_date('{$end}','YYYY-MM-DD')
-                             group by m.MI_ID, ol.OL_MENU,m.MI_NAME");
+                             group by m.MI_ID, ol.OL_MENU,m.MI_NAME
+                             order by t desc");
         oci_execute($query3);
         $start = date('d.m.Y', strtotime($start));
         $end = date('d.m.Y', strtotime($end));
