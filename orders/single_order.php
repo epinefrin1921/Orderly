@@ -16,7 +16,7 @@ oci_execute($query2);
 
 $row2=oci_fetch_row($query2);
 $status=$row2[3];
-$eid=$row2[13];
+$eid=$row2[14];
 $cid=$row2[6];
 
 $query3 = oci_parse($conn, "select TO_CHAR(max(OH_TIME_CHANGED), 'YYYY-MM-DD HH24:MI:SS'), TO_CHAR(min(OH_TIME_CHANGED), 'YYYY-MM-DD HH24:MI:SS')
@@ -82,7 +82,7 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
     </form>
     <form action="changewaiter.php?ID=<?=$id?>" method="post">
         <div class="textbox" id="divir">
-            <p>Current waiter: <?= $row2[14]." ".$row2[15] ?></p>
+            <p>Current waiter: <?= $row2[15]." ".$row2[16] ?></p>
             <p style="color:white;">Choose another waiter</p>
             <select name="waiter" id="waiter" class="order_type" required >
                 <option value="" selected disabled hidden>Choose waiter here</option>
@@ -100,7 +100,7 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
 
     <div id="divi">
 <p>Order time received: <?= $row2[5] ?></p>
-<p>Waiter: <?= $row2[14]." ".$row2[15] ?></p>
+<p>Waiter: <?= $row2[15]." ".$row2[16] ?></p>
 <p>Order total: <?= $row2[2] ?>KM</p>
 <p>Client: <?= $row2[7]." ".$row2[8] ?></p>
     <?php
