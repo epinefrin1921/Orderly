@@ -35,8 +35,9 @@ if ($_POST) {
            $query = oci_parse($conn, "select * from CLIENT where C_ID={$id}");
            oci_execute($query);
            $row=oci_fetch_assoc($query);
-           $image = $row['CI_IMAGE'];
+           $image = $row['C_IMAGE'];
        }
+       move_uploaded_file($_FILES['image']['tmp_name'], '../images/' . $image);
 
        $password = sha1($confirmpassword);
 
