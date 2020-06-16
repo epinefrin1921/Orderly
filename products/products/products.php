@@ -66,7 +66,7 @@ if (isset($_SESSION['id']) and $_SESSION['type']==0  and  $_SESSION['product_add
 
 <section class="wrap2" id="s3">
 <?php while($row=oci_fetch_assoc($query)):?>
-    <div class="container">
+    <div class="container preko">
         <div class="container2">
             <form method="post" action="../../orders/addtocart.php?ID=<?php echo $row['MI_ID']; ?>">
                 <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
@@ -84,9 +84,9 @@ if (isset($_SESSION['id']) and $_SESSION['type']==0  and  $_SESSION['product_add
 </section>
 <h1 id="naslov3">Sweets:</h1>
 
-<section class="wrap2" id="s3">
+<section class="wrap2" id="s3"> preko
     <?php while($row=oci_fetch_assoc($query4)):?>
-        <div class="container">
+        <div class="container preko">
             <div class="container2">
                 <form method="post" action="../../orders/addtocart.php?ID=<?php echo $row['MI_ID']; ?>">
                     <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
@@ -107,7 +107,7 @@ if (isset($_SESSION['id']) and $_SESSION['type']==0  and  $_SESSION['product_add
 
 <section class="wrap2" id="s3">
     <?php while($row=oci_fetch_assoc($query3)):?>
-        <div class="container">
+        <div class="container preko">
             <div class="container2">
                 <form method="post" action="../../orders/addtocart.php?ID=<?php echo $row['MI_ID']; ?>">
                     <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
@@ -130,7 +130,7 @@ if (isset($_SESSION['id']) and $_SESSION['type']==0  and  $_SESSION['product_add
 <section class="wrap2" id="s3">
     <?php while($row=oci_fetch_assoc($query2)):?>
 
-        <div class="container">
+        <div class="container preko">
             <div class="container2">
                 <form method="post" action="../../orders/addtocart.php?ID=<?php echo $row['MI_ID']; ?>">
                     <a href="../combos/single_combo.php?id=<?= $row['MI_ID'] ?>" class="info-more">
