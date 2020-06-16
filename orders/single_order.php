@@ -97,20 +97,19 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
 <?php } ?>
 <div id="first">
     <div id="status"><p1>Order status: <?= $status ?></p1></div>
-    <div id="temp">
-         <div id="divi">
-                <p>Order time received: <?= $row2[5] ?></p>
-                 <p>Waiter: <?= $row2[15]." ".$row2[16] ?></p>
-                 <p>Order total: <?= $row2[2] ?>KM</p>
-                 <p>Client: <?= $row2[7]." ".$row2[8] ?></p>
-                 <?php if($row2[3]=='finished') {?>
-                     <p>Time from placing the order to order being delivered to the costumer: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</p>
-                 <?php } ?>
-         </div>
-        <div>
-            <img src="../images/<?= $row2[13]?>">
-        </div>
-    </div>
+
+    <div id="divi">
+<p>Order time received: <?= $row2[5] ?></p>
+<p>Waiter: <?= $row2[15]." ".$row2[16] ?></p>
+<p>Order total: <?= $row2[2] ?>KM</p>
+<p>Client: <?= $row2[7]." ".$row2[8] ?></p>
+        <img src="../images/<?= $row2[13] ?>">
+    <?php
+    if($row2[3]=='finished')
+    {?>
+        <p>Time from placing the order to order being delivered to the costumer: <?= $hours!=0? $hours.' hours and': null ?> <?=$minutes2?> minutes</p>
+    <?php }
+    ?>
 </div>
 <?php if($_SESSION['type']==0):?>
     <div id="like"><p>Liked this order last time?</p></div>
