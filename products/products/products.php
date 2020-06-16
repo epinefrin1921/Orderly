@@ -84,7 +84,7 @@ if (isset($_SESSION['id']) and $_SESSION['type']==0  and  $_SESSION['product_add
 </section>
 <h1 id="naslov3">Sweets:</h1>
 
-<section class="wrap2" id="s3"> preko
+<section class="wrap2" id="s3">
     <?php while($row=oci_fetch_assoc($query4)):?>
         <div class="container preko">
             <div class="container2">
