@@ -113,7 +113,7 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
     <?php }
     ?>
 </div>
-<?php if($_SESSION['type']==0 && $row2[3]!='finished'):?>
+<?php if($_SESSION['type']==0 && $row2[3]=='finished'):?>
     <div id="like"><p>Liked this order last time?</p></div>
     <div class="are"><a href="repeatorder.php?id=<?=$id?>" onclick="return confirm('Are you sure? You will be redirected to cart');" style="text-decoration: none">Order again</a></div>
 <?php endif; ?>
