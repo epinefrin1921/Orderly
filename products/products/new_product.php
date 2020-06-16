@@ -50,6 +50,15 @@ oci_execute($query);
         <label for="image">Product image:</label>
         <input type="file" placeholder="Product image" id="image" name="image" required>
     </div>
+    <div class="textbox">
+        <label for="type">Product type:</label>
+        <select name="type">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="single">Main dish</option>
+            <option value="drink">Drink</option>
+            <option value="sweet">Sweet</option>
+        </select>
+    </div>
     <h2>Check ingredients in menu (if applicable):</h2>
     <div style="width: 100%">
         <?php while($row=oci_fetch_assoc($query)):?>

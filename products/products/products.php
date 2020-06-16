@@ -4,11 +4,15 @@ $title = 'Products';
 include('../../includes/DB.php');
 
 session_start();
- $query = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is null and lower(MI_TYPE)='single'");
+$query = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is null and lower(MI_TYPE)='single'");
 $query2 = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is null and lower(MI_TYPE)='combo'");
+$query3 = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is null and lower(MI_TYPE)='drink'");
+$query4 = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is null and lower(MI_TYPE)='sweet'");
+
  oci_execute($query);
 oci_execute($query2);
-
+oci_execute($query3);
+oci_execute($query4);
 
 ?>
 
@@ -78,7 +82,47 @@ if (isset($_SESSION['id']) and $_SESSION['type']==0  and  $_SESSION['product_add
     </div>
 <?php endwhile; ?>
 </section>
+<h1 id="naslov3">Sweets:</h1>
 
+<section class="wrap2" id="s3">
+    <?php while($row=oci_fetch_assoc($query4)):?>
+        <div class="container">
+            <div class="container2">
+                <form method="post" action="../../orders/addtocart.php?ID=<?php echo $row['MI_ID']; ?>">
+                    <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
+                        <img src="../../images/<?=$row['MI_IMG']?>">
+                        <p><?= $row['MI_NAME'] ?></p>
+                        <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
+                    </a>
+                    <?php if(isset($_SESSION['id']) and $_SESSION['type']==0){?>
+                        <div class="cart-action"><label for="quantity">Quantity:</label> <input type="number" class="product-quantity" name="quantity" value="1" min="1"/><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+                    <?php } ?>
+                </form>
+            </div>
+        </div>
+    <?php endwhile; ?>
+</section>
+
+<h1 id="naslov3">Drinks:</h1>
+
+<section class="wrap2" id="s3">
+    <?php while($row=oci_fetch_assoc($query3)):?>
+        <div class="container">
+            <div class="container2">
+                <form method="post" action="../../orders/addtocart.php?ID=<?php echo $row['MI_ID']; ?>">
+                    <a href="single_product.php?id=<?= $row['MI_ID'] ?>" class="info-more">
+                        <img src="../../images/<?=$row['MI_IMG']?>">
+                        <p><?= $row['MI_NAME'] ?></p>
+                        <p>Price: <?= number_format($row['MI_PRICE'],2)?>KM</p>
+                    </a>
+                    <?php if(isset($_SESSION['id']) and $_SESSION['type']==0){?>
+                        <div class="cart-action"><label for="quantity">Quantity:</label> <input type="number" class="product-quantity" name="quantity" value="1" min="1"/><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+                    <?php } ?>
+                </form>
+            </div>
+        </div>
+    <?php endwhile; ?>
+</section>
 <div class="wrap2 jumbotron">
     <h1 id="naslov3">Combos:</h1>
 </div>
