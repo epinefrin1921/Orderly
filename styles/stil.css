@@ -502,6 +502,8 @@ header ul .has-drop:hover>div{
     .scrolled header nav a {
         color: #89253e;
     }
-
+    #s3{
+        width: 95%;
+    }
 
 }
