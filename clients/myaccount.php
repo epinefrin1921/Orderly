@@ -57,7 +57,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
         <?php if(is_null($row['C_IMAGE'])){?>
             <img src="../1529573631.png" alt="PICTURE">
        <?php }else{ ?>
-            <img src="../images/<?= $row['C_IMAGE'] ?>" alt="PICTURE" >
+            <img style=" height: 400px;  max-width: 400px;" src="../images/<?= $row['C_IMAGE'] ?>" alt="PICTURE" >
         <?php }?>
     </div>
 
