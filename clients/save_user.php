@@ -26,7 +26,6 @@ if ($_POST) {
     $confirmpassword=$_POST['confirmpassword'];
     $dob2=date('d-m-Y',$dob);
     $image = $_FILES['image']['name'];
-
     move_uploaded_file($_FILES['image']['tmp_name'], '../images/' . $image);
 
 
