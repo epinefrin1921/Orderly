@@ -104,7 +104,7 @@ if (isset($_SESSION['order_placed']) and $_SESSION['order_placed']):?>
 <p>Order total: <?= $row2[2] ?>KM</p>
 <p>Client: <?= $row2[7]." ".$row2[8] ?></p>
         <?php if($_SESSION['type']==1){?>
-        <img style="max-width: 80%" src="../images/<?= $row2[13] ?>" alt="Client picture">
+        <img style="max-width: 80%; max-height: 400px" src="../images/<?= $row2[13] ?>" alt="Client picture">
             <?php } ?>
     <?php
     if($row2[3]=='finished')
