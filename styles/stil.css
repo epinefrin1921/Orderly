@@ -208,6 +208,12 @@ html{
     flex-wrap: wrap;
     justify-content: center;
 }
+.container:hover{
+    transform: scale(1.04);
+    -webkit-box-shadow: 7px 5px 74px 3px rgba(255,255,255,1);
+    -moz-box-shadow: 7px 5px 74px 3px rgba(255,255,255,1);
+    box-shadow: 7px 5px 74px 3px rgba(255,255,255,0.4);
+}
 .container2 p{
     width: 100%;
 }
