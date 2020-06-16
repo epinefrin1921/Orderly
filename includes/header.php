@@ -16,7 +16,7 @@
                 <?php endif;?>
                 <?php
                 if (!isset($_SESSION['id']) ):?>
-                    <a href="/Orderly/validation/LogIn.php" class="logout"><i class="fab fa-instagram-square"></i> Log in</a>
+                    <a href="/Orderly/validation/LogIn.php" class="logout"><i class="fas fa-sign-in-alt"></i> Log in</a>
                     <a href="/Orderly/validation/Register.php" class="logout"><i class="far fa-user"></i> Register</a>
                 <?php endif;?>
                 <?php
