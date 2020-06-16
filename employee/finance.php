@@ -85,7 +85,6 @@ $title='Financial results';
 <div class="fin1"><h3>Period: <?=$start?> to <?=$end?>, excluding last day</h3></div>
 <div class="fin1"><h3>Total money made for a given period: <?=$totalamount?>KM</h3></div>
     <div class="fin1"><h3>Number of orders for a given period: <?=$number?></h3></div>
-    <div class="fin1"><h3>Best sold item is : <a href="../products/products/single_product.php?id=<?=$item_id?>" style="color:red; text-decoration: none"><?=$item_name?></a> , that has been sold <span style="color:green;"><?=$item_number?></span> times</h3></div>
     <?php  while($row3=oci_fetch_assoc($query3)): ?>
         <div id="pok">
             <?php
