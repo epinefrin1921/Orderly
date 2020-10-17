@@ -38,7 +38,7 @@ if(isset($_SESSION['id'])){
     <?php endif; ?>
     <form class="Login" action="submitVisit.php" method="post" name="regform">
         <div class="textbox">
-            <input type="text" placeholder="Name" name="fname" value="<? if($_SESSION['id']){echo $row[1] } ?>" >
+            <input type="text" placeholder="Name" name="fname" value="<?php if($_SESSION['id']){echo $row[1] } ?>" >
         </div>
         <div class="textbox">
             <input type="text" placeholder="Surname" name="lname" value="<?= isset($_SESSION['id'])? $row[1] : null ?>" >
