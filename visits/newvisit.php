@@ -41,10 +41,10 @@ if(isset($_SESSION['id'])){
             <input type="text" placeholder="Name" name="fname" value="<?= isset($_SESSION['id'])? $row[0] : null ?>" >
         </div>
         <div class="textbox">
-            <input type="text" placeholder="Surname" name="lname" value="<?= isset($_SESSION['id'])? $row[1'] : null ?>" >
+            <input type="text" placeholder="Surname" name="lname" value="<?= isset($_SESSION['id'])? $row[1] : null ?>" >
         </div>
         <div class="textbox">
-            <input type="email" placeholder="E-mail" name="email" value="<?= isset($_SESSION['id'])? $row[2 : null ?>" >
+            <input type="email" placeholder="E-mail" name="email" value="<?= isset($_SESSION['id'])? $row[2] : null ?>" >
         </div>
         <div class="textbox">
             <input type="text" placeholder="Phone" name="phone" value="" >
