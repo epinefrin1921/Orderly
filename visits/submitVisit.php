@@ -19,6 +19,4 @@ if($_POST){
                        VALUES ('{$fname}','{$lname}', '{$email}', '{$phone}', sysdate, {$id})");
     oci_execute($query);
     oci_commit($conn);
-
-    header('Location: thankyou.php');
 }
