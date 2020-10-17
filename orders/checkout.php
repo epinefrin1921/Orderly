@@ -11,7 +11,7 @@ $id=$_SESSION['id'];
 
 
 $query = oci_parse($conn, "INSERT INTO ORDERS(O_DATE_RECEIVED, O_TOTAL_AMOUNT, O_STATUS, O_CLIENT, O_EMPLOYEE) 
-                      VALUES(sysdate, {$total},'pending', {$id}, 9)");
+                      VALUES(sysdate, {$total},'pending', {$id}, 2)");
 oci_execute($query);
 
 
@@ -48,6 +48,6 @@ $_SESSION['isUpdate']=false;
 $_SESSION['product_added']=false;
 $_SESSION['order_placed']=true;
 
-//header('Location: ../orders/single_order.php?id='.$oid);
+header('Location: ../orders/single_order.php?id='.$oid);
 
 
