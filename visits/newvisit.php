@@ -38,13 +38,13 @@ if(isset($_SESSION['id'])){
     <?php endif; ?>
     <form class="Login" action="submitVisit.php" method="post" name="regform">
         <div class="textbox">
-            <input type="text" placeholder="Name" name="fname" value="<?php if(isset($_SESSION['id'])){echo $row["c_fname"];}; ?>" >
+            <input type="text" placeholder="Name" name="fname" value="<?php if(isset($_SESSION['id'])){echo $row["C_FNAME"];}; ?>" >
         </div>
         <div class="textbox">
             <input type="text" placeholder="Surname" name="lname" value="<?= isset($_SESSION['id'])? $row['C_LNAME'] : null ?>" >
         </div>
         <div class="textbox">
-            <input type="email" placeholder="E-mail" name="email" value="<?= isset($_SESSION['id'])? $row : null ?>" >
+            <input type="email" placeholder="E-mail" name="email" value="<?= isset($_SESSION['id'])? $id : null ?>" >
         </div>
         <div class="textbox">
             <input type="text" placeholder="Phone" name="phone" value="" >
