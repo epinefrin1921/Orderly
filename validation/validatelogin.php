@@ -42,14 +42,20 @@ if ($_POST) {
         $_SESSION['isUpdate']=false;
         $_SESSION['product_added']=false;
         $_SESSION['order_placed']=false;
-        header('Location: ../index.php');
+
+        if(isset($_GET['newvisit'])){
+            header('Location: ../visits/newvisit.php');
+
+        }
+        else{
+            header('Location: ../index.php');
+        }
    }
    else {
         $_SESSION['login_error'] = true;
         $_SESSION['from_validate'] = true;
         header('Location: LogIn.php');
     }
-
 }
 ?>
 

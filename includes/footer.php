@@ -15,8 +15,7 @@
                 <a href="/Orderly/index.php">Home</a>
                 <a href="/Orderly/about.php">About</a>
                 <a href="/Orderly/products/products/products.php">Menu</a>
-                <a href="/Orderly/validation/Register.php">Register</a>
-                <a href="/Orderly/validation/LogIn.php">Login</a>
+                <a href="/Orderly/visits/newvisit.php">New visit</a>
             </div>
             <div>
                 &copy;SSST_2020 Orderly

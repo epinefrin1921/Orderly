@@ -25,11 +25,10 @@ $query3 = oci_parse($conn, "select *
                                    where O_STATUS!='active' and O_STATUS!='pending' and O_CLIENT=". $id." order by O_ID desc");
 oci_execute($query3);
 
-
-
 if (oci_num_rows($query) === 0) {
     header('Location: ../error.php');
 }
+
 
 $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
 ?>
@@ -53,6 +52,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
             <p>Email: <?= $row['C_EMAIL'] ?></p>
             <p>Date of birth: <?= $row['C_DOB'] ?></p>
             <p><a href="edit_account.php">Edit my account</a></p>
+            <p><a href="../visits/newTest.php">Tested positive to COVID?</a></p>
         </div>
         <?php if(is_null($row['C_IMAGE'])){?>
             <img src="../1529573631.png" alt="PICTURE">

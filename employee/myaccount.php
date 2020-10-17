@@ -55,6 +55,7 @@ $title = $_SESSION['user_first_name']." ".$_SESSION['user_last_name'];
                 <a href="finance.php">Show finance</a>
                 <a href="employeestatistics.php">Employee stats</a>
                 <a href="orderstatistics.php">Order stats</a>
+                <a href="seeNotifications.php">Notify people about COVID-19</a>
             <?php endif; ?>
         </div>
         <img src="../1529573631.png">

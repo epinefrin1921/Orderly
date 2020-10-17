@@ -42,6 +42,8 @@ if(isset($_SESSION['emp_existance_error'])) {
     $emp_not_existing = false;
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +58,11 @@ if(isset($_SESSION['emp_existance_error'])) {
 <h1><a href="../index.php">Welcome to orderly</a></h1>
 <main>
 <section class="sek">
-<form class="Login" action="validatelogin.php" onsubmit="return ValidateLogin()" method="post" name="clogin">
+<form class="Login" action="validatelogin.php<?php
+if(isset($_GET['newvisit'])){
+    echo '?newvisit=true';
+}
+?>" onsubmit="return ValidateLogin()" method="post" name="clogin">
     <h2>Log in</h2>
 
     <div class="textbox">

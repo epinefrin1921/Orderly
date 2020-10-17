@@ -12,7 +12,7 @@ if($_SESSION['type']==0){
 
 include('../../includes/DB.php');
 $title = 'Add new product';
-$query = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is null and lower(MI_TYPE)='single'");
+$query = oci_parse($conn, "select * from MENU_ITEMS where MI_DELETED is null");
 oci_execute($query);
 
 ?>

@@ -8,9 +8,10 @@ if(!isset($_SESSION['id'])){
 }
 $total=$_GET['total'];
 $id=$_SESSION['id'];
-$waiter=$_POST['waiter'];
+
+
 $query = oci_parse($conn, "INSERT INTO ORDERS(O_DATE_RECEIVED, O_TOTAL_AMOUNT, O_STATUS, O_CLIENT, O_EMPLOYEE) 
-                      VALUES(sysdate, {$total},'pending', {$id}, 2)");
+                      VALUES(sysdate, {$total},'pending', {$id}, 9)");
 oci_execute($query);
 
 
@@ -28,13 +29,13 @@ foreach ($_SESSION['products']  as $line)
     $row=oci_fetch_row($query2);
 
     $price=$row[1];
-        $supply_price=$row[3];
+    $supply_price=$row[3];
 
     $oid=$row2[0];
 
-    $query = oci_parse($conn, "INSERT INTO ORDER_LINE(OL_MENU, OL_ORDER, OL_QUANTITY, OL_PRICE, OL_SUPPLY_PRICE) 
-                      VALUES({$menu},$oid,$quant, $price, $supply_price)");
-    oci_execute($query);
+    $query7 = oci_parse($conn, "INSERT INTO ORDER_LINE(OL_MENU, OL_ORDER, OL_QUANTITY, OL_PRICE, OL_SUPPLY_PRICE) 
+                      VALUES({$menu}, {$oid}, {$quant}, {$price}, {$supply_price})" );
+    oci_execute($query7);
 }
 $oid=$row2[0];
 
@@ -48,6 +49,5 @@ $_SESSION['product_added']=false;
 $_SESSION['order_placed']=true;
 
 header('Location: ../orders/single_order.php?id='.$oid);
-
 
 

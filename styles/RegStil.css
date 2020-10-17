@@ -105,7 +105,11 @@ input[type="date"]:before {
     color:red;
     width:100%;
 }
-
+.visitDetails{
+    color: #eeeeee;
+    text-align: center;
+    margin: 20px 70px;
+}
 
 
 @media (max-width: 660px) {

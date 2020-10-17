@@ -12,6 +12,7 @@
                 if (isset($_SESSION['id']) and $_SESSION['type']==0):?>
                     <a href="/Orderly/clients/myaccount.php" class="logout"><i class="far fa-user"></i> My account</a>
                     <a href="/Orderly/orders/cart.php" class="logout"><i class="fas fa-shopping-cart"></i>  My cart</a>
+                    <a href="/Orderly/visits/newvisit.php" class="logout"><i class="fas fa-utensils"></i>  New Visit</a>
                     <a href="/Orderly/validation/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i>  Log out</a>
                 <?php endif;?>
                 <?php
@@ -39,6 +40,7 @@
                             if (isset($_SESSION['id']) and $_SESSION['type']==0):?>
                                 <a href="/Orderly/clients/myaccount.php" class="logout"><i class="far fa-user"></i> My account</a>
                                 <a href="/Orderly/orders/cart.php" class="logout"><i class="fas fa-shopping-cart"></i>  My cart</a>
+                                <a href="/Orderly/visits/newvisit.php" class="logout"><i class="fas fa-utensils"></i>  New Visit</a>
                                 <a href="/Orderly/validation/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i>  Log out</a>
                             <?php endif;?>
                             <?php

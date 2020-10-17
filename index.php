@@ -2,9 +2,30 @@
 session_start();
 $title = 'Homepage';
 include('includes/DB.php');
+if(isset($_SESSION['id'])){
+    $id = $_SESSION['id'];
+}
 
 $query = oci_parse($conn, "select * from(select * from MENU_ITEMS where MI_DELETED is null and MI_TYPE='single' ORDER BY DBMS_RANDOM.RANDOM) where ROWNUM<5");
 oci_execute($query);
+
+$shouldTest=false;
+if(isset($_SESSION['id'])){
+
+$query4 = oci_parse($conn, "select * from NOTIFICATIONS where N_CID=".$id);
+oci_execute($query4);
+$posjete = array();
+while($row10 = oci_fetch_assoc($query4)){
+    $shouldTest = true;
+    $query6=oci_parse($conn, "delete from NOTIFICATIONS where N_CID = ".$id);
+    oci_execute($query6);
+    oci_commit($conn);
+    $query6 = oci_parse($conn, "select * from VISITS where V_ID=".$row10['N_VISITID']);
+    oci_execute($query6);
+    $row = oci_fetch_assoc($query6);
+    array_push($posjete, $row['V_DATE']);
+}}
+
 
 ?>
 <!DOCTYPE html>
@@ -21,6 +42,15 @@ oci_execute($query);
 <body>
 <?php include 'includes/header.php';?>
 <div id="helping"></div>
+<?php if($shouldTest):?>
+<div class="wrap">
+    <h1>WARNING!</h1>
+    <p>You recently got in contact with COVID-19 positive person. Please test yourself in order to stop the spread of COVID!</p>
+    <?php foreach($posjete as $posjeta){ ?>
+         <p>Datum posjete: <?= $posjeta ?></p>
+    <?php } ?>
+</div>
+<?php endif; ?>
 <section class="wrap" id="s1">
     <div id="podnaslov">
         <?php

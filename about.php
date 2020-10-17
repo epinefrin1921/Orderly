@@ -9,6 +9,8 @@ $title = 'About';
 
     <?php include('includes/head.php') ?>
 </head>
+
+
 <style>
     ::-webkit-scrollbar {
         display: none;
