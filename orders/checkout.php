@@ -48,6 +48,6 @@ $_SESSION['isUpdate']=false;
 $_SESSION['product_added']=false;
 $_SESSION['order_placed']=true;
 
-header('Location: ../orders/single_order.php?id='.$oid);
+//header('Location: ../orders/single_order.php?id='.$oid);
 
 
