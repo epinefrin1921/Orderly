@@ -44,7 +44,7 @@ if(isset($_SESSION['id'])){
             <input type="text" placeholder="Surname" name="lname" value="<?= isset($_SESSION['id'])? $row['C_LNAME'] : null ?>" >
         </div>
         <div class="textbox">
-            <input type="email" placeholder="E-mail" name="email" value="<?= isset($_SESSION['id'])? "TEST" : null ?>" >
+            <input type="email" placeholder="E-mail" name="email" value="<?= isset($_SESSION['id'])? $row : null ?>" >
         </div>
         <div class="textbox">
             <input type="text" placeholder="Phone" name="phone" value="" >
