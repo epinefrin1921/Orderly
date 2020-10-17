@@ -1,0 +1,48 @@
+h2 a{
+    text-decoration: none;
+    color:white;
+}
+h3{
+    color: white;
+    text-align: center;
+}
+.car{
+    box-sizing: border-box;
+    color:white;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.place{
+    color:#89253e;
+    background-color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#continue{
+    width: 100%;
+ background: white;
+    color:#89253e;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+
+    margin-left:5px;
+}
+#flee{
+    display: flex;
+    justify-content: center;
+}
+#continue:hover{
+    transform:scale(1.03);
+}
+.m1{
+    margin-bottom:10px;
+}

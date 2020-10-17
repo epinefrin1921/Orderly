@@ -1,0 +1,23 @@
+.in-line{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    border-bottom:2px solid white ;
+    color:white;
+}
+.in-line a{
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.in-line a:hover{background-color: white;
+    color: #89253e;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.in-line p,.in-line a{
+    width:23%;
+    text-align: center;
+}

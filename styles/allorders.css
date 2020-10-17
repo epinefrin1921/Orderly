@@ -1,0 +1,22 @@
+.w1{
+    width:80%;
+    margin: 0 auto;
+}
+h1{
+    color: white;
+}
+.w1 a{
+    text-decoration: none;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.w1 a:hover{
+    background-color: white;
+    color: #89253e;
+}
+
+ ::-webkit-scrollbar {
+     display: none;
+ }

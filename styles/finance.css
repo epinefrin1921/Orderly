@@ -1,0 +1,33 @@
+.fin1{
+    text-align: center;
+    color:white;
+    font-weight: bold;
+}
+
+#fini{
+    text-align: center;
+}
+
+input{
+    background-color: #89253e;
+    color:white;
+}
+
+#f1{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+main{
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+}
+
+#pok{
+    background: white ;
+    color:#89253e;
+    width:80%;
+    border-radius: 15px;
+    padding: 10px;
+    margin:15px auto;
+}

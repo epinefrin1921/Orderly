@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="64ac5ae4-8b18-43e3-8db7-edf1a768c4a3" name="Default Changelist" comment="Added sweets and drinks" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="github/master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/epinefrin1921/Orderly" />
+        <option value="https://github.com/epinefrin1921/Orderly2" />
+      </set>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectId" id="1izviLXYnB0x69sPish1xobECji" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="oracle" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Orderly" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.Orderly" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\B.I.O.S. S\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64ac5ae4-8b18-43e3-8db7-edf1a768c4a3" name="Default Changelist" comment="" />
+      <created>1602923360396</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602923360396</updated>
+      <workItem from="1602923361457" duration="17195000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added sweets and drinks" />
+    <MESSAGE value="Added COVID functionalities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added COVID functionalities" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1612" y="347" key="#Notifications" timestamp="1602939498032">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1612" y="347" key="#Notifications/0.0.2560.1040@0.0.2560.1040" timestamp="1602939498032" />
+    <state x="1473" y="170" key="#PHP" timestamp="1602923371813">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1473" y="170" key="#PHP/0.0.2560.1040@0.0.2560.1040" timestamp="1602923371813" />
+    <state x="1443" y="178" key="#Test_Frameworks" timestamp="1602939600232">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1443" y="178" key="#Test_Frameworks/0.0.2560.1040@0.0.2560.1040" timestamp="1602939600232" />
+    <state x="1357" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602923535280">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1357" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602923535280" />
+    <state x="1643" y="264" key="FileChooserDialogImpl" timestamp="1602940317595">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1643" y="264" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1602940317595" />
+    <state x="1647" y="390" key="Github.CreatePullRequestDialog" timestamp="1602938926903">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1647" y="390" key="Github.CreatePullRequestDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602938926903" />
+    <state x="1739" y="421" key="Github.ShareDialog" timestamp="1602939887782">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1739" y="421" key="Github.ShareDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602939887782" />
+    <state width="1344" height="268" key="GridCell.Tab.0.bottom" timestamp="1602940566612">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1344" height="268" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1602940566612" />
+    <state width="1344" height="268" key="GridCell.Tab.0.center" timestamp="1602940566612">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1344" height="268" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1602940566612" />
+    <state width="1344" height="268" key="GridCell.Tab.0.left" timestamp="1602940566612">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1344" height="268" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1602940566612" />
+    <state width="1344" height="268" key="GridCell.Tab.0.right" timestamp="1602940566612">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1344" height="268" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1602940566612" />
+    <state x="1754" y="446" key="NewPhpFileDialog" timestamp="1602931352436">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1754" y="446" key="NewPhpFileDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602931352436" />
+    <state x="1364" y="168" key="SettingsEditor" timestamp="1602940509875">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1364" y="168" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1602940509875" />
+    <state x="1747" y="437" key="VCS.EditChangelistDialog" timestamp="1602938819687">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1747" y="437" key="VCS.EditChangelistDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602938819687" />
+    <state x="1452" y="256" key="Vcs.Push.Dialog.v2" timestamp="1602939426388">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1452" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1602939426388" />
+    <state x="1384" y="178" key="com.intellij.database.dbimport.ImportDialog" timestamp="1602931467138">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1384" y="178" key="com.intellij.database.dbimport.ImportDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602931467138" />
+    <state x="1600" y="343" width="408" height="356" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1602935366275">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1600" y="343" width="408" height="356" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602935366275" />
+    <state x="1413" y="168" width="518" height="528" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602935505588">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1413" y="168" width="518" height="528" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602935505588" />
+    <state x="1583" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602940277423">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1583" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1602940277423" />
+    <state x="111" y="0" width="924" height="1026" key="dock-window-1" timestamp="1602929662041">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="111" y="0" width="924" height="1026" key="dock-window-1/0.0.2560.1040@0.0.2560.1040" timestamp="1602929662041" />
+    <state x="1690" y="314" key="svn.repositoryBrowser" timestamp="1602939875924">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1690" y="314" key="svn.repositoryBrowser/0.0.2560.1040@0.0.2560.1040" timestamp="1602939875924" />
+    <state x="1675" y="297" key="svn4idea.import.options" timestamp="1602939871527">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1675" y="297" key="svn4idea.import.options/0.0.2560.1040@0.0.2560.1040" timestamp="1602939871527" />
+    <state x="1326" y="273" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1602940309915">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1326" y="273" key="vcs.ApplyPatchDifferentiatedDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602940309915" />
+  </component>
+</project>

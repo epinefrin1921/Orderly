@@ -1,0 +1,16 @@
+#ord{
+    text-align: center;
+}
+input{
+    background-color: #89253e;
+    color:white;
+}
+.in-line a{
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+}
+.in-line a:hover{background-color: white;
+    color: #89253e;
+}

@@ -1,0 +1,52 @@
+main{
+    padding-top: 100px;
+    color: white;
+}
+.prikaz{
+    background:  rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.info{
+    width: 50%;
+}
+img{
+    width: 50%;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+}
+.info a{
+    display: inline-block;
+    background-color: white;
+    color: #89253e;
+    padding: 10px;
+    border-radius: 10px;
+}
+#naslov2{
+    text-align: center;
+}
+
+@media (max-width: 740px) {
+    .prikaz{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    img{
+        width: 90%;
+        order: 1;
+    }
+    .info{
+        width: 100%;
+        order: 2;
+        text-align: center;
+    }
+}
