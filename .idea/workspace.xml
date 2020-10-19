@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64ac5ae4-8b18-43e3-8db7-edf1a768c4a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/934184f7-c2b2-4b4e-ad9c-d29daf9da243.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/934184f7-c2b2-4b4e-ad9c-d29daf9da243.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/DB.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +92,9 @@
       <updated>1602923360396</updated>
       <workItem from="1602923361457" duration="17195000" />
       <workItem from="1602941615386" duration="243000" />
-      <workItem from="1602941869082" duration="1840000" />
+      <workItem from="1602941869082" duration="5146000" />
+      <workItem from="1603096610377" duration="683000" />
+      <workItem from="1603098361377" duration="735000" />
     </task>
     <task id="LOCAL-00001" summary="Added COVID functionalities">
       <created>1602941700873</created>
@@ -104,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602941700873</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added COVID functionalities">
+      <created>1602944112134</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602944112134</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,10 +150,14 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1357" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602923535280" />
-    <state x="1209" y="114" key="CommitChangelistDialog2" timestamp="1602941700319">
+    <state x="1209" y="114" key="CommitChangelistDialog2" timestamp="1602944111605">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1209" y="114" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1602941700319" />
+    <state x="1209" y="114" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1602944111605" />
+    <state x="496" y="89" width="2048" height="860" key="DiffContextDialog" timestamp="1602944528542">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="496" y="89" width="2048" height="860" key="DiffContextDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602944528542" />
     <state x="1643" y="264" key="FileChooserDialogImpl" timestamp="1602940317595">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -176,14 +186,14 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1344" height="268" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1602940566612" />
-    <state x="496" y="94" key="MergeDialog" timestamp="1602941663261">
+    <state x="496" y="94" key="MergeDialog" timestamp="1602944478795">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="496" y="94" key="MergeDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602941663261" />
-    <state x="1274" y="289" key="MultipleFileMergeDialog" timestamp="1602941669686">
+    <state x="496" y="94" key="MergeDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602944478795" />
+    <state x="1274" y="289" key="MultipleFileMergeDialog" timestamp="1602944500294">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1274" y="289" key="MultipleFileMergeDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602941669686" />
+    <state x="1274" y="289" key="MultipleFileMergeDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602944500294" />
     <state x="1754" y="446" key="NewPhpFileDialog" timestamp="1602931352436">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -192,14 +202,18 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1364" y="168" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1602940509875" />
+    <state x="807" y="123" width="1658" height="810" key="ShowDiffWithBranchDialog" timestamp="1602944528542">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="807" y="123" width="1658" height="810" key="ShowDiffWithBranchDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602944528542" />
     <state x="1747" y="437" key="VCS.EditChangelistDialog" timestamp="1602938819687">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1747" y="437" key="VCS.EditChangelistDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602938819687" />
-    <state x="1452" y="256" key="Vcs.Push.Dialog.v2" timestamp="1602941703341">
+    <state x="1452" y="256" key="Vcs.Push.Dialog.v2" timestamp="1602944518016">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1452" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1602941703341" />
+    <state x="1452" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1602944518016" />
     <state x="1384" y="178" key="com.intellij.database.dbimport.ImportDialog" timestamp="1602931467138">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -212,10 +226,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1413" y="168" width="518" height="528" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602943035130" />
-    <state x="1583" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602940277423">
+    <state x="1583" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603098384882">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1583" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1602940277423" />
+    <state x="1583" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1603098384882" />
     <state x="111" y="0" width="924" height="1026" key="dock-window-1" timestamp="1602929662041">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>

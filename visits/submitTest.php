@@ -20,7 +20,7 @@ if ($_POST) {
     oci_execute($query);
     oci_commit($conn);
 
-    $query2 = oci_parse($conn, "select * from visits where V_DATE > (sysdate - 3)");
+    $query2 = oci_parse($conn, "select * from VISITS where V_DATE > (sysdate - 3)");
     oci_execute($query2);
     while ($row = oci_fetch_assoc($query2)) {
         $query3 = oci_parse($conn, "insert into NOTIFICATIONS (N_CID, N_VISITID) values ({$row['V_CID']},{$row['V_ID']})");
