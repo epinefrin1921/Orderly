@@ -8,7 +8,7 @@ $prezime="";
 $email="";
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
-    $query = oci_parse($conn, "select * from CLIENT where C_ID = ". $id);
+    $query = oci_parse($conn, "select * from CLIENT where C_ID =".$id);
     oci_execute($query);
     $row = oci_fetch_assoc($query);
     $ime=$row['C_FNAME'];
