@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64ac5ae4-8b18-43e3-8db7-edf1a768c4a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/visits/newvisit.php" beforeDir="false" afterPath="$PROJECT_DIR$/visits/newvisit.php" afterDir="false" />
-    </list>
+    <list default="true" id="64ac5ae4-8b18-43e3-8db7-edf1a768c4a3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +91,7 @@
       <workItem from="1602941615386" duration="243000" />
       <workItem from="1602941869082" duration="5146000" />
       <workItem from="1603096610377" duration="683000" />
-      <workItem from="1603098361377" duration="6342000" />
+      <workItem from="1603098361377" duration="6668000" />
     </task>
     <task id="LOCAL-00001" summary="Added COVID functionalities">
       <created>1602941700873</created>
@@ -242,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603107876971</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Fixed bugs">
+      <created>1603108174471</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1603108174471</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,10 +288,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1357" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602923535280" />
-    <state x="1209" y="114" key="CommitChangelistDialog2" timestamp="1603107876587">
+    <state x="1209" y="114" key="CommitChangelistDialog2" timestamp="1603108174081">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1209" y="114" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1603107876587" />
+    <state x="1209" y="114" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1603108174081" />
     <state x="496" y="89" width="2048" height="860" key="DiffContextDialog" timestamp="1602944528542">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -343,10 +348,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1747" y="437" key="VCS.EditChangelistDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602938819687" />
-    <state x="1452" y="256" key="Vcs.Push.Dialog.v2" timestamp="1603107878302">
+    <state x="1452" y="256" key="Vcs.Push.Dialog.v2" timestamp="1603108175601">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1452" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1603107878302" />
+    <state x="1452" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1603108175601" />
     <state x="1384" y="178" key="com.intellij.database.dbimport.ImportDialog" timestamp="1602931467138">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -371,10 +376,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1445" y="0" width="1125" height="919" key="dock-window-2/0.0.2560.1040@0.0.2560.1040" timestamp="1603107082290" />
-    <state x="0" y="0" width="1125" height="919" key="dock-window-3" timestamp="1603108170608">
+    <state x="0" y="0" width="1125" height="919" key="dock-window-3" timestamp="1603108497463">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="0" y="0" width="1125" height="919" key="dock-window-3/0.0.2560.1040@0.0.2560.1040" timestamp="1603108170608" />
+    <state x="0" y="0" width="1125" height="919" key="dock-window-3/0.0.2560.1040@0.0.2560.1040" timestamp="1603108497463" />
     <state x="1690" y="314" key="svn.repositoryBrowser" timestamp="1602939875924">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
