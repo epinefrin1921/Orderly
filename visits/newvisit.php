@@ -36,7 +36,7 @@ if(isset($_SESSION['id'])){
 <?php include '../includes/header.php';?>
 <div id="helping"></div>
 <?php
-var_dump($row);
+var_dump($id);
 ?>
 <div class="visitForm">
     <h1>Register new visit to our restaurant!</h1>
