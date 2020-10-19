@@ -20,9 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64ac5ae4-8b18-43e3-8db7-edf1a768c4a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visits/submitTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/visits/submitTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visits/submitVisit.php" beforeDir="false" afterPath="$PROJECT_DIR$/visits/submitVisit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/DB.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +93,7 @@
       <workItem from="1602941615386" duration="243000" />
       <workItem from="1602941869082" duration="5146000" />
       <workItem from="1603096610377" duration="683000" />
-      <workItem from="1603098361377" duration="3154000" />
+      <workItem from="1603098361377" duration="3474000" />
     </task>
     <task id="LOCAL-00001" summary="Added COVID functionalities">
       <created>1602941700873</created>
@@ -132,7 +130,28 @@
       <option name="project" value="LOCAL" />
       <updated>1603104179154</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed bugs">
+      <created>1603105044706</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603105044706</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixed bugs">
+      <created>1603105175782</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603105175782</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed bugs">
+      <created>1603105240245</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1603105240245</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,10 +192,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1357" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602923535280" />
-    <state x="1209" y="114" key="CommitChangelistDialog2" timestamp="1603104178765">
+    <state x="1209" y="114" key="CommitChangelistDialog2" timestamp="1603105239882">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1209" y="114" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1603104178765" />
+    <state x="1209" y="114" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1603105239882" />
     <state x="496" y="89" width="2048" height="860" key="DiffContextDialog" timestamp="1602944528542">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -233,10 +252,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1747" y="437" key="VCS.EditChangelistDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602938819687" />
-    <state x="1452" y="256" key="Vcs.Push.Dialog.v2" timestamp="1603104180349">
+    <state x="1452" y="256" key="Vcs.Push.Dialog.v2" timestamp="1603105247023">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1452" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1603104180349" />
+    <state x="1452" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1603105247023" />
     <state x="1384" y="178" key="com.intellij.database.dbimport.ImportDialog" timestamp="1602931467138">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
