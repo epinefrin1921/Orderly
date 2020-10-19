@@ -15,8 +15,12 @@ if($_POST){
     $email = $_POST['email'];
     $phone = $_POST['phone'];
 
+    $query2 = oci_parse($conn, "select max(V_ID) from VISITS");
+    oci_execute($query2);
+    $max = oci_fetch_assoc($query2)[0];
+    $max++;
     $query = oci_parse($conn,"INSERT INTO VISITS(V_ID,V_FNAME, V_LNAME, V_EMAIL, V_PHONE, V_DATE, V_CID)
-                       VALUES (11 ,'{$fname}','{$lname}', '{$email}', '{$phone}', sysdate, {$id})");
+                       VALUES ({$max} ,'{$fname}','{$lname}', '{$email}', '{$phone}', sysdate, {$id})");
     oci_execute($query);
     oci_commit($conn);
     header('Location: thankyou.php');
