@@ -44,7 +44,7 @@ if(isset($_SESSION['id'])){
     <?php endif; ?>
     <form class="Login" action="submitVisit.php" method="post" name="regform">
         <div class="textbox">
-            <input type="text" placeholder="Name" name="fname" value="<?= $ime ?>" >
+            <input type="text" placeholder="Name" name="fname" value="<?php echo $ime ?>" >
         </div>
         <div class="textbox">
             <input type="text" placeholder="Surname" name="lname" value="<?= $prezime ?>" >
