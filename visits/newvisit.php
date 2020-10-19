@@ -7,6 +7,7 @@ $ime="";
 $prezime="";
 $email="";
 
+if(isset($_SESSION['id'])){
 
     $id = $_SESSION['id'];
     $query = oci_parse( $conn, "select * from CLIENT where C_ID =".$id);
@@ -19,7 +20,7 @@ $email="";
     if (oci_num_rows($query) === 0) {
         header('Location: ../error.php');
     }
-
+};
 ?>
 <!DOCTYPE html>
 <html lang="en">
