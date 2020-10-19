@@ -14,11 +14,11 @@ if(isset($_SESSION['id'])){
     $query = oci_parse($conn, "select * from CLIENT where C_ID = ". $id);
     oci_execute($query);
     $row = oci_fetch_assoc($query);
+    var_dump($row);
     $ime=$row['C_FNAME'];
     $prezime=$row['C_LNAME'] ;
     $email=$row['C_EMAIL'];
 }
-$ime="Ime";
 ?>
 <!DOCTYPE html>
 <html lang="en">
