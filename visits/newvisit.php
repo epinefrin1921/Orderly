@@ -18,6 +18,7 @@ if(isset($_SESSION['id'])){
     $prezime=$row['C_LNAME'] ;
     $email=$row['C_EMAIL'];
 }
+$ime="Ime";
 ?>
 <!DOCTYPE html>
 <html lang="en">
