@@ -1,19 +1,22 @@
 <?php
-session_start();
 $title = 'New visit';
 include ('../includes/db.php');
+session_start();
 
 $ime="";
 $prezime="";
 $email="";
+
 if(isset($_SESSION['id'])){
+
     $id = $_SESSION['id'];
-    $query = oci_parse($conn, "select * from CLIENT where C_ID =".$id);
+    $query = oci_parse($conn, "select * from CLIENT where C_ID = 1006");
     oci_execute($query);
     $row = oci_fetch_assoc($query);
     $ime=$row['C_FNAME'];
     $prezime=$row['C_LNAME'] ;
     $email=$row['C_EMAIL'];
+
 }
 ?>
 <!DOCTYPE html>
