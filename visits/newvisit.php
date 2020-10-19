@@ -6,7 +6,7 @@ if(isset($_SESSION['id']) and $_SESSION['type']!=0){
     header('Location: ../index.php');
     exit();
 }
-$ime="";
+$ime="Ime";
 $prezime="";
 $email="";
 if(isset($_SESSION['id'])){
