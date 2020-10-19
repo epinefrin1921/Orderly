@@ -8,7 +8,7 @@ if(isset($_SESSION['id']) and $_SESSION['type']!=0){
 }
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
-    $query = oci_parse($conn, "select * from CLIENT where C_ID = ".$id);
+    $query = oci_parse($conn, 'select * from CLIENT where C_ID = '.$id);
     oci_execute($query);
     $row = oci_fetch_assoc($query);
 }
@@ -44,7 +44,7 @@ if(isset($_SESSION['id'])){
             <input type="text" placeholder="Surname" name="lname" value="<?= isset($_SESSION['id'])? $row['C_LNAME'] : null ?>" >
         </div>
         <div class="textbox">
-            <input type="email" placeholder="E-mail" name="email" value="<?= isset($_SESSION['id'])? $id : null ?>" >
+            <input type="email" placeholder="E-mail" name="email" value="<?= isset($_SESSION['id'])? $row['C_EMAIL'] : null ?>" >
         </div>
         <div class="textbox">
             <input type="text" placeholder="Phone" name="phone" value="" >
