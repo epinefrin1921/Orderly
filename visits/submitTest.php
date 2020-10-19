@@ -29,18 +29,19 @@ if ($_POST) {
     $query2 = oci_parse($conn, "select * from VISITS where V_DATE > (sysdate - 3)");
     oci_execute($query2);
 
-    $query2 = oci_parse($conn, "select max(N_ID) from NOTIFICATIONS");
-    oci_execute($query2);
-    $row = oci_fetch_assoc($query2);
-    $max = $row["MAX(N_ID)"];
+    $query3 = oci_parse($conn, "select max(N_ID) from NOTIFICATIONS");
+    oci_execute($query3);
+    $row5 = oci_fetch_assoc($query3);
+    $max = $row5["MAX(N_ID)"];
     $max++;
 
     while ($row = oci_fetch_assoc($query2)) {
         $query3 = oci_parse($conn, "insert into NOTIFICATIONS (N_ID, N_CID, N_VISITID) values ({$max},{$row['V_CID']},{$row['V_ID']})");
         oci_execute($query3);
-        oci_commit($conn);
         $max++;
     }
+    oci_commit($conn);
+
 
     header('Location: thankyou.php');
 }
