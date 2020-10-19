@@ -2,11 +2,8 @@
 session_start();
 $title = 'New visit';
 include ('../includes/db.php');
-if(isset($_SESSION['id']) and $_SESSION['type']!=0){
-    header('Location: ../index.php');
-    exit();
-}
-$ime="Ime";
+
+$ime="";
 $prezime="";
 $email="";
 if(isset($_SESSION['id'])){
@@ -36,7 +33,7 @@ if(isset($_SESSION['id'])){
 <?php include '../includes/header.php';?>
 <div id="helping"></div>
 <?php
-var_dump($id);
+var_dump($query);
 ?>
 <div class="visitForm">
     <h1>Register new visit to our restaurant!</h1>
