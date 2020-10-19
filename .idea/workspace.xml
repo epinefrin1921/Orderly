@@ -93,7 +93,7 @@
       <workItem from="1602941615386" duration="243000" />
       <workItem from="1602941869082" duration="5146000" />
       <workItem from="1603096610377" duration="683000" />
-      <workItem from="1603098361377" duration="6032000" />
+      <workItem from="1603098361377" duration="6342000" />
     </task>
     <task id="LOCAL-00001" summary="Added COVID functionalities">
       <created>1602941700873</created>
@@ -235,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603107506670</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fixed bugs">
+      <created>1603107876971</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1603107876971</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,10 +283,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1357" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602923535280" />
-    <state x="1209" y="114" key="CommitChangelistDialog2" timestamp="1603107506305">
+    <state x="1209" y="114" key="CommitChangelistDialog2" timestamp="1603107876587">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1209" y="114" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1603107506305" />
+    <state x="1209" y="114" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1603107876587" />
     <state x="496" y="89" width="2048" height="860" key="DiffContextDialog" timestamp="1602944528542">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -336,10 +343,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1747" y="437" key="VCS.EditChangelistDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1602938819687" />
-    <state x="1452" y="256" key="Vcs.Push.Dialog.v2" timestamp="1603107507663">
+    <state x="1452" y="256" key="Vcs.Push.Dialog.v2" timestamp="1603107878302">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1452" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1603107507663" />
+    <state x="1452" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1603107878302" />
     <state x="1384" y="178" key="com.intellij.database.dbimport.ImportDialog" timestamp="1602931467138">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -364,10 +371,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1445" y="0" width="1125" height="919" key="dock-window-2/0.0.2560.1040@0.0.2560.1040" timestamp="1603107082290" />
-    <state x="0" y="0" width="1125" height="919" key="dock-window-3" timestamp="1603107860615">
+    <state x="0" y="0" width="1125" height="919" key="dock-window-3" timestamp="1603108170608">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="0" y="0" width="1125" height="919" key="dock-window-3/0.0.2560.1040@0.0.2560.1040" timestamp="1603107860615" />
+    <state x="0" y="0" width="1125" height="919" key="dock-window-3/0.0.2560.1040@0.0.2560.1040" timestamp="1603108170608" />
     <state x="1690" y="314" key="svn.repositoryBrowser" timestamp="1602939875924">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>

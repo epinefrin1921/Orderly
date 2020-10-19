@@ -10,14 +10,17 @@ $email="";
 if(isset($_SESSION['id'])){
 
     $id = $_SESSION['id'];
-    $query = oci_parse($conn, "select * from CLIENT where C_ID = 1006");
+    $query = oci_parse( $conn, "select * from CLIENT where C_ID =".$id);
     oci_execute($query);
     $row = oci_fetch_assoc($query);
     $ime=$row['C_FNAME'];
     $prezime=$row['C_LNAME'] ;
     $email=$row['C_EMAIL'];
 
-}
+    if (oci_num_rows($query) === 0) {
+        header('Location: ../error.php');
+    }
+};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,9 +38,7 @@ if(isset($_SESSION['id'])){
 <body>
 <?php include '../includes/header.php';?>
 <div id="helping"></div>
-<?php
-var_dump($query);
-?>
+
 <div class="visitForm">
     <h1>Register new visit to our restaurant!</h1>
     <p class="visitDetails">Due to current situation with COVID epidemic, we monitor all our guests and register each visit to restaurant. If You visit restaurant in the same time with someone that later tests positive to COVID, we will notify You!</p>
