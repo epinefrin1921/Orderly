@@ -6,11 +6,17 @@ if(isset($_SESSION['id']) and $_SESSION['type']!=0){
     header('Location: ../index.php');
     exit();
 }
+$ime="";
+$prezime="";
+$email="";
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
-    $query = oci_parse($conn, 'select * from CLIENT where C_ID = '.$id);
+    $query = oci_parse($conn, "select * from CLIENT where C_ID = ". $id);
     oci_execute($query);
     $row = oci_fetch_assoc($query);
+    $ime=$row['C_FNAME'];
+    $prezime=$row['C_LNAME'] ;
+    $email=$row['C_EMAIL'];
 }
 ?>
 <!DOCTYPE html>
@@ -38,13 +44,13 @@ if(isset($_SESSION['id'])){
     <?php endif; ?>
     <form class="Login" action="submitVisit.php" method="post" name="regform">
         <div class="textbox">
-            <input type="text" placeholder="Name" name="fname" value="<?php if(isset($_SESSION['id'])){echo $row["C_FNAME"];}; ?>" >
+            <input type="text" placeholder="Name" name="fname" value="<?= $ime ?>" >
         </div>
         <div class="textbox">
-            <input type="text" placeholder="Surname" name="lname" value="<?= isset($_SESSION['id'])? $row['C_LNAME'] : null ?>" >
+            <input type="text" placeholder="Surname" name="lname" value="<?= $prezime ?>" >
         </div>
         <div class="textbox">
-            <input type="email" placeholder="E-mail" name="email" value="<?= isset($_SESSION['id'])? $row['C_EMAIL'] : null ?>" >
+            <input type="email" placeholder="E-mail" name="email" value="<?= $email ?>" >
         </div>
         <div class="textbox">
             <input type="text" placeholder="Phone" name="phone" value="" >
