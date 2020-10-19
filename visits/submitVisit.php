@@ -16,7 +16,7 @@ if($_POST){
     $phone = $_POST['phone'];
 
     $query = oci_parse($conn,"INSERT INTO VISITS(V_ID,V_FNAME, V_LNAME, V_EMAIL, V_PHONE, V_DATE, V_CID)
-                       VALUES (10 ,'{$fname}','{$lname}', '{$email}', '{$phone}', sysdate, {$id})");
+                       VALUES (11 ,'{$fname}','{$lname}', '{$email}', '{$phone}', sysdate, {$id})");
     oci_execute($query);
     oci_commit($conn);
     header('Location: thankyou.php');
