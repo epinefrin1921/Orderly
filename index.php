@@ -43,7 +43,7 @@ while($row10 = oci_fetch_assoc($query4)){
 <?php include 'includes/header.php';?>
 <div id="helping"></div>
 <?php if($shouldTest):?>
-<div class="wrap">
+<div class="wrap warning">
     <h1>WARNING!</h1>
     <p>You recently got in contact with COVID-19 positive person. Please test yourself in order to stop the spread of COVID!</p>
     <?php foreach($posjete as $posjeta){ ?>
