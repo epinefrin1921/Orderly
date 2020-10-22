@@ -26,7 +26,7 @@ if ($_POST) {
     oci_execute($query);
     oci_commit($conn);
 
-    $query2 = oci_parse($conn, "select * from VISITS where V_DATE > (sysdate - 3)");
+    $query2 = oci_parse($conn, "select * from VISITS where V_DATE > (sysdate - 1)");
     oci_execute($query2);
 
     $query3 = oci_parse($conn, "select max(N_ID) from NOTIFICATIONS");

@@ -301,6 +301,12 @@ input[type=submit]{
     color: white;
 
 }
+.warning{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
 #s3 button{
     background: #3a6186;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #89253e, #3a6186);  /* Chrome 10-25, Safari 5.1-6 */

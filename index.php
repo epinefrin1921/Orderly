@@ -45,10 +45,7 @@ while($row10 = oci_fetch_assoc($query4)){
 <?php if($shouldTest):?>
 <div class="wrap warning">
     <h1>WARNING!</h1>
-    <p>You recently got in contact with COVID-19 positive person. Please test yourself in order to stop the spread of COVID!</p>
-    <?php foreach($posjete as $posjeta){ ?>
-         <p>Datum posjete: <?= $posjeta ?></p>
-    <?php } ?>
+    <p>You recently got in contact with COVID-19 positive person. Please monitor your symptoms and test yourself if needed in order to stop the spread of COVID!</p>
 </div>
 <?php endif; ?>
 <section class="wrap" id="s1">
